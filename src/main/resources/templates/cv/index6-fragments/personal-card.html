@@ -1,0 +1,134 @@
+<th:block th:fragment="content">
+          <style>
+            .personal-contact-box .cv-download-title {
+              margin: 0 0 12px;
+              color: var(--ztc-text-text-1);
+              font-family: var(--ztc-family-font1);
+              font-size: 1rem;
+              font-weight: 700;
+              line-height: 1.2;
+              text-align: center;
+            }
+
+            .personal-contact-box .cv-download-actions {
+              display: grid;
+              grid-template-columns: repeat(2, minmax(0, 1fr));
+              gap: 12px;
+              width: 100%;
+            }
+
+            .personal-contact-box .cv-download-link {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              gap: 8px;
+              width: 100%;
+              min-height: 60px;
+              padding: 10px 14px;
+              border-radius: 22px;
+              border: 1px solid #f6ad19;
+              background: #f6ad19;
+              color: #08171b;
+              font-family: var(--ztc-family-font1);
+              font-size: 0.98rem;
+              font-weight: 700;
+              line-height: 1.15;
+              letter-spacing: 0.01em;
+              text-align: center;
+              text-decoration: none;
+              text-transform: none;
+              transition: all 0.25s ease;
+            }
+
+            .personal-contact-box .cv-download-link:hover {
+              background: transparent;
+              color: #ffffff;
+              border-color: #ffffff;
+            }
+
+            .personal-contact-box .cv-download-link img {
+              width: 14px;
+              height: 14px;
+              margin: 0;
+              object-fit: contain;
+              transition: filter 0.25s ease;
+            }
+
+            .personal-contact-box .cv-download-link:hover img {
+              filter: brightness(0) invert(1);
+            }
+
+            .personal-contact-box .cv-download-label {
+              display: block;
+            }
+
+            @media (max-width: 575px) {
+              .personal-contact-box .cv-download-actions {
+                grid-template-columns: 1fr;
+              }
+
+              .personal-contact-box .cv-download-link {
+                min-height: 56px;
+                font-size: 0.9rem;
+              }
+            }
+          </style>
+
+          <div class="personal-contact-box">
+
+            <div id="list-example" class="list-group">
+
+              <a class="list-group-item list-group-item-action active" href="#list-item-1"><img th:src="@{/ovro-index6-full/assets/img/icons/home1.svg}" src="/ovro-index6-full/assets/img/icons/home1.svg" alt=""><span>Cover Letter</span></a>
+
+              <a class="list-group-item list-group-item-action" href="#list-item-2"><img th:src="@{/ovro-index6-full/assets/img/icons/home2.svg}" src="/ovro-index6-full/assets/img/icons/home2.svg" alt=""><span>Professional Profile</span></a>
+
+              <a class="list-group-item list-group-item-action" href="#list-item-4"><img th:src="@{/ovro-index6-full/assets/img/icons/home4.svg}" src="/ovro-index6-full/assets/img/icons/home4.svg" alt=""><span>My Skills</span></a>
+
+              <a class="list-group-item list-group-item-action" href="#list-item-5"><img th:src="@{/ovro-index6-full/assets/img/icons/home5.svg}" src="/ovro-index6-full/assets/img/icons/home5.svg" alt=""><span>Personal Projects</span></a>
+
+              <a class="list-group-item list-group-item-action m-0" href="#list-item-8"><img th:src="@{/ovro-index6-full/assets/img/icons/home7.svg}" src="/ovro-index6-full/assets/img/icons/home7.svg" alt=""><span>Contact me</span></a>
+
+            </div>
+
+            <div class="img1 image-anime reveal">
+
+              <img th:src="@{/ovro-index6-full/assets/img/all-images/hero/Profile4.jpg}" src="/ovro-index6-full/assets/img/all-images/hero/Profile4.jpg" alt="">
+
+            </div>
+
+            <div class="space18"></div>
+
+            <h3>Alejandro Valencia</h3>
+
+            <div class="space16"></div>
+
+            <p>7 years making the impossible, reality</p>
+
+            <div class="space12"></div>
+
+            <ul>
+              <li>
+                <a href="https://www.linkedin.com/in/alejandro-valencia-rivera" target="_blank" rel="noopener noreferrer">
+                  <img th:src="@{/ovro-index6-full/assets/img/icons/s-icon4.svg}" src="/ovro-index6-full/assets/img/icons/s-icon4.svg" alt="LinkedIn">
+                </a>
+              </li>
+            </ul>
+
+            <div class="space18"></div>
+
+            <h4 class="cv-download-title">Download my CV:</h4>
+
+            <div class="space8"></div>
+
+            <div class="btn-area1 text-center cv-download-actions">
+
+              <a th:href="@{/portfolio/alejandro/cv.pdf}" href="/portfolio/alejandro/cv.pdf" download class="cv-download-link"><span class="cv-download-label">Full Resume (8 pages)</span><img th:src="@{/ovro-index6-full/assets/img/icons/download1.svg}" src="/ovro-index6-full/assets/img/icons/download1.svg" alt=""></a>
+
+              <a th:href="@{/portfolio/alejandro/compact-resume.pdf}" href="/portfolio/alejandro/compact-resume.pdf" download class="cv-download-link"><span class="cv-download-label">Small Resume (2 pages)</span><img th:src="@{/ovro-index6-full/assets/img/icons/download1.svg}" src="/ovro-index6-full/assets/img/icons/download1.svg" alt=""></a>
+
+            </div>
+
+            <div class="space8"></div>
+
+          </div>
+</th:block>

@@ -1,0 +1,30 @@
+{
+  "eyebrow": "Profile",
+  "titlePrimary": "Backend-first full stack delivery",
+  "titleSecondary": "with leadership and",
+  "highlightWord": "execution",
+  "paragraphs": [
+    "Senior full stack developer with a strong backend orientation, specialized in Java / Spring Boot, Python, enterprise integrations, cloud architecture, data engineering, and modernization programs for banking and financial services.",
+    "Brings end-to-end delivery ownership from planning and solution design through development, testing, release, production rollout, and post-production support. The profile combines hands-on coding with architecture, migration strategy, DevOps enablement, and cross-functional technical leadership.",
+    "Key achievements include core banking migration, API gateway and mediation layer design, Salesforce Marketing Cloud implementation, on-premises to AWS modernization, ETL optimization, encryption and anonymization initiatives, and delivery of data and reporting platforms with measurable business impact.",
+    "Scrum Master and Product Owner certified, with a delivery style centered on quality, security, traceability, and pragmatic execution."
+  ],
+  "highlights": [
+    {
+      "title": "Technical Leadership",
+      "description": "End-to-end ownership across planning, design, implementation, release, and production support."
+    },
+    {
+      "title": "Backend Engineering",
+      "description": "Java / Spring Boot and Python for APIs, microservices, domain logic, and integration-heavy systems."
+    },
+    {
+      "title": "Cloud & DevOps",
+      "description": "AWS, Terraform, Jenkins, Docker, Kubernetes, observability, and infrastructure modernization."
+    },
+    {
+      "title": "Data & Integrations",
+      "description": "ETL / ELT, SQL and NoSQL, SFTP, SOAP, REST, API mediation, BI, CRM, and migration programs."
+    }
+  ]
+}

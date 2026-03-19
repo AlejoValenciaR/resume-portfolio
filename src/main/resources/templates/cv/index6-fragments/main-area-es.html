@@ -1,0 +1,37 @@
+<th:block th:fragment="content">
+<!--===== MAIN AREA STARTS =======-->
+<div class="main-hero-area5 parallaxie">
+
+    <video class="body-overlay" muted="" autoplay="" loop="">
+
+        <source th:src="@{/ovro-index6-full/assets/img/video/video5.mp4}" src="/ovro-index6-full/assets/img/video/video5.mp4" type="video/mp4">
+
+    </video>
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-4">
+        <th:block th:replace="~{cv/index6-fragments/personal-card-es :: content}"></th:block>
+      </div>
+
+      <div class="col-lg-8 cv-main-column">
+
+        <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example cv-main-scroll" tabindex="0">
+          <th:block th:replace="~{cv/index6-fragments/hero-es :: content}"></th:block>
+          <th:block th:replace="~{cv/index6-fragments/about-es :: content}"></th:block>
+          <th:block th:replace="~{cv/index6-fragments/skills-es :: content}"></th:block>
+          <th:block th:replace="~{cv/index6-fragments/portfolio-es :: content}"></th:block>
+          <th:block th:replace="~{cv/index6-fragments/contact-es :: content}"></th:block>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<!--===== MAIN AREA ENDS =======-->
+</th:block>

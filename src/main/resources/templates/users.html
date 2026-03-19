@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/brand :: head(${pageTitle})}"></head>
+<body>
+    <header th:replace="~{fragments/brand :: header(${currentPath})}"></header>
+
+    <main class="brand-main">
+        <section class="hero">
+            <h1>User Directory</h1>
+            <p>All users are rendered as a branded HTML list.</p>
+        </section>
+
+        <h2 class="section-title">Users</h2>
+        <ul class="list">
+            <li th:each="user, userStat : ${users}">
+                <div>
+                    <strong th:text="${user}">Alice</strong>
+                    <span class="chip" th:text="'ID ' + ${userStat.count}">ID 1</span>
+                </div>
+                <a class="link-btn" th:href="@{/api/users/{id}(id=${userStat.count})}">View Detail</a>
+            </li>
+        </ul>
+    </main>
+
+    <footer th:replace="~{fragments/brand :: footer}"></footer>
+</body>
+</html>

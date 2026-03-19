@@ -1,0 +1,58 @@
+{
+  "fullName": "Alejandro Valencia Rivera",
+  "title": "Desarrollador Full Stack Senior | Enfoque Backend | Java, Python, AWS, Ingeniería de datos",
+  "shortBio": "Desarrollador full stack senior con más de 7 años de experiencia en banca, fintech, CRM, nube y entornos intensivos en datos. Mi mayor valor está en la arquitectura backend, la ejecución hands-on, las integraciones y el liderazgo técnico.",
+  "initials": "AV",
+  "footerText": "Abierto a oportunidades senior en backend, platform engineering y liderazgo técnico.",
+  "facts": [
+    {
+      "label": "Correo",
+      "value": "alejo.valenciarivera@gmail.com",
+      "url": "mailto:alejo.valenciarivera@gmail.com"
+    },
+    {
+      "label": "Teléfono",
+      "value": "+57 302 807 8826",
+      "url": "tel:+573028078826"
+    },
+    {
+      "label": "Ubicación",
+      "value": "Cali, Colombia",
+      "url": null
+    },
+    {
+      "label": "Fecha de nacimiento",
+      "value": "29 de octubre de 1996",
+      "url": null
+    }
+  ],
+  "primaryActions": [
+    {
+      "label": "Escríbeme",
+      "url": "mailto:alejo.valenciarivera@gmail.com",
+      "iconClass": "fa-solid fa-envelope"
+    },
+    {
+      "label": "Ver LinkedIn",
+      "url": "https://www.linkedin.com/in/alejandro-valencia-rivera-28313715b",
+      "iconClass": "fa-brands fa-linkedin-in"
+    }
+  ],
+  "socialLinks": [
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/alejandro-valencia-rivera-28313715b",
+      "iconClass": "fa-brands fa-linkedin-in"
+    },
+    {
+      "label": "Correo",
+      "url": "mailto:alejo.valenciarivera@gmail.com",
+      "iconClass": "fa-solid fa-envelope"
+    },
+    {
+      "label": "Teléfono",
+      "url": "tel:+573028078826",
+      "iconClass": "fa-solid fa-phone"
+    }
+  ]
+}

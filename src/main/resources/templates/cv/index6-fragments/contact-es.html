@@ -1,0 +1,127 @@
+<th:block th:fragment="content">
+          <div id="list-item-8">
+
+            <!--===== CONTACT AREA STARTS =======-->
+
+            <div class="contact-section-area">
+
+              <div class="container">
+
+                <div class="row">
+
+                  <div class="col-lg-12">
+
+                    <div class="contact-heading heading1">
+
+                      <h5 data-aos="fade-left" data-aos-duration="900"><img th:src="@{/ovro-index6-full/assets/img/icons/logo-orange32.png}" src="/ovro-index6-full/assets/img/icons/logo-orange32.png" alt=""><span th:text="#{contact.kicker}">Contact Me</span></h5>
+
+                      <div class="space24"></div>
+
+                      <h2 data-aos="fade-left" data-aos-duration="1000" th:text="#{contact.titlePrimary}">Are you interested?</h2>
+
+                      <div class="space24"></div>
+
+                      <h2 class="head" data-aos="fade-left" data-aos-duration="1100"><span th:text="#{contact.titleSecondaryPrefix}">Then,</span> <span th:text="#{contact.titleSecondaryHighlight}">Lets Talk!</span></h2>
+
+                    </div>
+
+                    <div class="space50"></div>
+
+                    <div class="contact-boxarea cv-contact-static" data-aos="zoom-in" data-aos-duration="1000">
+
+                      <div class="cv-contact-header">
+                        <span class="cv-contact-kicker" th:text="#{contact.availability}">Available for Hiring</span>
+                        <div class="space32"></div>
+                        <p th:text="#{contact.summary}">Public contact information for recruiters, hiring managers, and consulting opportunities.</p>
+                      </div>
+
+                      <div class="space24"></div>
+
+                      <div class="row g-4">
+
+                        <div class="col-lg-6 col-md-6">
+                          <div class="cv-contact-item">
+                            <div class="cv-contact-icon"><i class="fa-solid fa-user"></i></div>
+                            <div class="cv-contact-copy">
+                              <span class="cv-contact-label" th:text="#{contact.fullNameLabel}">Full Name</span>
+                              <strong class="cv-contact-value" th:text="#{contact.fullNameValue}">ALEJANDRO VALENCIA</strong>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                          <div class="cv-contact-item">
+                            <div class="cv-contact-icon"><i class="fa-solid fa-cake-candles"></i></div>
+                            <div class="cv-contact-copy">
+                              <span class="cv-contact-label" th:text="#{contact.birthDateLabel}">Birth Date</span>
+                              <strong class="cv-contact-value" th:text="#{contact.birthDateValue}">10/29/1996</strong>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                          <div class="cv-contact-item">
+                            <div class="cv-contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="cv-contact-copy">
+                              <span class="cv-contact-label" th:text="#{contact.emailLabel}">Email Address</span>
+                              <a class="cv-contact-link" data-contact-choice-trigger href="mailto:alejo.valenciarivera@gmail.com">alejo.valenciarivera@gmail.com</a>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                          <div class="cv-contact-item">
+                            <div class="cv-contact-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="cv-contact-copy">
+                              <span class="cv-contact-label" th:text="#{contact.phoneLabel}">Phone Number</span>
+                              <a class="cv-contact-link" href="tel:+573028078826">+57 302 807 8826</a>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                          <div class="cv-contact-item">
+                            <div class="cv-contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="cv-contact-copy">
+                              <span class="cv-contact-label" th:text="#{contact.locationLabel}">Location</span>
+                              <strong class="cv-contact-value" th:text="#{contact.locationValue}">Cali, Colombia</strong>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                          <div class="cv-contact-item">
+                            <div class="cv-contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                            <div class="cv-contact-copy">
+                              <span class="cv-contact-label" th:text="#{contact.linkedinLabel}">LinkedIn</span>
+                              <a class="cv-contact-link" href="https://www.linkedin.com/in/alejandro-valencia-rivera/" target="_blank" rel="noopener noreferrer">linkedin.com/in/alejandro-valencia-rivera</a>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <div class="space32"></div>
+
+                      <div class="cv-contact-actions">
+                        <button type="button" class="vl-btn1" data-contact-choice-trigger>
+                          <span th:text="#{contact.sendMessage}">Send Me A Message</span>
+                          <img th:src="@{/ovro-index6-full/assets/img/icons/mail1.svg}" src="/ovro-index6-full/assets/img/icons/mail1.svg" alt="">
+                        </button>
+                        <p class="cv-contact-action-note" th:text="#{contact.actionNote}">Choose whether to open your external email app or send the message directly from this site.</p>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!--===== CONTACT AREA ENDS =======-->
+
+          </div>
+</th:block>

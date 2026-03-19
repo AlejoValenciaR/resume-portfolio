@@ -1,0 +1,118 @@
+{
+  "title": "Experiencia profesional resumida",
+  "items": [
+    {
+      "company": "CINTE GROUP S.A. / Experian",
+      "role": "Lider tecnico, backend e ingenieria de datos",
+      "period": "jun. 2024 - dic. 2025",
+      "projects": [
+        {
+          "name": "Integracion de Salesforce Marketing Cloud",
+          "stack": ["Java", "Python", "AWS", "Terraform", "SFTP", "API Gateway", "Salesforce Marketing Cloud"]
+        },
+        {
+          "name": "Modernizacion de MongoDB hacia Amazon DocumentDB",
+          "stack": ["Spring Boot", "Node.js", "Python", "MongoDB", "Amazon DocumentDB", "AWS", "Terraform"]
+        },
+        {
+          "name": "Monitoreo transaccional Ascend",
+          "stack": ["AWS", "BI", "Encryption", "Anonymization", "Data Pipelines"]
+        }
+      ]
+    },
+    {
+      "company": "Independiente",
+      "role": "Consultor de software",
+      "period": "ene. 2024 - jun. 2024",
+      "projects": [
+        {
+          "name": "Modernizacion del pago de comparendos",
+          "stack": ["Java 21", "Oracle 13c", "React", "Redis", "Secure Authentication"]
+        },
+        {
+          "name": "Modernizacion Java 21 y API REST",
+          "stack": ["Java", "FastAPI", "Architecture Documentation", "Payments Integration"]
+        }
+      ]
+    },
+    {
+      "company": "Bold",
+      "role": "Ingeniero de software backend",
+      "period": "ago. 2023 - dic. 2023",
+      "projects": [
+        {
+          "name": "Lanzamiento del producto bancario Android de Bold",
+          "stack": ["Python", "FastAPI", "Pydantic", "Pytest", "AWS", "MongoDB"]
+        },
+        {
+          "name": "Backend para microcreditos y cuentas de bajo monto",
+          "stack": ["Java", "Python", "DDD", "DynamoDB", "REST APIs"]
+        }
+      ]
+    },
+    {
+      "company": "Banco Union",
+      "role": "Tech lead y analista senior de desarrollo",
+      "period": "mar. 2022 - ago. 2023",
+      "projects": [
+        {
+          "name": "API Gateway de core bancario",
+          "stack": ["Java", "Spring Boot", "REST", "SOAP", "API Gateway", "Mediation Layer"]
+        },
+        {
+          "name": "Modernizacion ETL y reportería",
+          "stack": ["AWS Glue", "Azure Data Factory", "GoAnywhere", "Power BI", "ETL"]
+        },
+        {
+          "name": "Validacion SARLAFT de riesgo e identidad",
+          "stack": ["Java", "Python", "WildFly", "Regulatory Reporting", "Security"]
+        }
+      ]
+    },
+    {
+      "company": "Banco de Occidente",
+      "role": "Analista senior de desarrollo",
+      "period": "ene. 2021 - ene. 2022",
+      "projects": [
+        {
+          "name": "Aplicaciones internas de reportería",
+          "stack": ["Java", "Python", "Flask", "Django", "Reporting", "Business Data"]
+        },
+        {
+          "name": "Integracion Wompi y soporte FLEXCUBE",
+          "stack": ["AWS", "Terraform", "Jenkins", "Wompi", "FLEXCUBE"]
+        }
+      ]
+    },
+    {
+      "company": "Banco de Occidente",
+      "role": "Analista profesional",
+      "period": "may. 2019 - dic. 2020",
+      "projects": [
+        {
+          "name": "Migracion de cartera hacia FLEXCUBE",
+          "stack": ["Oracle FLEXCUBE", "Java EE", "Jakarta EE", "Python", "Migration Rules"]
+        },
+        {
+          "name": "Pipelines ETL con IBM DataStage",
+          "stack": ["IBM DataStage", "ODS", "Oracle", "Reporting", "Portfolio Closing"]
+        }
+      ]
+    },
+    {
+      "company": "Innovar Web",
+      "role": "Analista de datos",
+      "period": "ene. 2018 - abr. 2019",
+      "projects": [
+        {
+          "name": "Normalizacion de base de datos a 3FN",
+          "stack": ["SQL", "Database Design", "Performance Tuning"]
+        },
+        {
+          "name": "Modelo predictivo de latencia",
+          "stack": ["Mathematical Modeling", "Database Analytics", "Performance Monitoring"]
+        }
+      ]
+    }
+  ]
+}

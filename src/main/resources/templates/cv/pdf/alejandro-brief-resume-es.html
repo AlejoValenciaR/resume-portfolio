@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Alejandro Valencia Rivera - Hoja de vida corta</title>
+  <style>
+    @page{size:A4;margin:0}html,body{margin:0;padding:0}body{font-family:"Segoe UI",Arial,sans-serif;color:#18303d;background:#fff}a{color:#1e7780;text-decoration:none}p,h1,h2,h3,h4,h5,strong,ul{margin:0}
+    .resume-page{width:210mm;height:297mm;page-break-after:always;background:#fffaf5}.resume-page:last-child{page-break-after:auto}.page-layout{width:100%;height:100%;border-collapse:collapse;table-layout:fixed}.page-layout td{vertical-align:top}
+    .sidebar{box-sizing:border-box;width:228px;background:#14343f;color:#fff7f0;border-right:2px solid #c97539}.sidebar-body{padding:7mm 4.5mm 7.5mm}.sidebar-photo{display:block;width:228px;height:auto}.main{box-sizing:border-box;padding:7.5mm 7.6mm 7.5mm 7.4mm;background:#fffaf5}
+    .sidebar-name{font-family:Georgia,"Times New Roman",serif;font-size:15pt;line-height:1;color:#fff}.sidebar-role{margin-top:2mm;font-size:6.5pt;line-height:1.42;letter-spacing:.1em;text-transform:uppercase;color:#f4bf98;font-weight:700}.sidebar-block{margin-top:3.8mm}
+    .sidebar-heading,.card-title{margin:0 0 1.8mm;font-size:6.5pt;line-height:1.2;letter-spacing:.18em;text-transform:uppercase;color:#f4bf98;font-weight:700}.card-title{color:#0f6c72;font-size:7.1pt}
+    .fact-row{margin-bottom:2mm}.fact-row:last-child{margin-bottom:0}.fact-label{display:block;margin-bottom:.5mm;font-size:5.8pt;line-height:1.2;letter-spacing:.12em;text-transform:uppercase;color:#d8bfa8}.fact-value,.fact-value a{display:block;font-size:6.8pt;line-height:1.35;color:#fffaf4;word-wrap:break-word}
+    .sidebar-chip{display:inline-block;margin:0 1.1mm 1.1mm 0;padding:1.1mm 1.8mm;border-radius:999px;background:#1f4552;border:1px solid #35535f;color:#fff;font-size:5.7pt;line-height:1.2}.sidebar-copy{font-size:6.2pt;line-height:1.44;color:#e8ddd2}
+    .sidebar-link-card{margin-bottom:2.6mm;padding:2.3mm;border-radius:10px;background:#1f4552;border:1px solid #35535f}.sidebar-link-card:last-child{margin-bottom:0}.sidebar-link-title{font-size:6.3pt;line-height:1.3;color:#fff;font-weight:700}.sidebar-link-url,.sidebar-link-url a{display:block;margin-top:.9mm;font-size:5.7pt;line-height:1.32;color:#d8e7eb;word-wrap:break-word}
+    .continuation-mark{width:15mm;height:15mm;line-height:15mm;border-radius:50%;text-align:center;background:#11303a;border:1px solid #43616c;color:#fff8f1;font-size:10pt;font-weight:700;font-family:Georgia,"Times New Roman",serif}
+    .continuation-name{margin-top:4mm;font-family:Georgia,"Times New Roman",serif;font-size:11pt;line-height:1.03;color:#fff}.continuation-role{margin-top:2mm;font-size:6.3pt;line-height:1.45;letter-spacing:.1em;text-transform:uppercase;color:#f4bf98;font-weight:700}.continuation-divider{margin:6mm 0;width:100%;height:2px;background:#c97539}
+    .hero-card{padding:5mm 5.2mm 4.4mm;border-radius:16px;background:#14343f;color:#fff;border-top:4mm solid #c97539}.hero-kicker{font-size:7pt;line-height:1.2;letter-spacing:.15em;text-transform:uppercase;color:#f4bf98;font-weight:700}.hero-name{margin-top:2mm;font-family:Georgia,"Times New Roman",serif;font-size:21pt;line-height:1;color:#fff}.hero-role{margin-top:1.8mm;font-size:9pt;line-height:1.3;color:#f8d7bd;font-weight:700}.hero-summary{margin-top:2.4mm;font-size:7.3pt;line-height:1.45;color:#edf2f3}
+    .section-card{margin-top:4mm;padding:3.6mm 3.8mm;border-radius:14px;border:1px solid #e7d9cb;background:#fff;page-break-inside:avoid}.section-card:first-child{margin-top:0}
+    .experience-group{padding:2.5mm 0;border-bottom:1px solid #eee2d6;page-break-inside:avoid}.experience-group:first-child{padding-top:0}.experience-group:last-child{padding-bottom:0;border-bottom:0}
+    .experience-head{width:100%;border-collapse:collapse}.experience-head td{padding:0;vertical-align:top}.company-name{font-size:8pt;line-height:1.25;color:#17333f;font-weight:700}.company-meta{font-size:6.3pt;line-height:1.3;color:#7f6755;text-align:right;white-space:nowrap}.company-role{margin-top:.8mm;font-size:6.9pt;line-height:1.35;color:#0f6c72;font-weight:700}
+    .project-list{margin-top:1.8mm}.project-item{margin-bottom:1.8mm}.project-item:last-child{margin-bottom:0}.project-name{font-size:6.8pt;line-height:1.34;color:#17333f;font-weight:700}.stack-line{margin-top:.7mm;font-size:6.1pt;line-height:1.38;color:#5b6a70}
+    .project-link-card{margin-bottom:2mm;padding:2.6mm;border-radius:11px;background:#fbf4ed;border:1px solid #eadbcd}.project-link-card:last-child{margin-bottom:0}.project-link-title{font-size:6.8pt;line-height:1.3;color:#17333f;font-weight:700}.project-link-line,.project-link-line a{display:block;margin-top:.8mm;font-size:6pt;line-height:1.32;color:#1e7780;word-wrap:break-word}
+  </style>
+</head>
+<body>
+  <div class="resume-page">
+    <table class="page-layout"><tr>
+      <td class="sidebar">
+        <img class="sidebar-photo" th:src="${resume.photoDataUri}" alt="Foto de perfil de Alejandro Valencia Rivera" />
+        <div class="sidebar-body">
+          <div class="sidebar-name" th:text="${resume.personalInfo.fullName}">Alejandro Valencia Rivera</div>
+          <div class="sidebar-role" th:text="${resume.personalInfo.title}">Senior Full Stack Developer | Backend-First | Java, Python, AWS, Data Engineering</div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Informacion personal</div>
+            <div class="fact-row" th:each="fact, factStat : ${resume.personalInfo.facts}" th:if="${factStat.index &lt; 4}">
+              <span class="fact-label" th:text="${fact.label}">Email</span>
+              <span class="fact-value" th:if="${fact.url == null}" th:text="${fact.value}">Cali, Colombia</span>
+              <span class="fact-value" th:if="${fact.url != null}"><a th:href="${fact.url}" th:text="${fact.value}">alejo.valenciarivera@gmail.com</a></span>
+            </div>
+          </div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Tecnologias principales</div>
+            <span class="sidebar-chip" th:each="technology : ${principalTechnologies}" th:text="${technology}">Java</span>
+          </div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Idiomas</div>
+            <div class="fact-row" th:each="language : ${resume.languages.items}">
+              <span class="fact-label" th:text="${language.name}">Spanish</span>
+              <span class="fact-value" th:text="${language.level}">Native</span>
+            </div>
+          </div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Educacion</div>
+            <div class="sidebar-copy" th:each="education : ${resume.education.items}">
+              <strong th:text="${education.degree}">Systems Engineer</strong><br />
+              <span th:text="${education.institution + ' | ' + education.period}">Universidad del Valle | 2014 - 2019</span>
+            </div>
+          </div>
+        </div>
+      </td>
+      <td class="main">
+        <div class="hero-card">
+          <div class="hero-kicker">Hoja de vida corta</div>
+          <div class="hero-name" th:text="${resume.personalInfo.fullName}">Alejandro Valencia Rivera</div>
+          <div class="hero-role" th:text="${resume.personalInfo.title}">Senior Full Stack Developer</div>
+          <div class="hero-summary">Vista corta para reclutamiento: perfil personal, tecnologias principales, idiomas, educacion, experiencia orientada a proyectos y enlaces publicos de GitHub.</div>
+        </div>
+        <div class="section-card">
+          <div class="card-title">Experiencia profesional</div>
+          <div class="experience-group" th:each="experience : ${compactExperiencePageOne}">
+            <table class="experience-head">
+              <tr>
+                <td>
+                  <div class="company-name" th:text="${experience.company}">CINTE GROUP S.A. / Experian</div>
+                  <div class="company-role" th:text="${experience.role}">Technical Lead, Backend &amp; Data Engineering</div>
+                </td>
+                <td class="company-meta" th:text="${experience.period}">2024 - 2025</td>
+              </tr>
+            </table>
+            <div class="project-list">
+              <div class="project-item" th:each="project : ${experience.projects}">
+                <div class="project-name" th:text="${project.name}">Salesforce Marketing Cloud Integration</div>
+                <div class="stack-line"><strong>Tecnologias:</strong> <span th:text="${#strings.listJoin(project.stack, ', ')}">Java, Python, AWS, Terraform</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr></table>
+  </div>
+
+  <div class="resume-page">
+    <table class="page-layout"><tr>
+      <td class="sidebar">
+        <div class="sidebar-body">
+          <div class="continuation-mark" th:text="${resume.personalInfo.initials}">AV</div>
+          <div class="continuation-name" th:text="${resume.personalInfo.fullName}">Alejandro Valencia Rivera</div>
+          <div class="continuation-role">Experiencia restante y enlaces del portafolio</div>
+          <div class="continuation-divider"></div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Contacto rapido</div>
+            <div class="fact-row" th:each="fact : ${resume.personalInfo.facts}">
+              <span class="fact-label" th:text="${fact.label}">Email</span>
+              <span class="fact-value" th:if="${fact.url == null}" th:text="${fact.value}">Cali, Colombia</span>
+              <span class="fact-value" th:if="${fact.url != null}"><a th:href="${fact.url}" th:text="${fact.value}">alejo.valenciarivera@gmail.com</a></span>
+            </div>
+          </div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Tecnologias principales</div>
+            <span class="sidebar-chip" th:each="technology, technologyStat : ${principalTechnologies}" th:if="${technologyStat.index &lt; 6}" th:text="${technology}">Java</span>
+          </div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Enfoque del portafolio</div>
+            <div class="sidebar-copy">Los repositorios publicos enfatizan automatizacion de infraestructura, integracion cloud, entrega backend y patrones de ingenieria de plataforma.</div>
+          </div>
+        </div>
+      </td>
+      <td class="main">
+        <div class="section-card">
+          <div class="card-title">Experiencia profesional</div>
+          <div class="experience-group" th:each="experience : ${compactExperiencePageTwo}">
+            <table class="experience-head">
+              <tr>
+                <td>
+                  <div class="company-name" th:text="${experience.company}">Banco de Occidente</div>
+                  <div class="company-role" th:text="${experience.role}">Senior Developer Analyst</div>
+                </td>
+                <td class="company-meta" th:text="${experience.period}">2021 - 2022</td>
+              </tr>
+            </table>
+            <div class="project-list">
+              <div class="project-item" th:each="project : ${experience.projects}">
+                <div class="project-name" th:text="${project.name}">Internal Reporting Applications</div>
+                <div class="stack-line"><strong>Tecnologias:</strong> <span th:text="${#strings.listJoin(project.stack, ', ')}">Java, Python, Flask, Django</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-card">
+          <div class="card-title">Proyectos de GitHub</div>
+          <div class="project-link-card" th:each="project : ${compactGithubProjects}">
+            <div class="project-link-title" th:text="${project.title}">Terraform Jenkins on DigitalOcean</div>
+            <div class="project-link-line"><a th:href="${project.repoUrl}" th:text="${project.repoUrl}">https://github.com/...</a></div>
+            <div class="project-link-line" th:if="${project.liveUrl != null and !#strings.isEmpty(project.liveUrl)}"><a th:href="${project.liveUrl}" th:text="${project.liveUrl}">https://example.com</a></div>
+          </div>
+        </div>
+      </td>
+    </tr></table>
+  </div>
+</body>
+</html>
+

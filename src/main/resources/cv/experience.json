@@ -1,0 +1,142 @@
+{
+  "eyebrow": "Experience",
+  "titlePrimary": "Professional",
+  "titleSecondary": "experience and",
+  "highlightWord": "impact",
+  "items": [
+    {
+      "role": "Technical Lead, Backend & Data Engineering",
+      "company": "CINTE GROUP S.A. (Experian Outsourcing)",
+      "location": "Cali, Colombia",
+      "period": "Jun 2024 - Dec 2025",
+      "summary": "Led and contributed to high-impact programs across CRM integration, cloud architecture, database modernization, transaction monitoring, and payment optimization for enterprise delivery teams.",
+      "tags": [
+        "CRM Integration",
+        "DocumentDB Migration",
+        "Payment Optimization",
+        "API Delivery",
+        "Salesforce Marketing Cloud"
+      ],
+      "bullets": [
+        "Led the full lifecycle of a Salesforce Marketing Cloud implementation, including API and SFTP integrations with AWS and migration of internal customer data into contactability models.",
+        "Led the migration from on-premises MongoDB to Amazon DocumentDB and delivered the AWS infrastructure using Terraform, aligned with governance and security requirements.",
+        "Built a large AWS-based architecture and the initial microservices backbone behind API Gateway, using services such as Lambda, Step Functions, ECS, EKS, Glue, EventBridge, SQS, S3, and CloudWatch.",
+        "Implemented the Ascend transaction monitoring and BI solution and delivered a national encryption plus anonymization model to protect customer identity and enable secure cross-team data exchange."
+      ]
+    },
+    {
+      "role": "Software Consultant",
+      "company": "Independent",
+      "location": "Cali, Colombia",
+      "period": "Jan 2024 - Jun 2024",
+      "summary": "Delivered backend, database, and frontend modernization for the Colombian Ministry of Transport, upgrading a critical public-facing payment workflow on top of Java, Oracle, and React.",
+      "tags": [
+        "Java Migration",
+        "REST API",
+        "Database Optimization",
+        "React Development"
+      ],
+      "bullets": [
+        "Modernized the traffic fines payment platform for the Colombian Ministry of Transport, combining backend migration, API redesign, and frontend delivery for a critical public-facing workflow.",
+        "Migrated the payment module from Java 8 to Java 21, documented the target architecture, and created a new REST API that established the technical foundation for future payment-processing modules.",
+        "Improved Oracle 13c query performance by 40% in payments and reporting, standardized shared connectivity modules, and delivered a React admin panel with secure authentication, encryption, Redis-backed session support, and caching."
+      ]
+    },
+    {
+      "role": "Backend Software Engineer",
+      "company": "Bold",
+      "location": "Cali, Colombia",
+      "period": "Aug 2023 - Dec 2023",
+      "summary": "Supported backend systems and cloud delivery for a new banking-product application, combining Python, Java, DDD, and production support for low-balance accounts and microloans.",
+      "tags": [
+        "DDD and Test Automation",
+        "REST APIs",
+        "Python Delivery",
+        "Java Services",
+        "Cloud-Native Banking"
+      ],
+      "bullets": [
+        "Delivered backend services for low-balance accounts and microloans in the Bold CF application.",
+        "Developed Python and Java domain models across multiple microservices following Domain-Driven Design principles and supported production environments backed by DynamoDB.",
+        "Worked with cloud-native architectures across AWS, GCP, and Azure, combining SQL and NoSQL persistence, API patterns, technical documentation, and test design for a reliable banking product."
+      ]
+    },
+    {
+      "role": "Tech Lead & Senior Developer Analyst",
+      "company": "Banco Union",
+      "location": "Cali, Colombia",
+      "period": "Mar 2022 - Aug 2023",
+      "summary": "Led a strategic technology and compliance program that helped enable the bank operating-license process while modernizing the integration, reporting, and ETL ecosystem behind a new core banking platform.",
+      "tags": [
+        "Core Banking",
+        "API Gateway",
+        "REST & SOAP",
+        "ETL Modernization",
+        "AWS and Azure"
+      ],
+      "bullets": [
+        "Led a strategic technology and compliance program that supported the bank operating license process and the rollout of a new Core Banking platform.",
+        "Built the inter-application communication backbone from scratch, including an API Gateway and mediation layer with more than 94 REST and SOAP services plus a translation API for legacy-to-modern integration.",
+        "Standardized more than 130 ETL jobs and reports, produced technical standards for regulatory and audit requirements, and contributed ETL modernization using AWS Glue, Azure Data Factory, and GoAnywhere.",
+        "Delivered risk-profile and identity-validation capabilities for SARLAFT, optimized Pentaho and GoAnywhere pipelines, improved WildFly stability, and supported reporting for operations and collections."
+      ]
+    },
+    {
+      "role": "Senior Developer Analyst",
+      "company": "Banco de Occidente",
+      "location": "Cali, Colombia",
+      "period": "Jan 2021 - Jan 2022",
+      "summary": "Built internal applications, optimized ETL flows, and strengthened data protection for production banking operations, while also contributing to Wompi integration and modernization initiatives.",
+      "tags": [
+        "Reporting Apps",
+        "ETL Optimization",
+        "Encryption Model",
+        "Wompi Integration",
+        "AWS and Terraform"
+      ],
+      "bullets": [
+        "Built four internal applications, two in Java and two in Python with Flask and Django, improving reporting and decision-making by 30% to 40% for business units.",
+        "Optimized five production ETL pipelines involved in the loan portfolio closing process, reducing close time by 1.5 hours.",
+        "Designed and implemented the national encryption model and an anonymization replica database, strengthening customer identity protection and secure information exchange.",
+        "Contributed to Wompi integration, improved FLEXCUBE data processing, and acted as an AWS, Terraform, and Jenkins reference for modernization and migration initiatives."
+      ]
+    },
+    {
+      "role": "Professional Analyst",
+      "company": "Banco de Occidente",
+      "location": "Cali, Colombia",
+      "period": "May 2019 - Dec 2020",
+      "summary": "Owned migration architecture and delivery coordination for active loan portfolio products moving into Oracle FLEXCUBE, combining ETL work, technical leadership, and migration-rehearsal planning.",
+      "tags": [
+        "Oracle FLEXCUBE",
+        "Core Banking Migration",
+        "Technical Leadership",
+        "ETL and DataStage",
+        "ODS and Reporting"
+      ],
+      "bullets": [
+        "Designed the full technology architecture to migrate an active loan portfolio product to FLEXCUBE.",
+        "Built 15 ETL pipelines with IBM DataStage and optimized ODS queries and ETL processes to improve data management and decision-making.",
+        "Led an 11-person team as Scrum Master and contributed to a high-impact migration with 99.8% success, covering 39,000 customers and 80,000 loans."
+      ]
+    },
+    {
+      "role": "Data Analyst",
+      "company": "Innovar Web",
+      "location": "Cali, Colombia",
+      "period": "Jan 2018 - Apr 2019",
+      "summary": "Improved transactional performance and data quality by redesigning database structures, modeling latency behavior, and optimizing the application data layer for better throughput.",
+      "tags": [
+        "SQL Optimization",
+        "3NF Modeling",
+        "Latency Analysis",
+        "Performance Tuning"
+      ],
+      "bullets": [
+        "Normalized the application database to Third Normal Form and materially improved system performance.",
+        "Built a mathematical model that predicted database latency with 90% accuracy and helped identify low-performance conditions.",
+        "Raised daily transactions by 30% through database optimization and contributed to improved application stability and user experience."
+      ]
+    }
+  ]
+}

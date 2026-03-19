@@ -1,0 +1,17 @@
+{
+  "eyebrow": "Educación",
+  "titlePrimary": "Educación",
+  "titleSecondary": "e",
+  "highlightWord": "idiomas",
+  "items": [
+    {
+      "degree": "Ingeniero de Sistemas",
+      "institution": "Universidad del Valle",
+      "location": "Cali, Colombia",
+      "period": "2014 - 2019",
+      "highlights": [
+        "Graduado con buenos resultados académicos y ubicado entre los mejores desempeños nacionales en las pruebas ECAES del programa de Ingeniería de Sistemas."
+      ]
+    }
+  ]
+}

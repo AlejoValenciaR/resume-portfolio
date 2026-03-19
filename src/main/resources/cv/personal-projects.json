@@ -1,0 +1,34 @@
+{
+  "eyebrow": "Personal Projects",
+  "title": "Public GitHub work and infrastructure labs",
+  "items": [
+    {
+      "title": "Terraform Jenkins on DigitalOcean",
+      "summary": "Infrastructure as Code project that provisions a Jenkins server on DigitalOcean with persistent storage, Nginx, DNS, firewall rules, Docker, and HTTPS.",
+      "stack": "Terraform, Jenkins, Docker, Nginx, Linux, DigitalOcean",
+      "repoUrl": "https://github.com/AlejoValenciaR/droplet-jenkins",
+      "liveUrl": "https://www.jenkinsnauthsoftwareprivate.app"
+    },
+    {
+      "title": "Azure VM Terraform + LocalStack",
+      "summary": "Single-server Azure environment with networking, DNS, Docker, LocalStack, Nginx, and custom domains for repeatable cloud-emulation experiments.",
+      "stack": "Terraform, Azure, LocalStack, Docker, Nginx, DNS",
+      "repoUrl": "https://github.com/AlejoValenciaR/azure-docker-vm-terraform",
+      "liveUrl": "https://localstack.nauthappstest.tech/_localstack/health"
+    },
+    {
+      "title": "LocalStack AWS Automation Lab",
+      "summary": "Jenkins-based automation lab that deploys AWS-like resources into LocalStack with Terraform or AWS CLI and supports reusable deployment pipelines.",
+      "stack": "Jenkins, Terraform, AWS CLI, LocalStack, Azure Blob State, Shell Automation",
+      "repoUrl": "https://github.com/AlejoValenciaR/localstack-terraform-jenkins",
+      "liveUrl": "https://nauthappstest.tech"
+    },
+    {
+      "title": "Spring Boot Multi-App Platform",
+      "summary": "Spring Boot platform that serves multiple web applications from one backend, organizing routing, templates, static assets, and shared presentation logic.",
+      "stack": "Java, Spring Boot, Thymeleaf, HTML, CSS, Web Routing",
+      "repoUrl": "https://github.com/AlejoValenciaR/hello-spring",
+      "liveUrl": "https://nauthappstest.tech/apps/"
+    }
+  ]
+}

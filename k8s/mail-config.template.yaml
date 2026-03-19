@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mail-config
+  namespace: __NAMESPACE__
+data:
+  MAIL_HOST: smtp.gmail.com
+  MAIL_PORT: "587"
+  APP_CONTACT_MAIL_FROM: __MAIL_FROM__
+  APP_CONTACT_MAIL_TO: __MAIL_TO__

@@ -1,0 +1,142 @@
+{
+  "eyebrow": "Experiencia",
+  "titlePrimary": "Experiencia",
+  "titleSecondary": "profesional e",
+  "highlightWord": "impacto",
+  "items": [
+    {
+      "role": "Lider tecnico, backend e ingenieria de datos",
+      "company": "CINTE GROUP S.A. (Outsourcing para Experian)",
+      "location": "Cali, Colombia",
+      "period": "jun. 2024 - dic. 2025",
+      "summary": "Lidere y participe en programas de alto impacto en integracion CRM, arquitectura cloud, modernizacion de bases de datos, monitoreo transaccional y optimizacion de pagos para equipos enterprise.",
+      "tags": [
+        "Integracion CRM",
+        "Migracion a DocumentDB",
+        "Optimizacion de pagos",
+        "Entrega de APIs",
+        "Salesforce Marketing Cloud"
+      ],
+      "bullets": [
+        "Lidere el ciclo completo de una implementacion de Salesforce Marketing Cloud, incluyendo integraciones por API y SFTP con AWS y la migracion de datos internos de clientes hacia modelos de contactabilidad.",
+        "Lidere la migracion de MongoDB on-premises hacia Amazon DocumentDB y entregue la infraestructura AWS con Terraform, alineada con requisitos de gobierno y seguridad.",
+        "Construi una arquitectura AWS de gran escala y la base inicial de microservicios detras de API Gateway, usando Lambda, Step Functions, ECS, EKS, Glue, EventBridge, SQS, S3 y CloudWatch.",
+        "Implemente la solucion Ascend de monitoreo transaccional y BI, y entregue un modelo nacional de cifrado y anonimización para proteger la identidad del cliente y habilitar intercambio seguro de datos entre equipos."
+      ]
+    },
+    {
+      "role": "Consultor de software",
+      "company": "Independiente",
+      "location": "Cali, Colombia",
+      "period": "ene. 2024 - jun. 2024",
+      "summary": "Entregue modernizacion backend, de base de datos y frontend para el Ministerio de Transporte de Colombia, actualizando un flujo critico de pagos sobre Java, Oracle y React.",
+      "tags": [
+        "Migracion Java",
+        "API REST",
+        "Optimizacion de base de datos",
+        "Desarrollo React"
+      ],
+      "bullets": [
+        "Modernice la plataforma de pago de comparendos del Ministerio de Transporte, combinando migracion backend, rediseño de APIs y entrega frontend para un flujo critico de cara al ciudadano.",
+        "Migre el modulo de pagos de Java 8 a Java 21, documente la arquitectura objetivo y cree una nueva API REST que dejo lista la base tecnica para futuros modulos de procesamiento de pagos.",
+        "Mejore en 40% el rendimiento de consultas Oracle 13c en pagos y reportería, estandarice modulos compartidos de conectividad y entregue un panel administrativo en React con autenticacion segura, cifrado, soporte de sesiones con Redis y cache."
+      ]
+    },
+    {
+      "role": "Ingeniero de software backend",
+      "company": "Bold",
+      "location": "Cali, Colombia",
+      "period": "ago. 2023 - dic. 2023",
+      "summary": "Apoye sistemas backend y entrega cloud para una nueva aplicacion de productos bancarios, combinando Python, Java, DDD y soporte productivo para cuentas de bajo monto y microcreditos.",
+      "tags": [
+        "DDD y automatizacion de pruebas",
+        "APIs REST",
+        "Entrega en Python",
+        "Servicios Java",
+        "Banca cloud-native"
+      ],
+      "bullets": [
+        "Entregue servicios backend para cuentas de bajo monto y microcreditos dentro de la aplicacion Bold CF.",
+        "Desarrolle modelos de dominio en Python y Java sobre multiples microservicios siguiendo principios de Domain-Driven Design y apoye ambientes productivos respaldados por DynamoDB.",
+        "Trabaje con arquitecturas cloud-native sobre AWS, GCP y Azure, combinando persistencia SQL y NoSQL, patrones API, documentacion tecnica y diseño de pruebas para un producto bancario confiable."
+      ]
+    },
+    {
+      "role": "Tech lead y analista senior de desarrollo",
+      "company": "Banco Union",
+      "location": "Cali, Colombia",
+      "period": "mar. 2022 - ago. 2023",
+      "summary": "Lidere un programa estrategico de tecnologia y cumplimiento que ayudo a habilitar el proceso de licencia bancaria, mientras modernizaba el ecosistema de integracion, reportería y ETL detras del nuevo core bancario.",
+      "tags": [
+        "Core bancario",
+        "API Gateway",
+        "REST y SOAP",
+        "Modernizacion ETL",
+        "AWS y Azure"
+      ],
+      "bullets": [
+        "Lidere un programa estrategico de tecnologia y cumplimiento que respaldo el proceso de licencia bancaria y el despliegue de una nueva plataforma Core Banking.",
+        "Construi desde cero la columna vertebral de comunicacion entre aplicaciones, incluyendo un API Gateway y una capa de mediacion con mas de 94 servicios REST y SOAP, ademas de una API de traduccion para integrar sistemas legados con plataformas modernas.",
+        "Estandarice mas de 130 procesos ETL y activos de reportería, defini estandares tecnicos para requisitos regulatorios y de auditoria, y contribuí a la modernizacion ETL con AWS Glue, Azure Data Factory y GoAnywhere.",
+        "Entregue capacidades de perfil de riesgo y validacion de identidad para SARLAFT, optimice flujos en Pentaho y GoAnywhere, mejore la estabilidad en WildFly y apoye reportería para operaciones y cobranzas."
+      ]
+    },
+    {
+      "role": "Analista senior de desarrollo",
+      "company": "Banco de Occidente",
+      "location": "Cali, Colombia",
+      "period": "ene. 2021 - ene. 2022",
+      "summary": "Construi aplicaciones internas, optimice flujos ETL y fortalezi proteccion de datos para operaciones bancarias productivas, al tiempo que aporte a la integracion con Wompi y a iniciativas de modernizacion.",
+      "tags": [
+        "Aplicaciones de reportería",
+        "Optimizacion ETL",
+        "Modelo de cifrado",
+        "Integracion Wompi",
+        "AWS y Terraform"
+      ],
+      "bullets": [
+        "Construi cuatro aplicaciones internas, dos en Java y dos en Python con Flask y Django, mejorando entre 30% y 40% la reportería y la toma de decisiones para varias areas del negocio.",
+        "Optimice cinco pipelines ETL productivos usados en el cierre de cartera, reduciendo el tiempo de cierre en 1,5 horas.",
+        "Diseñe e implemente el modelo nacional de cifrado y una replica anonimizada de base de datos, fortaleciendo la proteccion de identidad del cliente y el intercambio seguro de informacion.",
+        "Contribui a la integracion con Wompi, mejore el procesamiento de datos FLEXCUBE y fui referente en AWS, Terraform y Jenkins para iniciativas de modernizacion y migracion."
+      ]
+    },
+    {
+      "role": "Analista profesional",
+      "company": "Banco de Occidente",
+      "location": "Cali, Colombia",
+      "period": "may. 2019 - dic. 2020",
+      "summary": "Asumi arquitectura de migracion y coordinacion de entrega para productos de cartera activa moviendose hacia Oracle FLEXCUBE, combinando trabajo ETL, liderazgo tecnico y planeacion de simulacros de migracion.",
+      "tags": [
+        "Oracle FLEXCUBE",
+        "Migracion de core bancario",
+        "Liderazgo tecnico",
+        "ETL y DataStage",
+        "ODS y reportería"
+      ],
+      "bullets": [
+        "Diseñe la arquitectura tecnologica completa para migrar un producto de cartera activa hacia FLEXCUBE.",
+        "Construi 15 pipelines ETL con IBM DataStage y optimice consultas ODS y procesos ETL para mejorar la gestion de datos y la toma de decisiones.",
+        "Lidere un equipo de 11 personas como Scrum Master y aporte a una migracion de alto impacto con 99,8% de exito, cubriendo 39.000 clientes y 80.000 creditos."
+      ]
+    },
+    {
+      "role": "Analista de datos",
+      "company": "Innovar Web",
+      "location": "Cali, Colombia",
+      "period": "ene. 2018 - abr. 2019",
+      "summary": "Mejore el rendimiento transaccional y la calidad de datos rediseñando estructuras de base de datos, modelando comportamiento de latencia y optimizando la capa de datos de la aplicacion.",
+      "tags": [
+        "Optimizacion SQL",
+        "Modelado 3FN",
+        "Analisis de latencia",
+        "Ajuste de rendimiento"
+      ],
+      "bullets": [
+        "Normalize la base de datos de la aplicacion hasta Tercera Forma Normal y mejore de forma material el rendimiento del sistema.",
+        "Construi un modelo matematico que predijo la latencia de base de datos con 90% de precision y ayudo a identificar condiciones de bajo desempeño.",
+        "Aumente en 30% las transacciones diarias mediante optimizacion de base de datos y contribuí a mejorar la estabilidad de la aplicacion y la experiencia de usuario."
+      ]
+    }
+  ]
+}

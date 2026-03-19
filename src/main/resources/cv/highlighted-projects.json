@@ -1,0 +1,84 @@
+{
+  "eyebrow": "Highlighted Projects",
+  "title": "Selected enterprise delivery projects",
+  "items": [
+    {
+      "title": "Salesforce Marketing Cloud Integration",
+      "company": "CINTE GROUP S.A. / Experian",
+      "period": "Jun 2024 - Dec 2025",
+      "summary": "Designed a six-month integration program that connected Salesforce Marketing Cloud with internal AWS services through a new API Gateway, secure SFTP exchange, governed customer-data pipelines, and production-ready technical designs.",
+      "impact": "Enabled campaign orchestration and reliable contactability flows while improving campaign success rates by 45% and profitability by 25% under enterprise security and governance constraints.",
+      "stack": "AWS, Terraform, Java, Python, SFTP, API Gateway, Salesforce Marketing Cloud",
+      "highlights": [
+        "Defined the API Gateway and secure SFTP exchange that allowed Salesforce Marketing Cloud to communicate with internal AWS services.",
+        "Produced diagrams, technical designs, and governed data-movement flows for a six-month program with cross-team dependencies.",
+        "Balanced Java, Python, infrastructure, and governance needs so the solution could move cleanly from design into production delivery."
+      ]
+    },
+    {
+      "title": "MongoDB to Amazon DocumentDB Modernization",
+      "company": "CINTE GROUP S.A. / Experian",
+      "period": "Jun 2024 - Dec 2025",
+      "summary": "Led a compatibility-heavy migration from on-premises MongoDB to Amazon DocumentDB that required adapting roughly 400 queries across 130 components, standardizing translation libraries, and coordinating Node.js, Spring Boot, and Python updates.",
+      "impact": "Reduced operating cost by nearly $15,000 per month, increased migration-team efficiency by about 70%, and established encryption plus anonymized data distribution for downstream analytics and monitoring.",
+      "stack": "Amazon DocumentDB, MongoDB, Terraform, Python, Node.js, Spring Boot, AWS",
+      "highlights": [
+        "Adapted approximately 400 data-access queries across 130 components while guiding the migration mix between Node.js and Spring Boot services.",
+        "Created reusable translation and casting utilities so teams could move data safely without losing metadata fidelity.",
+        "Implemented encrypted and anonymized distribution flows for reporting and monitoring platforms that depended on protected production data."
+      ]
+    },
+    {
+      "title": "Core Banking API Gateway and ETL Modernization",
+      "company": "Banco Union",
+      "period": "Mar 2022 - Aug 2023",
+      "summary": "Built the integration backbone for a new core banking ecosystem, including an API Gateway and mediation layer with 94+ REST and SOAP services, a legacy-to-modern translation API, and technical standards for regulatory readiness.",
+      "impact": "Supported the bank operating-license process and accelerated modernization across more than 130 ETL and reporting assets, improving auditability, compliance delivery, and operational integration speed.",
+      "stack": "Java, Spring Boot, REST, SOAP, AWS Glue, Azure Data Factory, GoAnywhere, Power BI",
+      "highlights": [
+        "Delivered an API Gateway and mediation layer that became the integration backbone for regulated banking operations.",
+        "Cataloged and improved more than 130 ETL and reporting assets so audit and operational teams could work with cleaner delivery standards.",
+        "Produced standards, manuals, and integration documentation used in readiness work for regulatory and compliance processes."
+      ]
+    },
+    {
+      "title": "Traffic Fines Payment Modernization",
+      "company": "Independent / Ministry of Transport",
+      "period": "Jan 2024 - Jun 2024",
+      "summary": "Modernized a public-facing traffic fines payment platform by upgrading the backend from Java 8 to Java 21, redesigning the API layer, and rebuilding administrative and payment flows with React-based delivery.",
+      "impact": "Improved Oracle reporting and payment-query performance by 40%, established the technical foundation for future payment modules, and delivered a more secure operational workflow for a critical public service.",
+      "stack": "Java 21, FastAPI, React, Oracle 13c, Redis, Encryption, Secure Authentication",
+      "highlights": [
+        "Migrated the core payment module from Java 8 to Java 21 and documented the target architecture for future delivery work.",
+        "Created a new REST API and modern administrative frontend for inquiry, payment, and user-management flows.",
+        "Standardized shared connectivity modules and introduced secure authentication, encryption, session handling, and caching."
+      ]
+    },
+    {
+      "title": "Bold Android Banking Product Launch",
+      "company": "Bold",
+      "period": "Aug 2023 - Dec 2023",
+      "summary": "Helped deliver the first Android banking-product prototype in roughly three to four months, combining backend domain modeling, API delivery, and cloud support for microloans and low-balance account flows.",
+      "impact": "Enabled faster go-to-market for new financial products once the company received authorization to operate as a financing company, while keeping quality, documentation, and automated testing in scope.",
+      "stack": "Python, FastAPI, Pydantic, Pytest, Java, AWS, MongoDB, DDD, Scrum",
+      "highlights": [
+        "Built backend services and domain models under Domain-Driven Design to support the product launch timeline.",
+        "Worked across cloud environments, documentation, and test design so the mobile experience had stable backend support.",
+        "Contributed to a fast delivery cycle without dropping the engineering discipline needed for a regulated financial product."
+      ]
+    },
+    {
+      "title": "FLEXCUBE Loan Portfolio Migration",
+      "company": "Banco de Occidente",
+      "period": "May 2019 - Dec 2020",
+      "summary": "Designed the migration architecture and core rules for moving active loan portfolio products from legacy systems into Oracle FLEXCUBE, coordinating ETL, reporting, and rehearsal cycles with business and technology teams.",
+      "impact": "Reached a 99.8% migration success rate across 39,000 customers and 80,000 loans, while ETL and reporting optimizations reduced close-cycle time by 1.5 hours.",
+      "stack": "Oracle FLEXCUBE, DataStage, Java EE, Jakarta EE, Python, Jenkins, PostgreSQL, Oracle",
+      "highlights": [
+        "Defined migration rules and technical architecture for revolving-credit and fixed-amount loan products entering FLEXCUBE.",
+        "Led an 11-person team through migration rehearsals with Oracle and internal stakeholders until the process became reliable at scale.",
+        "Built and optimized ETL assets, ODS queries, and reporting flows that supported the migration and later production operations."
+      ]
+    }
+  ]
+}

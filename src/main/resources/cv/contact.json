@@ -1,0 +1,39 @@
+{
+  "eyebrow": "Contact",
+  "titlePrimary": "Open to senior backend",
+  "titleSecondary": "and technical lead",
+  "highlightWord": "conversations",
+  "summary": "For recruiter conversations, technical interviews, or leadership opportunities, use any of the channels below.",
+  "items": [
+    {
+      "label": "Email",
+      "value": "alejo.valenciarivera@gmail.com",
+      "url": "mailto:alejo.valenciarivera@gmail.com",
+      "iconClass": "fa-solid fa-envelope"
+    },
+    {
+      "label": "Phone",
+      "value": "+57 302 807 8826",
+      "url": "tel:+573028078826",
+      "iconClass": "fa-solid fa-phone"
+    },
+    {
+      "label": "LinkedIn",
+      "value": "linkedin.com/in/alejandro-valencia-rivera-28313715b",
+      "url": "https://www.linkedin.com/in/alejandro-valencia-rivera-28313715b",
+      "iconClass": "fa-brands fa-linkedin-in"
+    },
+    {
+      "label": "Location",
+      "value": "Cali, Colombia",
+      "url": null,
+      "iconClass": "fa-solid fa-location-dot"
+    },
+    {
+      "label": "Date of Birth",
+      "value": "October 29, 1996",
+      "url": null,
+      "iconClass": "fa-solid fa-calendar-days"
+    }
+  ]
+}

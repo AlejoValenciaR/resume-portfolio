@@ -1,0 +1,88 @@
+<th:block th:fragment="content">
+<!--===== CONTACT MODAL STARTS=======-->
+<div class="cv-contact-modal" id="cv-contact-modal" aria-hidden="true" role="dialog" aria-modal="true"
+     aria-labelledby="cv-contact-modal-title"
+     th:attr="data-contact-api=@{/api/contact/send(lang='es')},data-mailto='mailto:alejo.valenciarivera@gmail.com'">
+  <div class="cv-contact-modal-backdrop" data-contact-close></div>
+  <div class="cv-contact-modal-shell" role="document">
+    <button type="button" class="cv-contact-modal-close" th:attr="aria-label=#{contactModal.closeWindow}" data-contact-close>&times;</button>
+
+    <section class="cv-contact-modal-view is-active" data-contact-view="choice">
+      <span class="cv-contact-modal-kicker" th:text="#{contactModal.choice.kicker}">Contact Options</span>
+      <h3 id="cv-contact-modal-title" th:text="#{contactModal.choice.title}">How do you want to send your message?</h3>
+      <p class="cv-contact-modal-copy" th:text="#{contactModal.choice.copy}">Keep the current external mail feature or use the built-in form so this Spring Boot application sends the message from the backend.</p>
+
+      <div class="cv-contact-modal-actions">
+        <a class="vl-btn1 cv-contact-modal-primary" data-contact-external href="mailto:alejo.valenciarivera@gmail.com">
+          <span th:text="#{contactModal.choice.external}">Use External Email</span>
+          <img th:src="@{/ovro-index6-full/assets/img/icons/mail1.svg}" src="/ovro-index6-full/assets/img/icons/mail1.svg" alt="">
+        </a>
+        <button type="button" class="cv-secondary-btn cv-contact-modal-secondary" data-contact-open-form th:text="#{contactModal.choice.internal}">Send From This Site</button>
+      </div>
+
+      <p class="cv-contact-modal-note" th:utext="#{contactModal.choice.note}">The internal form validates the sender email format and routes the message to <strong>alejo.valenciarivera@gmail.com</strong>.</p>
+    </section>
+
+    <section class="cv-contact-modal-view" data-contact-view="form" hidden>
+      <span class="cv-contact-modal-kicker" th:text="#{contactModal.form.kicker}">Send Me A Message</span>
+      <h3 th:text="#{contactModal.form.title}">Backend Email Form</h3>
+      <p class="cv-contact-modal-copy" th:utext="#{contactModal.form.copy}">Enter a real email address in the <strong>From email</strong> field so Alejandro can reply to you directly.</p>
+
+      <form class="cv-contact-form" id="cv-contact-form" novalidate>
+        <div class="cv-contact-form-grid">
+          <div class="cv-contact-form-group">
+            <label class="cv-contact-form-label" for="cv-contact-from-email" th:text="#{contactModal.form.fromEmailLabel}">From Email</label>
+            <input class="cv-contact-form-input" id="cv-contact-from-email" name="fromEmail" type="email" inputmode="email" autocomplete="email" maxlength="320" th:attr="placeholder=#{contactModal.form.fromEmailPlaceholder}" placeholder="name@company.com" required>
+            <p class="cv-contact-form-hint" th:utext="#{contactModal.form.fromEmailHint}">Required. Use a valid email format, for example <span>name@company.com</span>.</p>
+            <p class="cv-contact-field-error" data-field-error="fromEmail"></p>
+          </div>
+
+          <div class="cv-contact-form-group">
+            <label class="cv-contact-form-label" for="cv-contact-subject" th:text="#{contactModal.form.subjectLabel}">Subject</label>
+            <input class="cv-contact-form-input" id="cv-contact-subject" name="subject" type="text" maxlength="160" th:attr="placeholder=#{contactModal.form.subjectPlaceholder}" placeholder="Hiring opportunity, project inquiry, consulting request" required>
+            <p class="cv-contact-form-hint" th:text="#{contactModal.form.subjectHint}">Required. Keep it concise and specific.</p>
+            <p class="cv-contact-field-error" data-field-error="subject"></p>
+          </div>
+
+          <div class="cv-contact-form-group cv-contact-form-group-full">
+            <label class="cv-contact-form-label" for="cv-contact-message" th:text="#{contactModal.form.messageLabel}">Message</label>
+            <textarea class="cv-contact-form-input cv-contact-form-textarea" id="cv-contact-message" name="message" maxlength="5000" th:attr="placeholder=#{contactModal.form.messagePlaceholder}" placeholder="Write your message here..." required></textarea>
+            <p class="cv-contact-form-hint" th:text="#{contactModal.form.messageHint}">Required. Explain your opportunity, project scope, or reason for contact.</p>
+            <p class="cv-contact-field-error" data-field-error="message"></p>
+          </div>
+        </div>
+
+        <div class="cv-contact-form-status" data-contact-form-status aria-live="polite"></div>
+
+        <div class="cv-contact-modal-actions cv-contact-modal-actions-form">
+          <button type="submit" class="vl-btn1 cv-contact-modal-primary" data-contact-submit>
+            <span class="cv-contact-submit-label" th:text="#{contactModal.form.submit}">Send Message</span>
+            <img th:src="@{/ovro-index6-full/assets/img/icons/mail1.svg}" src="/ovro-index6-full/assets/img/icons/mail1.svg" alt="">
+          </button>
+          <button type="button" class="cv-secondary-btn cv-contact-modal-secondary" data-contact-back th:text="#{contactModal.form.back}">Back</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="cv-contact-modal-view" data-contact-view="result" hidden>
+      <div class="cv-contact-result" data-contact-result-state="success">
+        <div class="cv-contact-result-icon" data-contact-result-icon>
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <span class="cv-contact-modal-kicker" data-contact-result-kicker th:text="#{contactModal.result.successKicker}">Message Sent</span>
+        <h3 data-contact-result-title th:text="#{contactModal.result.successTitle}">Your message was sent successfully.</h3>
+        <p class="cv-contact-modal-copy" data-contact-result-copy th:text="#{contactModal.result.successCopy}">Alejandro received your message and can now reply to your email directly.</p>
+
+        <div class="cv-contact-modal-actions cv-contact-modal-actions-form">
+          <button type="button" class="vl-btn1 cv-contact-modal-primary" data-contact-result-close>
+            <span th:text="#{contactModal.result.close}">Close</span>
+            <img th:src="@{/ovro-index6-full/assets/img/icons/mail1.svg}" src="/ovro-index6-full/assets/img/icons/mail1.svg" alt="">
+          </button>
+          <button type="button" class="cv-secondary-btn cv-contact-modal-secondary" data-contact-result-retry hidden th:text="#{contactModal.result.retry}">Try Again</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+<!--===== CONTACT MODAL ENDS =======-->
+</th:block>

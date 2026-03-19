@@ -1,0 +1,209 @@
+<th:block th:fragment="content">
+          <div id="list-item-5">
+
+            <!--===== PORTFOLIO AREA STARTS =======-->
+
+            <div class="portfolio-section-area">
+
+              <div class="container">
+
+                <div class="row">
+
+                  <div class="col-lg-12">
+
+                    <div class="portfolio-header heading1">
+
+                      <h5 data-aos="fade-left" data-aos-duration="800"><img th:src="@{/ovro-index6-full/assets/img/icons/logo-orange32.png}" src="/ovro-index6-full/assets/img/icons/logo-orange32.png" alt=""><span th:text="#{portfolio.kicker}">Personal Projects</span></h5>
+
+                      <div class="space24"></div>
+
+                      <h2 data-aos="fade-left" data-aos-duration="1000" th:text="#{portfolio.titlePrimary}">The Best Resume</h2>
+
+                      <div class="space24"></div>
+
+                      <h2 class="head" data-aos="fade-left" data-aos-duration="1100"><span th:text="#{portfolio.titleSecondaryPrefix}">It is</span> <span th:text="#{portfolio.titleSecondaryHighlight}">Your Work</span></h2>
+
+                    </div>
+
+                  </div>
+
+                  <div class="space50"></div>
+
+                  <div class="col-lg-12" data-aos="fade-left" data-aos-duration="900">
+
+                    <div class="portfolio-boxarea cv-portfolio-card">
+
+                      <button type="button" class="cv-portfolio-image-trigger" data-portfolio-lightbox th:attr="data-image-alt=#{portfolio.project1.imageAlt}">
+                        <div class="img1">
+                          <img th:src="@{/ovro-index6-full/assets/img/all-images/portfolio/GithubProjects/Jenkins-Digitalocean-Project.jpg(v='20260318-portfolio-1')}" src="/ovro-index6-full/assets/img/all-images/portfolio/GithubProjects/Jenkins-Digitalocean-Project.jpg?v=20260318-portfolio-1" th:alt="#{portfolio.project1.imageAlt}" alt="Terraform Jenkins DigitalOcean project">
+                        </div>
+                      </button>
+
+                      <div class="space24"></div>
+
+                      <span class="cv-portfolio-meta" th:text="#{portfolio.githubProject}">GitHub Project</span>
+
+                      <div class="space12"></div>
+
+                      <h3 class="cv-portfolio-title" th:text="#{portfolio.project1.title}">Terraform Jenkins on DigitalOcean</h3>
+
+                      <div class="space16"></div>
+
+                      <p th:text="#{portfolio.project1.summary}">This Infrastructure as Code project provisions a Jenkins server on DigitalOcean with Terraform, persistent storage, DNS, firewall rules, Docker, and Nginx, creating a compact self-hosted CI/CD environment exposed securely over HTTPS.</p>
+
+                      <div class="space16"></div>
+
+                      <span class="cv-portfolio-endpoint-label" th:text="#{portfolio.publicEndpoint}">Public Endpoint</span>
+
+                      <div class="space8"></div>
+
+                      <a class="cv-portfolio-endpoint" href="https://www.jenkinsnauthsoftwareprivate.app" target="_blank" rel="noopener noreferrer">https://www.jenkinsnauthsoftwareprivate.app</a>
+
+                      <div class="cv-portfolio-actions">
+                        <a class="cv-portfolio-btn" href="https://github.com/AlejoValenciaR/droplet-jenkins" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> <span th:text="#{portfolio.githubRepo}">GitHub Repo</span></a>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-lg-12" data-aos="fade-left" data-aos-duration="1000">
+
+                    <div class="portfolio-boxarea cv-portfolio-card">
+
+                      <button type="button" class="cv-portfolio-image-trigger" data-portfolio-lightbox th:attr="data-image-alt=#{portfolio.project2.imageAlt}">
+                        <div class="img1">
+                          <img th:src="@{/ovro-index6-full/assets/img/all-images/portfolio/GithubProjects/Azure-Localstack-Project.jpg(v='20260318-portfolio-1')}" src="/ovro-index6-full/assets/img/all-images/portfolio/GithubProjects/Azure-Localstack-Project.jpg?v=20260318-portfolio-1" th:alt="#{portfolio.project2.imageAlt}" alt="Azure LocalStack Terraform project">
+                        </div>
+                      </button>
+
+                      <div class="space24"></div>
+
+                      <span class="cv-portfolio-meta" th:text="#{portfolio.githubProject}">GitHub Project</span>
+
+                      <div class="space12"></div>
+
+                      <h3 class="cv-portfolio-title" th:text="#{portfolio.project2.title}">Azure VM Terraform + LocalStack</h3>
+
+                      <div class="space16"></div>
+
+                      <p th:text="#{portfolio.project2.summary}">This Terraform and Jenkins setup provisions an Azure environment with networking, DNS, persistent storage, Docker, Nginx, a static website, and LocalStack behind custom domains with TLS for repeatable single-server automation.</p>
+
+                      <div class="space16"></div>
+
+                      <span class="cv-portfolio-endpoint-label" th:text="#{portfolio.publicEndpoint}">Public Endpoint</span>
+
+                      <div class="space8"></div>
+
+                      <a class="cv-portfolio-endpoint" href="https://localstack.nauthappstest.tech/_localstack/health" target="_blank" rel="noopener noreferrer">https://localstack.nauthappstest.tech/_localstack/health</a>
+
+                      <div class="cv-portfolio-actions">
+                        <a class="cv-portfolio-btn" href="https://github.com/AlejoValenciaR/azure-docker-vm-terraform" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> <span th:text="#{portfolio.githubRepo}">GitHub Repo</span></a>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-lg-12" data-aos="fade-left" data-aos-duration="1100">
+
+                    <div class="portfolio-boxarea cv-portfolio-card">
+
+                      <button type="button" class="cv-portfolio-image-trigger" data-portfolio-lightbox th:attr="data-image-alt=#{portfolio.project3.imageAlt}">
+                        <div class="img1">
+                          <img th:src="@{/ovro-index6-full/assets/img/all-images/portfolio/GithubProjects/Localstack-AWS-deploy.jpg(v='20260318-portfolio-1')}" src="/ovro-index6-full/assets/img/all-images/portfolio/GithubProjects/Localstack-AWS-deploy.jpg?v=20260318-portfolio-1" th:alt="#{portfolio.project3.imageAlt}" alt="LocalStack AWS automation project">
+                        </div>
+                      </button>
+
+                      <div class="space24"></div>
+
+                      <span class="cv-portfolio-meta" th:text="#{portfolio.githubProject}">GitHub Project</span>
+
+                      <div class="space12"></div>
+
+                      <h3 class="cv-portfolio-title" th:text="#{portfolio.project3.title}">LocalStack AWS Automation Lab</h3>
+
+                      <div class="space16"></div>
+
+                      <p th:text="#{portfolio.project3.summary}">This Jenkins-based automation lab deploys AWS-like resources into LocalStack with Terraform or AWS CLI, handling preflight checks, credentials, deployment artifacts, and optional Azure-backed Terraform state from one pipeline.</p>
+
+                      <div class="space16"></div>
+
+                      <span class="cv-portfolio-endpoint-label" th:text="#{portfolio.publicEndpoint}">Public Endpoint</span>
+
+                      <div class="space8"></div>
+
+                      <a class="cv-portfolio-endpoint" href="https://nauthappstest.tech" target="_blank" rel="noopener noreferrer">https://nauthappstest.tech</a>
+
+                      <div class="cv-portfolio-actions">
+                        <a class="cv-portfolio-btn" href="https://github.com/AlejoValenciaR/localstack-terraform-jenkins" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> <span th:text="#{portfolio.githubRepo}">GitHub Repo</span></a>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-lg-12" data-aos="fade-left" data-aos-duration="1200">
+
+                    <div class="portfolio-boxarea cv-portfolio-card">
+
+                      <button type="button" class="cv-portfolio-image-trigger" data-portfolio-lightbox th:attr="data-image-alt=#{portfolio.project4.imageAlt}">
+                        <div class="img1">
+                          <img th:src="@{/ovro-index6-full/assets/img/all-images/portfolio/GithubProjects/Spring-boot-app.jpg(v='20260318-portfolio-1')}" src="/ovro-index6-full/assets/img/all-images/portfolio/GithubProjects/Spring-boot-app.jpg?v=20260318-portfolio-1" th:alt="#{portfolio.project4.imageAlt}" alt="Spring Boot multi-app platform project">
+                        </div>
+                      </button>
+
+                      <div class="space24"></div>
+
+                      <span class="cv-portfolio-meta" th:text="#{portfolio.githubProject}">GitHub Project</span>
+
+                      <div class="space12"></div>
+
+                      <h3 class="cv-portfolio-title" th:text="#{portfolio.project4.title}">Spring Boot Multi-App Platform</h3>
+
+                      <div class="space16"></div>
+
+                      <p th:text="#{portfolio.project4.summary}">This Spring Boot project centralizes and serves multiple web applications from a single backend, organizing routing, templates, static assets, and shared presentation logic to expose portfolio-style app experiences from one platform.</p>
+
+                      <div class="space16"></div>
+
+                      <span class="cv-portfolio-endpoint-label" th:text="#{portfolio.publicEndpoint}">Public Endpoint</span>
+
+                      <div class="space8"></div>
+
+                      <a class="cv-portfolio-endpoint" href="https://nauthappstest.tech/apps/" target="_blank" rel="noopener noreferrer">https://nauthappstest.tech/apps/</a>
+
+                      <div class="cv-portfolio-actions">
+                        <a class="cv-portfolio-btn" href="https://github.com/AlejoValenciaR/hello-spring" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> <span th:text="#{portfolio.githubRepo}">GitHub Repo</span></a>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="cv-portfolio-lightbox" id="cv-portfolio-lightbox" aria-hidden="true" role="dialog" th:attr="aria-label=#{portfolio.lightbox.dialogLabel}">
+                <div class="cv-portfolio-lightbox-shell">
+                  <button type="button" class="cv-portfolio-lightbox-close" th:attr="aria-label=#{portfolio.lightbox.closeLabel}">&times;</button>
+                  <div class="cv-portfolio-lightbox-toolbar">
+                    <button type="button" class="cv-portfolio-lightbox-tool" data-lightbox-action="zoom-out" th:attr="aria-label=#{portfolio.lightbox.zoomOut}">-</button>
+                    <button type="button" class="cv-portfolio-lightbox-tool" data-lightbox-action="reset" th:attr="aria-label=#{portfolio.lightbox.resetZoom}">100%</button>
+                    <button type="button" class="cv-portfolio-lightbox-tool" data-lightbox-action="zoom-in" th:attr="aria-label=#{portfolio.lightbox.zoomIn}">+</button>
+                  </div>
+                  <div class="cv-portfolio-lightbox-stage" id="cv-portfolio-lightbox-stage">
+                    <img id="cv-portfolio-lightbox-image" class="cv-portfolio-lightbox-image" src="" alt="">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="space40"></div>
+
+            <!--===== PORTFOLIO AREA ENDS =======-->
+
+          </div>
+</th:block>

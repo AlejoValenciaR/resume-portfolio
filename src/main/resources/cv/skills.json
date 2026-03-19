@@ -1,0 +1,44 @@
+{
+  "eyebrow": "Skills",
+  "titlePrimary": "Core strengths",
+  "titleSecondary": "that technical recruiters",
+  "highlightWord": "notice",
+  "items": [
+    {
+      "badge": "7+ years",
+      "title": "Java / Spring Boot",
+      "description": "Backend services, integrations, core banking initiatives, REST APIs, and production migrations.",
+      "level": 96
+    },
+    {
+      "badge": "6+ years",
+      "title": "Python",
+      "description": "Microservices, domain modeling, ETL, reporting, automation, Flask, Django, and FastAPI.",
+      "level": 91
+    },
+    {
+      "badge": "Backend",
+      "title": "Architecture & Integrations",
+      "description": "REST, SOAP, SFTP, API Gateway, mediation layers, JWT security, DDD, and enterprise workflows.",
+      "level": 93
+    },
+    {
+      "badge": "Cloud",
+      "title": "AWS / Terraform / CI-CD",
+      "description": "Cloud-native delivery with Terraform, Jenkins, Docker, Kubernetes, automation, and rollout support.",
+      "level": 92
+    },
+    {
+      "badge": "Data",
+      "title": "SQL, NoSQL, ETL, BI",
+      "description": "Oracle, PostgreSQL, MySQL, SQL Server, MongoDB, DocumentDB, DynamoDB, Power BI, and ETL optimization.",
+      "level": 90
+    },
+    {
+      "badge": "Full Stack",
+      "title": "Frontend Support Delivery",
+      "description": "React and Angular exposure for end-to-end delivery, while keeping backend engineering as the main specialization.",
+      "level": 72
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "eyebrow": "Education",
+  "titlePrimary": "Education",
+  "titleSecondary": "and",
+  "highlightWord": "languages",
+  "items": [
+    {
+      "degree": "Systems Engineer",
+      "institution": "Universidad del Valle",
+      "location": "Cali, Colombia",
+      "period": "2014 - 2019",
+      "highlights": [
+        "Graduated with strong academic results and ranked among the top performers in the national ECAES exam for the Systems Engineering program."
+      ]
+    }
+  ]
+}

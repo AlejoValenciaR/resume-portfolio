@@ -1,0 +1,16 @@
+{
+  "eyebrow": "Languages",
+  "titlePrimary": "Languages",
+  "titleSecondary": "",
+  "highlightWord": "",
+  "items": [
+    {
+      "name": "Spanish",
+      "level": "Native"
+    },
+    {
+      "name": "English",
+      "level": "Intermediate to upper-intermediate (B1-B2)"
+    }
+  ]
+}

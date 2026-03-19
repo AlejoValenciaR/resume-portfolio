@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/brand :: head(${pageTitle})}"></head>
+<body>
+    <header th:replace="~{fragments/brand :: header(${currentPath})}"></header>
+
+    <main class="brand-main">
+        <section class="hero">
+            <h1>Hello Route</h1>
+            <p>This URL now renders an HTML page instead of plain text.</p>
+        </section>
+
+        <h2 class="section-title">Service Response</h2>
+        <section class="detail">
+            <dl>
+                <dt>Endpoint</dt>
+                <dd><code>/apps/api/hello</code></dd>
+                <dt>Message</dt>
+                <dd th:text="${message}">Hello, World!</dd>
+            </dl>
+            <a class="link-btn" th:href="@{/}">Back to Home</a>
+        </section>
+    </main>
+
+    <footer th:replace="~{fragments/brand :: footer}"></footer>
+</body>
+</html>

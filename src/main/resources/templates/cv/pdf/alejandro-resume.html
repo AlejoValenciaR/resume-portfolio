@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Alejandro Valencia Rivera Resume</title>
+  <style>
+    @page{size:A4;margin:0}html,body{margin:0;padding:0}body{font-family:"Segoe UI",Arial,sans-serif;color:#18303d;background:#fff}a{color:#1e7780;text-decoration:none}p,h1,h2,h3,h4,h5,strong,ul{margin:0}
+    .resume-page{width:210mm;height:297mm;page-break-after:always;background:#fffaf5}.resume-page:last-child{page-break-after:auto}.page-layout{width:100%;height:100%;border-collapse:collapse;table-layout:fixed}.page-layout td{vertical-align:top}
+    .sidebar{box-sizing:border-box;width:228px;background:#14343f;color:#fff7f0;border-right:2px solid #c97539}.sidebar-body{padding:7mm 4.5mm 8mm}.sidebar-photo{display:block;width:228px;height:auto}.main{box-sizing:border-box;padding:8mm 8.2mm 8mm 8mm;background:#fffaf5}
+    .sidebar-name{font-family:Georgia,"Times New Roman",serif;font-size:15pt;line-height:1;color:#fff}.sidebar-role{margin-top:2mm;font-size:6.8pt;line-height:1.45;letter-spacing:.1em;text-transform:uppercase;color:#f4bf98;font-weight:700}.sidebar-block{margin-top:4mm;page-break-inside:avoid}
+    .sidebar-heading,.card-title{margin:0 0 2mm;font-size:6.8pt;line-height:1.2;letter-spacing:.18em;text-transform:uppercase;color:#f4bf98;font-weight:700}.card-title{margin-bottom:2.4mm;color:#0f6c72;font-size:7.5pt}.sidebar-copy{font-size:6.6pt;line-height:1.5;color:#e8ddd2}
+    .fact-row{margin-bottom:2.2mm}.fact-row:last-child{margin-bottom:0}.fact-label{display:block;margin-bottom:.5mm;font-size:6pt;line-height:1.2;letter-spacing:.12em;text-transform:uppercase;color:#d8bfa8}.fact-value,.fact-value a{display:block;font-size:7.2pt;line-height:1.38;color:#fffaf4;word-wrap:break-word}
+    .sidebar-note{margin-top:4mm;padding:2.6mm;border-radius:10px;background:#1f4552;border:1px solid #35535f;font-size:6.5pt;line-height:1.45;color:#ecdfd2}.skill-mini{margin-bottom:2.4mm}.skill-mini:last-child{margin-bottom:0}.skill-mini-head{width:100%;border-collapse:collapse;margin-bottom:.7mm}.skill-mini-head td{padding:0}.skill-mini-title,.skill-mini-level{font-size:6.9pt;line-height:1.25;font-weight:700}.skill-mini-title{color:#fff}.skill-mini-level{color:#f4bf98;text-align:right}
+    .skill-track{height:4px;border-radius:999px;background:#4a6470;overflow:hidden}.skill-fill{height:4px;border-radius:999px;background:#c97539}.continuation-mark{width:15mm;height:15mm;line-height:15mm;border-radius:50%;text-align:center;background:#11303a;border:1px solid #43616c;color:#fff8f1;font-size:10pt;font-weight:700;font-family:Georgia,"Times New Roman",serif}
+    .continuation-name{margin-top:4mm;font-family:Georgia,"Times New Roman",serif;font-size:11.5pt;line-height:1.03;color:#fff}.continuation-role{margin-top:2mm;font-size:6.6pt;line-height:1.5;letter-spacing:.1em;text-transform:uppercase;color:#f4bf98;font-weight:700}.continuation-divider{margin:6mm 0;width:100%;height:2px;background:#c97539}
+    .hero-card{padding:6mm 6mm 5mm;border-radius:16px;background:#14343f;color:#fff;border-top:4mm solid #c97539}.hero-kicker{font-size:7.3pt;line-height:1.2;letter-spacing:.15em;text-transform:uppercase;color:#f4bf98;font-weight:700}.hero-name{margin-top:2mm;font-family:Georgia,"Times New Roman",serif;font-size:23pt;line-height:1;color:#fff}.hero-role{margin-top:2mm;font-size:10pt;line-height:1.36;color:#f8d7bd;font-weight:700}.hero-summary{margin-top:3mm;font-size:8.3pt;line-height:1.56;color:#edf2f3}
+    .stats-grid{width:100%;border-collapse:separate;border-spacing:2.2mm 2.2mm;margin-top:3mm}.stat-box{padding:2.5mm;border-radius:11px;background:#214b58;border:1px solid #3e6673}.stat-value{display:block;font-size:10pt;line-height:1.2;color:#fff;font-weight:700}.stat-label{display:block;margin-top:.8mm;font-size:6.8pt;line-height:1.32;color:#d8e3e7}
+    .card{margin-top:4mm;padding:4mm 4.2mm;border-radius:14px;border:1px solid #e7d9cb;background:#fff;page-break-inside:avoid}.card:first-child{margin-top:0}.profile-copy{font-size:7.8pt;line-height:1.54;color:#4d616b}.profile-copy+.profile-copy{margin-top:2mm}
+    .strength-grid{width:100%;border-collapse:separate;border-spacing:2mm 2mm}.strength-box{padding:2.6mm;border-radius:11px;background:#fbf4ed;border:1px solid #eadbcd}.strength-title{font-size:7.2pt;line-height:1.26;color:#17333f;font-weight:700}.strength-copy{margin-top:1mm;font-size:6.7pt;line-height:1.42;color:#5c6a71}
+    .skill-card{padding:2.7mm;margin-bottom:2mm;border-radius:11px;background:#fbf4ed;border:1px solid #eadbcd}.skill-card:last-child{margin-bottom:0}.skill-card-head{width:100%;border-collapse:collapse;margin-bottom:1mm}.skill-card-head td{padding:0}.skill-card-title{font-size:7.5pt;line-height:1.3;color:#17333f;font-weight:700}.skill-card-badge{font-size:6.3pt;line-height:1.2;color:#c97539;text-align:right;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.skill-card-copy{margin-top:1mm;font-size:6.8pt;line-height:1.4;color:#59686e}
+    .tech-table{width:100%;border-collapse:separate;border-spacing:2mm 2mm}.tech-box{padding:2.7mm;border-radius:11px;background:#fbf4ed;border:1px solid #eadbcd}.tech-title{font-size:7.2pt;line-height:1.28;color:#17333f;font-weight:700}.tech-copy{margin-top:1mm;font-size:6.6pt;line-height:1.43;color:#59686e}
+    .experience-intro{margin-bottom:3mm;font-size:7.3pt;line-height:1.48;color:#4d616b}.pill{display:inline-block;margin:0 1.4mm 1.4mm 0;padding:1.6mm 2.1mm;border-radius:999px;background:#1f4552;border:1px solid #35535f;color:#fff;font-size:6.1pt;line-height:1.2}.sidebar-category{margin-bottom:3mm}.sidebar-category:last-child{margin-bottom:0}.sidebar-category-title{font-size:6.9pt;line-height:1.28;color:#fff;font-weight:700}.sidebar-category-copy{margin-top:1mm;font-size:6pt;line-height:1.45;color:#d8cdc2}
+    .experience-item{padding:2.6mm 0 3mm;border-bottom:1px solid #eee2d6;page-break-inside:avoid}.experience-item:first-child{padding-top:0}.experience-item:last-child{padding-bottom:0;border-bottom:0}.experience-head{width:100%;border-collapse:collapse;margin-bottom:1.1mm}.experience-head td{padding:0;vertical-align:top}.experience-role{font-size:8.4pt;line-height:1.28;color:#17333f;font-weight:700}.experience-company{margin-top:.6mm;font-size:7.1pt;line-height:1.28;color:#0f6c72;font-weight:700}.experience-meta{width:31%;text-align:right;font-size:6.4pt;line-height:1.35;color:#7f6755;white-space:nowrap}
+    .experience-summary{margin-top:1mm;font-size:6.9pt;line-height:1.44;color:#5c6a71}.tag-row{margin:1.5mm 0 1.6mm}.tag-chip{display:inline-block;margin:0 1.2mm 1.2mm 0;padding:1.1mm 1.8mm;border-radius:999px;background:#f5ede5;border:1px solid #e7d6c4;color:#8a5a37;font-size:5.8pt;line-height:1.2;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+    .experience-list{margin:0;padding-left:4mm}.experience-list li{margin:0 0 1.1mm;font-size:6.9pt;line-height:1.41;color:#4d616b}.experience-list li:last-child{margin-bottom:0}
+    .project-card{padding:2.8mm;margin-bottom:2.2mm;border-radius:11px;background:#fbf4ed;border:1px solid #eadbcd;page-break-inside:avoid}.project-card:last-child{margin-bottom:0}.project-kicker{font-size:6.1pt;line-height:1.2;letter-spacing:.16em;text-transform:uppercase;color:#c97539;font-weight:700}.project-title{margin-top:1mm;font-size:8.1pt;line-height:1.28;color:#17333f;font-weight:700}.project-copy{margin-top:1mm;font-size:6.8pt;line-height:1.42;color:#4d616b}.project-stack{margin-top:1.1mm;font-size:6.5pt;line-height:1.35;color:#17333f}.project-highlights{margin:1.3mm 0 0;padding-left:4mm}.project-highlights li{margin:0 0 .9mm;font-size:6.5pt;line-height:1.38;color:#53656e}.project-highlights li:last-child{margin-bottom:0}
+    .link-row{margin-top:1.2mm}.link-row a{display:block;font-size:6.4pt;line-height:1.38;word-wrap:break-word;margin-bottom:.7mm}.link-row a:last-child{margin-bottom:0}.contact-list{width:100%;border-collapse:separate;border-spacing:0 2mm}.contact-list td{padding:2.3mm 2.6mm;border:1px solid #eadbcd;border-radius:10px;background:#fbf4ed;vertical-align:top}.contact-label{display:block;font-size:6.3pt;line-height:1.2;letter-spacing:.12em;text-transform:uppercase;color:#c97539;font-weight:700}.contact-value{display:block;margin-top:1mm;font-size:7pt;line-height:1.4;color:#17333f;word-wrap:break-word}
+  </style>
+</head>
+<body>
+  <div class="resume-page">
+    <table class="page-layout"><tr>
+      <td class="sidebar">
+        <img class="sidebar-photo" th:src="${resume.photoDataUri}" alt="Alejandro Valencia Rivera profile photo" />
+        <div class="sidebar-body">
+          <div class="sidebar-name" th:text="${resume.personalInfo.fullName}">Alejandro Valencia Rivera</div>
+          <div class="sidebar-role" th:text="${resume.personalInfo.title}">Senior Full Stack Developer | Backend-First | Java, Python, AWS, Data Engineering</div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Personal Info</div>
+            <div class="fact-row" th:each="fact, factStat : ${resume.personalInfo.facts}" th:if="${factStat.index &lt; 3}">
+              <span class="fact-label" th:text="${fact.label}">Email</span>
+              <span class="fact-value" th:if="${fact.url == null}" th:text="${fact.value}">Cali, Colombia</span>
+              <span class="fact-value" th:if="${fact.url != null}"><a th:href="${fact.url}" th:text="${fact.value}">alejo.valenciarivera@gmail.com</a></span>
+            </div>
+          </div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Quick Fit</div>
+            <div class="sidebar-copy" th:text="${resume.personalInfo.shortBio}">Senior full stack developer with 7+ years of experience across banking, fintech, CRM, cloud, and data-intensive environments.</div>
+          </div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Top Strengths</div>
+            <div class="skill-mini" th:each="skill : ${coverSkills}">
+              <table class="skill-mini-head"><tr><td class="skill-mini-title" th:text="${skill.title}">Java / Spring Boot</td><td class="skill-mini-level" th:text="${skill.level + '%'}">96%</td></tr></table>
+              <div class="skill-track"><div class="skill-fill" th:style="'width:' + ${skill.level} + '%;'"></div></div>
+            </div>
+          </div>
+          <div class="sidebar-note" th:text="${resume.personalInfo.footerText}">Open to senior backend, platform engineering, and tech lead opportunities.</div>
+        </div>
+      </td>
+      <td class="main">
+        <div class="hero-card">
+          <div class="hero-kicker">Printable Portfolio Resume</div>
+          <div class="hero-name" th:text="${resume.personalInfo.fullName}">Alejandro Valencia Rivera</div>
+          <div class="hero-role" th:text="${resume.personalInfo.title}">Senior Full Stack Developer</div>
+          <div class="hero-summary" th:text="${resume.hero.summary}">Java / Spring Boot, Python, AWS, Terraform, microservices, ETL, core banking, CRM integrations, and production delivery.</div>
+          <table class="stats-grid">
+            <tr><td><div class="stat-box"><span class="stat-value" th:text="${resume.hero.stats[0].value}">7+</span><span class="stat-label" th:text="${resume.hero.stats[0].label}">Years delivering enterprise software</span></div></td><td><div class="stat-box"><span class="stat-value" th:text="${resume.hero.stats[1].value}">80 / 20</span><span class="stat-label" th:text="${resume.hero.stats[1].label}">Backend / frontend focus</span></div></td></tr>
+            <tr><td><div class="stat-box"><span class="stat-value" th:text="${resume.hero.stats[2].value}">Java + Python</span><span class="stat-label" th:text="${resume.hero.stats[2].label}">Primary backend stack</span></div></td><td><div class="stat-box"><span class="stat-value" th:text="${resume.hero.stats[3].value}">Banking + Cloud</span><span class="stat-label" th:text="${resume.hero.stats[3].label}">Core domain specialization</span></div></td></tr>
+          </table>
+        </div>
+        <div class="card">
+          <div class="card-title">Professional Snapshot</div>
+          <div class="profile-copy" th:text="${resume.personalInfo.shortBio}">Senior full stack developer with 7+ years of experience across banking, fintech, CRM, cloud, and data-intensive environments.</div>
+          <div class="profile-copy" th:text="${resume.profile.paragraphs[0]}">Senior full stack developer with a strong backend orientation, specialized in Java / Spring Boot, Python, enterprise integrations, cloud architecture, data engineering, and modernization programs for banking and financial services.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">What I Build</div>
+          <table class="strength-grid">
+            <tr><td><div class="strength-box"><div class="strength-title">Java and Python Delivery</div><div class="strength-copy">Enterprise-grade backend implementation with Spring, Hibernate, Jakarta EE, Flask, FastAPI, and Django.</div></div></td><td><div class="strength-box"><div class="strength-title">Quality Assurance</div><div class="strength-copy">Testing, code review discipline, and pragmatic engineering standards that keep releases safe and maintainable.</div></div></td></tr>
+            <tr><td><div class="strength-box"><div class="strength-title">Patterns and Architecture</div><div class="strength-copy">SOLID, design patterns, migration planning, and clean architecture decisions aligned with real business constraints.</div></div></td><td><div class="strength-box"><div class="strength-title">REST, SOAP, and Integrations</div><div class="strength-copy">API-first delivery for banking, CRM, ETL, and cross-platform integrations that need performance and reliability.</div></div></td></tr>
+          </table>
+        </div>
+        <div class="card">
+          <div class="card-title">Delivery Domains</div>
+          <table class="strength-grid">
+            <tr><td><div class="strength-box"><div class="strength-title">Core Banking Platforms</div><div class="strength-copy">Experience shaping regulated banking platforms, migration programs, mediation layers, ETL modernization, and production support.</div></div></td><td><div class="strength-box"><div class="strength-title">CRM and Contactability</div><div class="strength-copy">Hands-on work connecting Salesforce Marketing Cloud with enterprise backends, governed data flows, and secure operational pipelines.</div></div></td></tr>
+            <tr><td><div class="strength-box"><div class="strength-title">Modernization Programs</div><div class="strength-copy">Java migration, query optimization, React admin delivery, secure authentication, and cloud rollout for legacy-to-modern transitions.</div></div></td><td><div class="strength-box"><div class="strength-title">Public Portfolio Labs</div><div class="strength-copy">Infrastructure labs built with Terraform, Jenkins, LocalStack, and Spring Boot to make the platform work visible outside enterprise environments.</div></div></td></tr>
+          </table>
+        </div>
+      </td>
+    </tr></table>
+  </div>
+
+  <div class="resume-page">
+    <table class="page-layout"><tr>
+      <td class="sidebar">
+        <div class="sidebar-body">
+          <div class="continuation-mark" th:text="${resume.personalInfo.initials}">AV</div>
+          <div class="continuation-name" th:text="${resume.personalInfo.fullName}">Alejandro Valencia Rivera</div>
+          <div class="continuation-role">Profile depth, credentials, and skill evidence</div>
+          <div class="continuation-divider"></div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Education</div>
+            <div class="sidebar-category" th:each="education : ${resume.education.items}">
+              <div class="sidebar-category-title" th:text="${education.degree}">Systems Engineer</div>
+              <div class="sidebar-category-copy" th:text="${education.institution + ' | ' + education.period}">Universidad del Valle | 2014 - 2019</div>
+              <div class="sidebar-category-copy" th:text="${education.highlights[0]}">Top performer in the ECAES exam.</div>
+            </div>
+          </div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Languages</div>
+            <div class="fact-row" th:each="language : ${resume.languages.items}">
+              <span class="fact-label" th:text="${language.name}">Spanish</span>
+              <span class="fact-value" th:text="${language.level}">Native</span>
+            </div>
+          </div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Availability</div>
+            <div class="sidebar-copy">Certified Scrum Master and Product Owner, open to senior backend, platform, and technical lead opportunities.</div>
+          </div>
+        </div>
+      </td>
+      <td class="main">
+        <div class="card">
+          <div class="card-title">Professional Profile</div>
+          <div class="profile-copy" th:each="paragraph : ${resume.profile.paragraphs}" th:text="${paragraph}">Senior full stack developer with a strong backend orientation.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Core Skills</div>
+          <div class="skill-card" th:each="skill : ${resume.skills.items}">
+            <table class="skill-card-head"><tr><td class="skill-card-title" th:text="${skill.title}">Java / Spring Boot</td><td class="skill-card-badge" th:text="${skill.badge}">7+ years</td></tr></table>
+            <div class="skill-track"><div class="skill-fill" th:style="'width:' + ${skill.level} + '%;'"></div></div>
+            <div class="skill-card-copy" th:text="${skill.description}">Backend services, integrations, core banking initiatives, REST APIs, and production migrations.</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Working Style</div>
+          <table class="strength-grid">
+            <tr><td><div class="strength-box"><div class="strength-title">Hands-on Ownership</div><div class="strength-copy">Comfortable leading architecture and still shipping the core modules, automation, and integration paths personally.</div></div></td><td><div class="strength-box"><div class="strength-title">Business-Driven Engineering</div><div class="strength-copy">The strongest work has come from solving core banking, CRM, reporting, and platform modernization problems under production pressure.</div></div></td></tr>
+            <tr><td><div class="strength-box"><div class="strength-title">Cloud and Automation Mindset</div><div class="strength-copy">Terraform, CI/CD, containerization, and cloud-native service composition are used to reduce delivery friction and improve reliability.</div></div></td><td><div class="strength-box"><div class="strength-title">AI-Assisted Analysis</div><div class="strength-copy">Uses LLMs and prompt engineering to accelerate documentation, analysis, and repetitive artifact creation while preserving traceability and quality.</div></div></td></tr>
+          </table>
+        </div>
+      </td>
+    </tr></table>
+  </div>
+  <div class="resume-page">
+    <table class="page-layout"><tr>
+      <td class="sidebar">
+        <div class="sidebar-body">
+          <div class="continuation-mark" th:text="${resume.personalInfo.initials}">AV</div>
+          <div class="continuation-name" th:text="${resume.personalInfo.fullName}">Alejandro Valencia Rivera</div>
+          <div class="continuation-role">Experience part one: cloud delivery and modernization</div>
+          <div class="continuation-divider"></div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Focus Areas</div>
+            <span class="pill">CRM Integration</span><span class="pill">DocumentDB Migration</span><span class="pill">Terraform</span><span class="pill">API Delivery</span><span class="pill">Java 21 Migration</span><span class="pill">React Admin</span>
+          </div>
+          <div class="sidebar-note">Recent delivery work centers on CRM integration, database modernization, consulting, and product engineering where architecture and implementation moved together.</div>
+        </div>
+      </td>
+      <td class="main">
+        <div class="card">
+          <div class="card-title">Professional Experience</div>
+          <div class="experience-intro">Recent roles combine consulting, cloud modernization, backend delivery, and architecture ownership across enterprise and public-facing systems.</div>
+          <div class="experience-item" th:each="entry : ${experienceBatchOne}">
+            <table class="experience-head"><tr><td><div class="experience-role" th:text="${entry.role}">Technical Lead, Backend &amp; Data Engineering</div><div class="experience-company" th:text="${entry.company}">CINTE GROUP S.A. (Experian Outsourcing)</div></td><td class="experience-meta" th:text="${entry.location + ' | ' + entry.period}">Cali, Colombia | 2024 - 2025</td></tr></table>
+            <div class="experience-summary" th:text="${entry.summary}">Led the full lifecycle of a Salesforce Marketing Cloud implementation.</div>
+            <div class="tag-row" th:if="${entry.tags != null and !#lists.isEmpty(entry.tags)}"><span class="tag-chip" th:each="tag : ${entry.tags}" th:text="${tag}">CRM Integration</span></div>
+            <ul class="experience-list"><li th:each="bullet : ${entry.bullets}" th:text="${bullet}">Led the full lifecycle of a Salesforce Marketing Cloud implementation.</li></ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Recent Delivery Signals</div>
+          <table class="strength-grid">
+            <tr><td><div class="strength-box"><div class="strength-title">45% campaign success gain</div><div class="strength-copy">Measured result delivered on the Salesforce Marketing Cloud integration program.</div></div></td><td><div class="strength-box"><div class="strength-title">25% profitability uplift</div><div class="strength-copy">Business impact tied to governed contactability and campaign orchestration flows.</div></div></td></tr>
+            <tr><td><div class="strength-box"><div class="strength-title">40% Oracle query improvement</div><div class="strength-copy">Public-sector payment modernization work improved reporting and payment-query performance.</div></div></td><td><div class="strength-box"><div class="strength-title">60% faster payment operations</div><div class="strength-copy">Optimization work removed transaction and query bottlenecks in production payment services.</div></div></td></tr>
+          </table>
+        </div>
+      </td>
+    </tr></table>
+  </div>
+
+  <div class="resume-page">
+    <table class="page-layout"><tr>
+      <td class="sidebar">
+        <div class="sidebar-body">
+          <div class="continuation-mark" th:text="${resume.personalInfo.initials}">AV</div>
+          <div class="continuation-name" th:text="${resume.personalInfo.fullName}">Alejandro Valencia Rivera</div>
+          <div class="continuation-role">Experience part two: core banking and platform integration</div>
+          <div class="continuation-divider"></div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Architecture Themes</div>
+            <span class="pill">Core Banking</span><span class="pill">API Gateway</span><span class="pill">REST + SOAP</span><span class="pill">ETL Modernization</span><span class="pill">Audit Readiness</span><span class="pill">AWS + Azure</span>
+          </div>
+          <div class="sidebar-note">These roles were heavier on system integration, compliance delivery, reporting modernization, and platform stability inside regulated financial environments.</div>
+        </div>
+      </td>
+      <td class="main">
+        <div class="card">
+          <div class="card-title">Professional Experience</div>
+          <div class="experience-intro">Banking programs in this period focused on platform rollout, inter-application communication, ETL modernization, reporting quality, and cloud-enabled production support.</div>
+          <div class="experience-item" th:each="entry : ${experienceBatchTwo}">
+            <table class="experience-head"><tr><td><div class="experience-role" th:text="${entry.role}">Tech Lead &amp; Senior Developer Analyst</div><div class="experience-company" th:text="${entry.company}">Banco Union</div></td><td class="experience-meta" th:text="${entry.location + ' | ' + entry.period}">Cali, Colombia | 2022 - 2023</td></tr></table>
+            <div class="experience-summary" th:text="${entry.summary}">Led a strategic technology and compliance program that supported the bank operating license process.</div>
+            <div class="tag-row" th:if="${entry.tags != null and !#lists.isEmpty(entry.tags)}"><span class="tag-chip" th:each="tag : ${entry.tags}" th:text="${tag}">Core Banking</span></div>
+            <ul class="experience-list"><li th:each="bullet : ${entry.bullets}" th:text="${bullet}">Led a strategic technology and compliance program that supported the bank operating license process.</li></ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Modernization Scope</div>
+          <table class="strength-grid">
+            <tr><td><div class="strength-box"><div class="strength-title">94+ Integrated Services</div><div class="strength-copy">The Banco Union program required a real mediation layer, not isolated APIs, so service standardization and translation logic became a core architectural asset.</div></div></td><td><div class="strength-box"><div class="strength-title">130+ ETL Assets</div><div class="strength-copy">ETL cataloging and modernization mattered as much as APIs because reporting and audit flows were tied directly to the operating model.</div></div></td></tr>
+            <tr><td><div class="strength-box"><div class="strength-title">30% to 40% Reporting Gains</div><div class="strength-copy">Internal applications and optimized data flows improved reporting quality and business decision speed for several teams.</div></div></td><td><div class="strength-box"><div class="strength-title">Security by Design</div><div class="strength-copy">Encryption, anonymized replicas, and production-risk reduction were built into delivery instead of treated as afterthoughts.</div></div></td></tr>
+          </table>
+        </div>
+      </td>
+    </tr></table>
+  </div>
+
+  <div class="resume-page">
+    <table class="page-layout"><tr>
+      <td class="sidebar">
+        <div class="sidebar-body">
+          <div class="continuation-mark" th:text="${resume.personalInfo.initials}">AV</div>
+          <div class="continuation-name" th:text="${resume.personalInfo.fullName}">Alejandro Valencia Rivera</div>
+          <div class="continuation-role">Experience part three: migration leadership and production tooling</div>
+          <div class="continuation-divider"></div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Impact Signals</div>
+            <span class="pill">99.8% migration success</span><span class="pill">39k customers</span><span class="pill">80k loans</span><span class="pill">130+ ETL assets</span><span class="pill">$15k/month saved</span><span class="pill">1.5h faster close</span>
+          </div>
+          <div class="sidebar-note">Earlier roles built the base for later lead work: migration architecture, ETL execution, database optimization, and measurable operational improvement.</div>
+        </div>
+      </td>
+      <td class="main">
+        <div class="card">
+          <div class="card-title">Professional Experience</div>
+          <div class="experience-item" th:each="entry : ${experienceBatchThree}">
+            <table class="experience-head"><tr><td><div class="experience-role" th:text="${entry.role}">Professional Analyst</div><div class="experience-company" th:text="${entry.company}">Banco de Occidente</div></td><td class="experience-meta" th:text="${entry.location + ' | ' + entry.period}">Cali, Colombia | 2019 - 2021</td></tr></table>
+            <div class="experience-summary" th:text="${entry.summary}">Designed the full technology architecture to migrate an active loan portfolio product to FLEXCUBE.</div>
+            <div class="tag-row" th:if="${entry.tags != null and !#lists.isEmpty(entry.tags)}"><span class="tag-chip" th:each="tag : ${entry.tags}" th:text="${tag}">Oracle FLEXCUBE</span></div>
+            <ul class="experience-list"><li th:each="bullet : ${entry.bullets}" th:text="${bullet}">Designed the full technology architecture to migrate an active loan portfolio product to FLEXCUBE.</li></ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Production Technology Stack</div>
+          <table class="tech-table">
+            <tr><td><div class="tech-box"><div class="tech-title" th:text="${technologyPrimary[0].title}">Backend &amp; APIs</div><div class="tech-copy" th:text="${#strings.listJoin(technologyPrimary[0].items, ', ')}">Java, Spring, Spring Boot, Python, REST, SOAP, Microservices.</div></div></td><td><div class="tech-box"><div class="tech-title" th:text="${technologyPrimary[1].title}">Frontend</div><div class="tech-copy" th:text="${#strings.listJoin(technologyPrimary[1].items, ', ')}">React, Angular, HTML, CSS, responsive support.</div></div></td></tr>
+            <tr><td><div class="tech-box"><div class="tech-title" th:text="${technologyPrimary[2].title}">Cloud &amp; DevOps</div><div class="tech-copy" th:text="${#strings.listJoin(technologyPrimary[2].items, ', ')}">AWS, Azure, GCP, Terraform, Jenkins, Docker, Kubernetes.</div></div></td><td><div class="tech-box"><div class="tech-title" th:text="${technologySecondary[0].title}">Data &amp; Databases</div><div class="tech-copy" th:text="${#strings.listJoin(technologySecondary[0].items, ', ')}">Oracle, PostgreSQL, MongoDB, DocumentDB, DynamoDB, Glue, Data Factory.</div></div></td></tr>
+            <tr><td><div class="tech-box"><div class="tech-title" th:text="${technologySecondary[1].title}">Delivery Tooling</div><div class="tech-copy" th:text="${#strings.listJoin(technologySecondary[1].items, ', ')}">Git, Jira, Confluence, Postman, SoapUI, JMeter, Miro, ClickUp, IDE tooling.</div></div></td><td><div class="tech-box"><div class="tech-title" th:text="${technologySecondary[2].title}">CRM &amp; AI</div><div class="tech-copy" th:text="${#strings.listJoin(technologySecondary[2].items, ', ')}">Salesforce Marketing Cloud, ChatGPT, Copilot, Gemini, Ollama, prompt engineering.</div></div></td></tr>
+          </table>
+          <div class="experience-summary">The public portfolio complements enterprise delivery with infrastructure labs, repeatable automation, and Spring Boot presentation work that makes the production stack visible outside client environments.</div>
+        </div>
+      </td>
+    </tr></table>
+  </div>
+  <div class="resume-page">
+    <table class="page-layout"><tr>
+      <td class="sidebar">
+        <div class="sidebar-body">
+          <div class="continuation-mark" th:text="${resume.personalInfo.initials}">AV</div>
+          <div class="continuation-name" th:text="${resume.personalInfo.fullName}">Alejandro Valencia Rivera</div>
+          <div class="continuation-role">Selected enterprise projects and delivery outcomes</div>
+          <div class="continuation-divider"></div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Selected Skills</div>
+            <div class="skill-mini" th:each="skill : ${resume.skills.items}">
+              <table class="skill-mini-head"><tr><td class="skill-mini-title" th:text="${skill.title}">Java / Spring Boot</td><td class="skill-mini-level" th:text="${skill.level + '%'}">96%</td></tr></table>
+              <div class="skill-track"><div class="skill-fill" th:style="'width:' + ${skill.level} + '%;'"></div></div>
+            </div>
+          </div>
+        </div>
+      </td>
+      <td class="main">
+        <div class="card">
+          <div class="card-title" th:text="${resume.highlightedProjects.eyebrow}">Highlighted Projects</div>
+          <div class="experience-intro">These programs combine architecture definition, implementation ownership, security-aware delivery, and measurable business outcomes in enterprise environments.</div>
+          <div class="project-card" th:each="project : ${highlightedBatchOne}">
+            <div class="project-kicker" th:text="${project.company + ' | ' + project.period}">CINTE GROUP S.A. / Experian | 2024 - 2025</div>
+            <div class="project-title" th:text="${project.title}">Salesforce Marketing Cloud Integration</div>
+            <div class="project-copy" th:text="${project.summary}">Designed a six-month integration program that connected Salesforce Marketing Cloud with internal AWS services.</div>
+            <div class="project-copy" th:text="${project.impact}">Enabled campaign orchestration and reliable contactability flows while improving campaign success rates.</div>
+            <ul class="project-highlights" th:if="${project.highlights != null and !#lists.isEmpty(project.highlights)}">
+              <li th:each="highlight : ${project.highlights}" th:text="${highlight}">Defined the API Gateway and secure SFTP exchange between enterprise systems.</li>
+            </ul>
+            <div class="project-stack"><strong>Stack:</strong> <span th:text="${project.stack}">AWS, Terraform, Java, Python, SFTP, API Gateway, Salesforce Marketing Cloud</span></div>
+          </div>
+        </div>
+      </td>
+    </tr></table>
+  </div>
+
+  <div class="resume-page">
+    <table class="page-layout"><tr>
+      <td class="sidebar">
+        <div class="sidebar-body">
+          <div class="continuation-mark" th:text="${resume.personalInfo.initials}">AV</div>
+          <div class="continuation-name" th:text="${resume.personalInfo.fullName}">Alejandro Valencia Rivera</div>
+          <div class="continuation-role">More enterprise projects: modernization, launch, and migration</div>
+          <div class="continuation-divider"></div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Project Themes</div>
+            <span class="pill">Public-sector modernization</span><span class="pill">Android launch</span><span class="pill">Banking migration</span><span class="pill">API delivery</span><span class="pill">Security</span><span class="pill">Reporting impact</span>
+          </div>
+          <div class="sidebar-note">The project selection emphasizes programs where architecture decisions, code delivery, and operational outcomes were all part of the same responsibility set.</div>
+        </div>
+      </td>
+      <td class="main">
+        <div class="card">
+          <div class="card-title">Highlighted Projects</div>
+          <div class="project-card" th:each="project : ${highlightedBatchTwo}">
+            <div class="project-kicker" th:text="${project.company + ' | ' + project.period}">Bold | 2023</div>
+            <div class="project-title" th:text="${project.title}">Bold Android Banking Product Launch</div>
+            <div class="project-copy" th:text="${project.summary}">Helped deliver the first Android banking-product prototype in roughly three to four months.</div>
+            <div class="project-copy" th:text="${project.impact}">Enabled faster go-to-market for new financial products.</div>
+            <ul class="project-highlights" th:if="${project.highlights != null and !#lists.isEmpty(project.highlights)}">
+              <li th:each="highlight : ${project.highlights}" th:text="${highlight}">Built backend services and domain models under Domain-Driven Design.</li>
+            </ul>
+            <div class="project-stack"><strong>Stack:</strong> <span th:text="${project.stack}">Python, FastAPI, Pydantic, Pytest, Java, AWS, MongoDB, DDD, Scrum</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">What These Projects Show</div>
+          <table class="strength-grid">
+            <tr><td><div class="strength-box"><div class="strength-title">Architecture plus delivery</div><div class="strength-copy">The strongest programs required both architecture decisions and direct implementation ownership.</div></div></td><td><div class="strength-box"><div class="strength-title">Security-aware execution</div><div class="strength-copy">Encryption, authentication, governance, and protected data movement were part of delivery scope.</div></div></td></tr>
+            <tr><td><div class="strength-box"><div class="strength-title">Modernization depth</div><div class="strength-copy">Legacy-to-modern transitions included Java upgrades, data migration, ETL evolution, and API redesign.</div></div></td><td><div class="strength-box"><div class="strength-title">Visible business impact</div><div class="strength-copy">The project set includes measurable success in campaign performance, migration quality, and operational speed.</div></div></td></tr>
+          </table>
+        </div>
+      </td>
+    </tr></table>
+  </div>
+
+  <div class="resume-page">
+    <table class="page-layout"><tr>
+      <td class="sidebar">
+        <div class="sidebar-body">
+          <div class="continuation-mark" th:text="${resume.personalInfo.initials}">AV</div>
+          <div class="continuation-name" th:text="${resume.personalInfo.fullName}">Alejandro Valencia Rivera</div>
+          <div class="continuation-role">Public portfolio, infrastructure labs, and recruiter contact</div>
+          <div class="continuation-divider"></div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Direct Contact</div>
+            <div class="fact-row" th:each="item, itemStat : ${resume.contact.items}" th:if="${itemStat.index &lt; 4}">
+              <span class="fact-label" th:text="${item.label}">Email</span>
+              <span class="fact-value" th:if="${item.url == null}" th:text="${item.value}">Cali, Colombia</span>
+              <span class="fact-value" th:if="${item.url != null}"><a th:href="${item.url}" th:text="${item.value}">alejo.valenciarivera@gmail.com</a></span>
+            </div>
+          </div>
+          <div class="sidebar-note">Public projects were chosen to show hands-on infrastructure, automation, and application-delivery work that complements the enterprise resume.</div>
+        </div>
+      </td>
+      <td class="main">
+        <div class="card">
+          <div class="card-title" th:text="${resume.personalProjects.eyebrow}">Personal Projects</div>
+          <div class="experience-intro" th:text="${resume.personalProjects.title}">Public GitHub work and infrastructure labs</div>
+          <div class="project-card" th:each="project : ${resume.personalProjects.items}">
+            <div class="project-kicker">GitHub Project</div>
+            <div class="project-title" th:text="${project.title}">Terraform Jenkins on DigitalOcean</div>
+            <div class="project-copy" th:text="${project.summary}">Infrastructure as Code project that provisions a Jenkins server on DigitalOcean.</div>
+            <div class="project-stack"><strong>Stack:</strong> <span th:text="${project.stack}">Terraform, Jenkins, Docker, Nginx, Linux, DigitalOcean</span></div>
+            <div class="link-row">
+              <a th:href="${project.repoUrl}" th:text="${'Repository: ' + project.repoUrl}">Repository</a>
+              <a th:if="${project.liveUrl != null and !#strings.isEmpty(project.liveUrl)}" th:href="${project.liveUrl}" th:text="${'Live URL: ' + project.liveUrl}">Live URL</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Recruiter Contact</div>
+          <div class="profile-copy" th:text="${resume.contact.summary}">For recruiter conversations, technical interviews, or leadership opportunities, use any of the channels below.</div>
+          <table class="contact-list">
+            <tr th:each="item : ${resume.contact.items}">
+              <td>
+                <span class="contact-label" th:text="${item.label}">Email</span>
+                <span class="contact-value" th:if="${item.url == null}" th:text="${item.value}">Cali, Colombia</span>
+                <span class="contact-value" th:if="${item.url != null}"><a th:href="${item.url}" th:text="${item.value}">alejo.valenciarivera@gmail.com</a></span>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr></table>
+  </div>
+</body>
+</html>

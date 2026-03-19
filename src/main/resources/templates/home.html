@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/brand :: head(${pageTitle})}"></head>
+<body>
+    <header th:replace="~{fragments/brand :: header(${currentPath})}"></header>
+
+    <main class="brand-main">
+        <section class="hero">
+            <h1>Atlas Grove Service Console</h1>
+            <p>Every route now serves a branded HTML view with the same layout system.</p>
+            <p>Use the links below to navigate URLs under the <code>/apps</code> root.</p>
+        </section>
+
+        <h2 class="section-title">Available Routes</h2>
+        <section class="brand-grid">
+            <article class="panel">
+                <h2>Greeting</h2>
+                <p>Open the hello endpoint as a branded page.</p>
+                <a class="link-btn" th:href="@{/api/hello}">Go to /apps/api/hello</a>
+            </article>
+            <article class="panel">
+                <h2>User Directory</h2>
+                <p>View all users as a styled list.</p>
+                <a class="link-btn" th:href="@{/api/users}">Go to /apps/api/users</a>
+            </article>
+            <article class="panel">
+                <h2>User Detail</h2>
+                <p>Example detail view for a specific user id.</p>
+                <a class="link-btn" th:href="@{/api/users/{id}(id=1)}">Go to /apps/api/users/1</a>
+            </article>
+        </section>
+    </main>
+
+    <footer th:replace="~{fragments/brand :: footer}"></footer>
+</body>
+</html>

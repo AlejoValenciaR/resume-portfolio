@@ -1,0 +1,112 @@
+{
+  "eyebrow": "Technologies",
+  "titlePrimary": "Production-ready stack",
+  "titleSecondary": "across backend, cloud, and",
+  "highlightWord": "data",
+  "categories": [
+    {
+      "title": "Backend & APIs",
+      "items": [
+        "Java",
+        "Spring",
+        "Spring Boot",
+        "JEE",
+        "Python",
+        "Flask",
+        "Django",
+        "FastAPI",
+        "Node.js",
+        "REST",
+        "SOAP",
+        "Microservices",
+        "DDD",
+        "JWT",
+        "SFTP Integrations"
+      ]
+    },
+    {
+      "title": "Frontend",
+      "items": [
+        "React",
+        "Angular",
+        "HTML",
+        "CSS",
+        "Responsive Delivery Support"
+      ]
+    },
+    {
+      "title": "Cloud & DevOps",
+      "items": [
+        "AWS",
+        "Azure",
+        "GCP",
+        "Terraform",
+        "Jenkins",
+        "Docker",
+        "Kubernetes",
+        "CloudFormation",
+        "API Gateway",
+        "Lambda",
+        "Step Functions",
+        "ECS",
+        "EKS",
+        "EventBridge",
+        "S3",
+        "SQS",
+        "CloudWatch"
+      ]
+    },
+    {
+      "title": "Data & Databases",
+      "items": [
+        "Oracle 11g/12c",
+        "PL/SQL",
+        "PostgreSQL",
+        "MySQL",
+        "SQL Server",
+        "MongoDB",
+        "Amazon DocumentDB",
+        "DynamoDB",
+        "IBM DataStage",
+        "Pentaho",
+        "AWS Glue",
+        "Azure Data Factory",
+        "GoAnywhere",
+        "Power BI"
+      ]
+    },
+    {
+      "title": "Delivery Tooling",
+      "items": [
+        "Git",
+        "GitHub",
+        "Bitbucket",
+        "SVN",
+        "Postman",
+        "SoapUI",
+        "JMeter",
+        "Jira",
+        "Confluence",
+        "Miro",
+        "Mural",
+        "ClickUp",
+        "Scrum Master",
+        "Product Owner",
+        "IntelliJ IDEA",
+        "PyCharm",
+        "Eclipse"
+      ]
+    },
+    {
+      "title": "CRM & AI",
+      "items": [
+        "Salesforce Marketing Cloud",
+        "ChatGPT",
+        "Copilot",
+        "Gemini",
+        "Ollama",
+        "Prompt Engineering"
+      ]
+    }
+  ]
+}

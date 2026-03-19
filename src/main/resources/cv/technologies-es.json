@@ -1,0 +1,112 @@
+{
+  "eyebrow": "Tecnologías",
+  "titlePrimary": "Stack listo para producción",
+  "titleSecondary": "en backend, nube y",
+  "highlightWord": "datos",
+  "categories": [
+    {
+      "title": "Backend y APIs",
+      "items": [
+        "Java",
+        "Spring",
+        "Spring Boot",
+        "JEE",
+        "Python",
+        "Flask",
+        "Django",
+        "FastAPI",
+        "Node.js",
+        "REST",
+        "SOAP",
+        "Microservicios",
+        "DDD",
+        "JWT",
+        "Integraciones SFTP"
+      ]
+    },
+    {
+      "title": "Frontend",
+      "items": [
+        "React",
+        "Angular",
+        "HTML",
+        "CSS",
+        "Soporte para entregas responsive"
+      ]
+    },
+    {
+      "title": "Cloud y DevOps",
+      "items": [
+        "AWS",
+        "Azure",
+        "GCP",
+        "Terraform",
+        "Jenkins",
+        "Docker",
+        "Kubernetes",
+        "CloudFormation",
+        "API Gateway",
+        "Lambda",
+        "Step Functions",
+        "ECS",
+        "EKS",
+        "EventBridge",
+        "S3",
+        "SQS",
+        "CloudWatch"
+      ]
+    },
+    {
+      "title": "Datos y bases de datos",
+      "items": [
+        "Oracle 11g/12c",
+        "PL/SQL",
+        "PostgreSQL",
+        "MySQL",
+        "SQL Server",
+        "MongoDB",
+        "Amazon DocumentDB",
+        "DynamoDB",
+        "IBM DataStage",
+        "Pentaho",
+        "AWS Glue",
+        "Azure Data Factory",
+        "GoAnywhere",
+        "Power BI"
+      ]
+    },
+    {
+      "title": "Herramientas de entrega",
+      "items": [
+        "Git",
+        "GitHub",
+        "Bitbucket",
+        "SVN",
+        "Postman",
+        "SoapUI",
+        "JMeter",
+        "Jira",
+        "Confluence",
+        "Miro",
+        "Mural",
+        "ClickUp",
+        "Scrum Master",
+        "Product Owner",
+        "IntelliJ IDEA",
+        "PyCharm",
+        "Eclipse"
+      ]
+    },
+    {
+      "title": "CRM e IA",
+      "items": [
+        "Salesforce Marketing Cloud",
+        "ChatGPT",
+        "Copilot",
+        "Gemini",
+        "Ollama",
+        "Ingeniería de prompts"
+      ]
+    }
+  ]
+}

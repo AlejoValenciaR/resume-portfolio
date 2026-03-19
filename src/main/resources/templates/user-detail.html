@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/brand :: head(${pageTitle})}"></head>
+<body>
+    <header th:replace="~{fragments/brand :: header(${currentPath})}"></header>
+
+    <main class="brand-main">
+        <section class="hero">
+            <h1>User Profile</h1>
+            <p>Detail page rendered from the URL parameter.</p>
+        </section>
+
+        <h2 class="section-title">Profile Data</h2>
+        <section class="detail">
+            <dl>
+                <dt>User ID</dt>
+                <dd th:text="${userId}">1</dd>
+                <dt>Description</dt>
+                <dd th:text="${userDescription}">User with id: 1</dd>
+            </dl>
+            <a class="link-btn" th:href="@{/api/users}">Back to Users</a>
+        </section>
+    </main>
+
+    <footer th:replace="~{fragments/brand :: footer}"></footer>
+</body>
+</html>

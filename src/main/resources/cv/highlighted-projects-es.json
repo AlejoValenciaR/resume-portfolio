@@ -1,0 +1,84 @@
+{
+  "eyebrow": "Proyectos destacados",
+  "title": "Proyectos empresariales seleccionados",
+  "items": [
+    {
+      "title": "Integracion de Salesforce Marketing Cloud",
+      "company": "CINTE GROUP S.A. / Experian",
+      "period": "jun. 2024 - dic. 2025",
+      "summary": "Diseñe un programa de integracion de seis meses que conecto Salesforce Marketing Cloud con servicios internos en AWS por medio de un nuevo API Gateway, intercambio seguro por SFTP, flujos gobernados de datos de clientes y diseños tecnicos listos para produccion.",
+      "impact": "Habilito la orquestacion de campañas y flujos confiables de contactabilidad, mejorando la efectividad de campañas en 45% y la rentabilidad en 25% bajo restricciones enterprise de seguridad y gobierno.",
+      "stack": "AWS, Terraform, Java, Python, SFTP, API Gateway, Salesforce Marketing Cloud",
+      "highlights": [
+        "Defini el API Gateway y el intercambio seguro por SFTP que permitieron la comunicacion entre Salesforce Marketing Cloud y servicios internos en AWS.",
+        "Produje diagramas, diseños tecnicos y flujos gobernados de movimiento de datos para un programa de seis meses con dependencias entre multiples equipos.",
+        "Balancee necesidades de Java, Python, infraestructura y gobierno para que la solucion pudiera pasar de diseño a entrega productiva sin friccion."
+      ]
+    },
+    {
+      "title": "Modernizacion de MongoDB hacia Amazon DocumentDB",
+      "company": "CINTE GROUP S.A. / Experian",
+      "period": "jun. 2024 - dic. 2025",
+      "summary": "Lidere una migracion con alta complejidad de compatibilidad desde MongoDB on-premises hacia Amazon DocumentDB, que requirio adaptar cerca de 400 consultas en 130 componentes, estandarizar librerias de traduccion y coordinar actualizaciones sobre Node.js, Spring Boot y Python.",
+      "impact": "Redujo el costo operativo en cerca de USD 15.000 por mes, aumento la eficiencia del equipo de migracion en aproximadamente 70% y establecio distribucion cifrada y anonimizada de datos para analitica y monitoreo.",
+      "stack": "Amazon DocumentDB, MongoDB, Terraform, Python, Node.js, Spring Boot, AWS",
+      "highlights": [
+        "Adapte aproximadamente 400 consultas de acceso a datos en 130 componentes, guiando la mezcla de migracion entre servicios Node.js y Spring Boot.",
+        "Cree utilidades reutilizables de traduccion y casteo para que los equipos movieran datos de forma segura sin perder metadatos.",
+        "Implemente flujos cifrados y anonimizados de distribucion para plataformas de reportería y monitoreo que dependian de datos protegidos de produccion."
+      ]
+    },
+    {
+      "title": "API Gateway de core bancario y modernizacion ETL",
+      "company": "Banco Union",
+      "period": "mar. 2022 - ago. 2023",
+      "summary": "Construi la columna vertebral de integracion para un nuevo ecosistema de core bancario, incluyendo un API Gateway y una capa de mediacion con mas de 94 servicios REST y SOAP, una API de traduccion entre legado y moderno, y estandares tecnicos para alistamiento regulatorio.",
+      "impact": "Respaldo el proceso de licencia bancaria y acelero la modernizacion de mas de 130 activos ETL y de reportería, mejorando auditabilidad, cumplimiento y velocidad de integracion operativa.",
+      "stack": "Java, Spring Boot, REST, SOAP, AWS Glue, Azure Data Factory, GoAnywhere, Power BI",
+      "highlights": [
+        "Entregue un API Gateway y una capa de mediacion que se convirtieron en la base de integracion para la operacion bancaria regulada.",
+        "Catalogue y mejore mas de 130 activos ETL y de reportería para que equipos de auditoria y operacion trabajaran con un estandar de entrega mas limpio.",
+        "Produje estandares, manuales y documentacion de integracion usados en el trabajo de alistamiento regulatorio y de cumplimiento."
+      ]
+    },
+    {
+      "title": "Modernizacion del pago de comparendos",
+      "company": "Independiente / Ministerio de Transporte",
+      "period": "ene. 2024 - jun. 2024",
+      "summary": "Modernice una plataforma publica de pago de comparendos actualizando el backend de Java 8 a Java 21, rediseñando la capa API y reconstruyendo flujos administrativos y de pago con entrega basada en React.",
+      "impact": "Mejoro en 40% el rendimiento de consultas y reportería en Oracle, dejo la base tecnica lista para futuros modulos de pago y entrego un flujo operativo mas seguro para un servicio publico critico.",
+      "stack": "Java 21, FastAPI, React, Oracle 13c, Redis, Encryption, Secure Authentication",
+      "highlights": [
+        "Migre el modulo central de pagos de Java 8 a Java 21 y documente la arquitectura objetivo para trabajo futuro de entrega.",
+        "Cree una nueva API REST y un frontend administrativo moderno para consulta, pago y gestion de usuarios.",
+        "Estandarice modulos compartidos de conectividad e introduje autenticacion segura, cifrado, manejo de sesiones y cache."
+      ]
+    },
+    {
+      "title": "Lanzamiento del producto bancario Android de Bold",
+      "company": "Bold",
+      "period": "ago. 2023 - dic. 2023",
+      "summary": "Ayude a entregar el primer prototipo Android del producto bancario en aproximadamente tres a cuatro meses, combinando modelado de dominio backend, entrega de APIs y soporte cloud para microcreditos y cuentas de bajo monto.",
+      "impact": "Acelero la salida al mercado de nuevos productos financieros una vez la compañia recibio autorizacion para operar como compañia de financiamiento, manteniendo calidad, documentacion y pruebas automatizadas dentro del alcance.",
+      "stack": "Python, FastAPI, Pydantic, Pytest, Java, AWS, MongoDB, DDD, Scrum",
+      "highlights": [
+        "Construi servicios backend y modelos de dominio bajo Domain-Driven Design para soportar el calendario de lanzamiento del producto.",
+        "Trabaje sobre ambientes cloud, documentacion y diseño de pruebas para que la experiencia movil contara con soporte backend estable.",
+        "Contribui a un ciclo de entrega rapido sin perder la disciplina de ingenieria requerida por un producto financiero regulado."
+      ]
+    },
+    {
+      "title": "Migracion de cartera hacia FLEXCUBE",
+      "company": "Banco de Occidente",
+      "period": "may. 2019 - dic. 2020",
+      "summary": "Diseñe la arquitectura de migracion y las reglas centrales para mover productos de cartera activa desde sistemas legados hacia Oracle FLEXCUBE, coordinando ETL, reportería y ciclos de simulacion con equipos de negocio y tecnologia.",
+      "impact": "Alcanzo una tasa de exito de 99,8% sobre 39.000 clientes y 80.000 creditos, mientras las optimizaciones ETL y de reportería redujeron el ciclo de cierre en 1,5 horas.",
+      "stack": "Oracle FLEXCUBE, DataStage, Java EE, Jakarta EE, Python, Jenkins, PostgreSQL, Oracle",
+      "highlights": [
+        "Defini reglas de migracion y arquitectura tecnica para productos de credito rotativo y prestamos de monto fijo que ingresaban a FLEXCUBE.",
+        "Lidere un equipo de 11 personas a traves de simulacros de migracion con Oracle y stakeholders internos hasta volver el proceso confiable a escala.",
+        "Construi y optimice activos ETL, consultas ODS y flujos de reportería que soportaron tanto la migracion como la operacion posterior."
+      ]
+    }
+  ]
+}

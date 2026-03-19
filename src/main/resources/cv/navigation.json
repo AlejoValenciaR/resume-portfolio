@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "targetId": "list-item-1",
+      "label": "Home",
+      "iconClass": "fa-solid fa-house"
+    },
+    {
+      "targetId": "list-item-2",
+      "label": "Profile",
+      "iconClass": "fa-solid fa-user-tie"
+    },
+    {
+      "targetId": "list-item-3",
+      "label": "Skills",
+      "iconClass": "fa-solid fa-layer-group"
+    },
+    {
+      "targetId": "list-item-4",
+      "label": "Technologies",
+      "iconClass": "fa-solid fa-microchip"
+    },
+    {
+      "targetId": "list-item-5",
+      "label": "Experience",
+      "iconClass": "fa-solid fa-briefcase"
+    },
+    {
+      "targetId": "list-item-6",
+      "label": "Education",
+      "iconClass": "fa-solid fa-graduation-cap"
+    },
+    {
+      "targetId": "list-item-7",
+      "label": "References",
+      "iconClass": "fa-solid fa-address-book"
+    },
+    {
+      "targetId": "list-item-8",
+      "label": "Contact",
+      "iconClass": "fa-solid fa-paper-plane"
+    }
+  ]
+}

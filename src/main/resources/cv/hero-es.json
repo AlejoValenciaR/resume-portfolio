@@ -1,0 +1,33 @@
+{
+  "eyebrow": "Desarrollador Full Stack Senior | Perfil backend-first",
+  "titlePrimary": "Ingeniería de backend escalable",
+  "titleSecondary": "para banca, nube y",
+  "highlightWord": "datos",
+  "summary": "Java / Spring Boot, Python, AWS, Terraform, microservicios, ETL, core bancario, integraciones CRM y entrega productiva. Aproximadamente 80% backend y 20% frontend, con un fuerte encaje para roles senior de backend, plataforma y liderazgo técnico.",
+  "stats": [
+    {
+      "value": "7+",
+      "label": "Años entregando software empresarial"
+    },
+    {
+      "value": "80 / 20",
+      "label": "Enfoque backend / frontend"
+    },
+    {
+      "value": "Java + Python",
+      "label": "Stack backend principal"
+    },
+    {
+      "value": "Banca + Nube",
+      "label": "Especialización de dominio"
+    }
+  ],
+  "primaryAction": {
+    "label": "Contáctame",
+    "url": "#list-item-8"
+  },
+  "secondaryAction": {
+    "label": "Perfil de LinkedIn",
+    "url": "https://www.linkedin.com/in/alejandro-valencia-rivera-28313715b"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "title": "Compact professional experience",
+  "items": [
+    {
+      "company": "CINTE GROUP S.A. / Experian",
+      "role": "Technical Lead, Backend & Data Engineering",
+      "period": "Jun 2024 - Dec 2025",
+      "projects": [
+        {
+          "name": "Salesforce Marketing Cloud Integration",
+          "stack": ["Java", "Python", "AWS", "Terraform", "SFTP", "API Gateway", "Salesforce Marketing Cloud"]
+        },
+        {
+          "name": "MongoDB to Amazon DocumentDB Modernization",
+          "stack": ["Spring Boot", "Node.js", "Python", "MongoDB", "Amazon DocumentDB", "AWS", "Terraform"]
+        },
+        {
+          "name": "Ascend Transaction Monitoring",
+          "stack": ["AWS", "BI", "Encryption", "Anonymization", "Data Pipelines"]
+        }
+      ]
+    },
+    {
+      "company": "Independent",
+      "role": "Software Consultant",
+      "period": "Jan 2024 - Jun 2024",
+      "projects": [
+        {
+          "name": "Traffic Fines Payment Modernization",
+          "stack": ["Java 21", "Oracle 13c", "React", "Redis", "Secure Authentication"]
+        },
+        {
+          "name": "Java 21 and REST API Modernization",
+          "stack": ["Java", "FastAPI", "Architecture Documentation", "Payments Integration"]
+        }
+      ]
+    },
+    {
+      "company": "Bold",
+      "role": "Backend Software Engineer",
+      "period": "Aug 2023 - Dec 2023",
+      "projects": [
+        {
+          "name": "Bold Android Banking Product Launch",
+          "stack": ["Python", "FastAPI", "Pydantic", "Pytest", "AWS", "MongoDB"]
+        },
+        {
+          "name": "Microloans and Low-Balance Backend",
+          "stack": ["Java", "Python", "DDD", "DynamoDB", "REST APIs"]
+        }
+      ]
+    },
+    {
+      "company": "Banco Union",
+      "role": "Tech Lead & Senior Developer Analyst",
+      "period": "Mar 2022 - Aug 2023",
+      "projects": [
+        {
+          "name": "Core Banking API Gateway",
+          "stack": ["Java", "Spring Boot", "REST", "SOAP", "API Gateway", "Mediation Layer"]
+        },
+        {
+          "name": "ETL Modernization and Reporting",
+          "stack": ["AWS Glue", "Azure Data Factory", "GoAnywhere", "Power BI", "ETL"]
+        },
+        {
+          "name": "SARLAFT Risk and Identity Validation",
+          "stack": ["Java", "Python", "WildFly", "Regulatory Reporting", "Security"]
+        }
+      ]
+    },
+    {
+      "company": "Banco de Occidente",
+      "role": "Senior Developer Analyst",
+      "period": "Jan 2021 - Jan 2022",
+      "projects": [
+        {
+          "name": "Internal Reporting Applications",
+          "stack": ["Java", "Python", "Flask", "Django", "Reporting", "Business Data"]
+        },
+        {
+          "name": "Wompi Integration and FLEXCUBE Support",
+          "stack": ["AWS", "Terraform", "Jenkins", "Wompi", "FLEXCUBE"]
+        }
+      ]
+    },
+    {
+      "company": "Banco de Occidente",
+      "role": "Professional Analyst",
+      "period": "May 2019 - Dec 2020",
+      "projects": [
+        {
+          "name": "FLEXCUBE Loan Portfolio Migration",
+          "stack": ["Oracle FLEXCUBE", "Java EE", "Jakarta EE", "Python", "Migration Rules"]
+        },
+        {
+          "name": "IBM DataStage ETL Pipelines",
+          "stack": ["IBM DataStage", "ODS", "Oracle", "Reporting", "Portfolio Closing"]
+        }
+      ]
+    },
+    {
+      "company": "Innovar Web",
+      "role": "Data Analyst",
+      "period": "Jan 2018 - Apr 2019",
+      "projects": [
+        {
+          "name": "3NF Database Normalization",
+          "stack": ["SQL", "Database Design", "Performance Tuning"]
+        },
+        {
+          "name": "Latency Prediction Model",
+          "stack": ["Mathematical Modeling", "Database Analytics", "Performance Monitoring"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "eyebrow": "References",
+  "titlePrimary": "Trusted",
+  "titleSecondary": "professional",
+  "highlightWord": "references",
+  "summary": "Contacts from engineering and delivery environments who can speak to backend, integration, and execution capabilities.",
+  "items": [
+    {
+      "name": "Santiago Giraldo",
+      "role": "Senior Python Engineer",
+      "company": "Gorilla Logic",
+      "phone": "+57 317 237 8476"
+    },
+    {
+      "name": "Edgar Mauricio Ceron",
+      "role": "Senior Backend Developer",
+      "company": "Gorilla Logic",
+      "phone": "+57 317 648 3290"
+    },
+    {
+      "name": "Jessica Manrique",
+      "role": "Senior Quality Analyst",
+      "company": "Fundacion Valle del Lili",
+      "phone": "+57 316 575 8384"
+    }
+  ]
+}

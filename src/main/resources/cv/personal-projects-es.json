@@ -1,0 +1,34 @@
+{
+  "eyebrow": "Proyectos personales",
+  "title": "Trabajo publico en GitHub y laboratorios de infraestructura",
+  "items": [
+    {
+      "title": "Jenkins con Terraform en DigitalOcean",
+      "summary": "Proyecto de infraestructura como codigo que aprovisiona un servidor Jenkins en DigitalOcean con almacenamiento persistente, Nginx, DNS, reglas de firewall, Docker y HTTPS.",
+      "stack": "Terraform, Jenkins, Docker, Nginx, Linux, DigitalOcean",
+      "repoUrl": "https://github.com/AlejoValenciaR/droplet-jenkins",
+      "liveUrl": "https://www.jenkinsnauthsoftwareprivate.app"
+    },
+    {
+      "title": "VM de Azure con Terraform + LocalStack",
+      "summary": "Entorno de servidor unico en Azure con red, DNS, Docker, LocalStack, Nginx y dominios personalizados para experimentos repetibles de emulacion cloud.",
+      "stack": "Terraform, Azure, LocalStack, Docker, Nginx, DNS",
+      "repoUrl": "https://github.com/AlejoValenciaR/azure-docker-vm-terraform",
+      "liveUrl": "https://localstack.nauthappstest.tech/_localstack/health"
+    },
+    {
+      "title": "Laboratorio de automatizacion AWS con LocalStack",
+      "summary": "Laboratorio de automatizacion basado en Jenkins que despliega recursos tipo AWS en LocalStack con Terraform o AWS CLI y soporta pipelines reutilizables de despliegue.",
+      "stack": "Jenkins, Terraform, AWS CLI, LocalStack, Azure Blob State, Automatizacion Shell",
+      "repoUrl": "https://github.com/AlejoValenciaR/localstack-terraform-jenkins",
+      "liveUrl": "https://nauthappstest.tech"
+    },
+    {
+      "title": "Plataforma multiaplicacion en Spring Boot",
+      "summary": "Plataforma en Spring Boot que sirve multiples aplicaciones web desde un solo backend, organizando rutas, plantillas, activos estaticos y logica compartida de presentacion.",
+      "stack": "Java, Spring Boot, Thymeleaf, HTML, CSS, Enrutamiento web",
+      "repoUrl": "https://github.com/AlejoValenciaR/hello-spring",
+      "liveUrl": "https://nauthappstest.tech/apps/"
+    }
+  ]
+}
