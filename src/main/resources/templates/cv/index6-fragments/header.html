@@ -6,6 +6,7 @@
     align-items: center;
     gap: 8px;
     margin-right: 16px;
+    flex-wrap: nowrap;
   }
 
   .cv-language-option {
@@ -45,15 +46,117 @@
     letter-spacing: 0.01em;
   }
 
+  .cv-language-code {
+    display: none;
+    letter-spacing: 0.08em;
+  }
+
+  .hamburger_menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.08) !important;
+    flex: 0 0 auto;
+  }
+
+  .hamburger_menu img {
+    display: block;
+    width: 22px;
+    height: 22px;
+  }
+
   @media (max-width: 991px) {
+    .header-area.homepage1 .header-elements {
+      gap: 12px;
+    }
+
+    .header-area.homepage1 .header-elements .site-logo {
+      flex: 0 1 auto;
+      min-width: 0;
+    }
+
+    .header-area.homepage1 .header-elements .site-logo img {
+      width: clamp(104px, 26vw, 124px);
+      height: auto;
+    }
+
+    .header-area.homepage1 .header-elements .btn-area {
+      margin-left: auto;
+      gap: 10px;
+      flex: 0 0 auto;
+    }
+
+    .header-area.homepage1 .header-elements .btn-area .vl-btn1 {
+      display: none;
+    }
+
     .cv-language-switch {
-      margin-right: 10px;
+      margin-right: 0;
+      gap: 6px;
     }
 
     .cv-language-option {
-      min-width: 76px;
-      padding: 7px 9px;
-      font-size: 0.75rem;
+      min-width: 0;
+      padding: 7px 8px;
+      gap: 5px;
+      font-size: 0.74rem;
+    }
+
+    .cv-language-flag {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 16px;
+    }
+
+    .cv-language-label {
+      display: none;
+    }
+
+    .cv-language-code {
+      display: inline;
+    }
+
+    .hamburger_menu {
+      width: 50px;
+      height: 50px;
+    }
+
+    .hamburger_menu img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .header-area.homepage1 .header-elements {
+      gap: 10px;
+    }
+
+    .header-area.homepage1 .header-elements .btn-area {
+      gap: 8px;
+    }
+
+    .cv-language-switch {
+      gap: 4px;
+    }
+
+    .cv-language-option {
+      padding: 6px 7px;
+      border-radius: 14px;
+    }
+
+    .cv-language-code {
+      font-size: 0.7rem;
+    }
+
+    .hamburger_menu {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
     }
   }
 </style>
@@ -82,10 +185,12 @@
                   <a class="cv-language-option is-active" th:href="@{/portfolio/alejandro(lang='en')}" href="/portfolio/alejandro?lang=en">
                     <img class="cv-language-flag" th:src="@{/ovro-index6-full/assets/img/flags/us-circle.svg}" src="/ovro-index6-full/assets/img/flags/us-circle.svg" alt="United States flag">
                     <span class="cv-language-label">English</span>
+                    <span class="cv-language-code" aria-hidden="true">EN</span>
                   </a>
                   <a class="cv-language-option" th:href="@{/portfolio/alejandro(lang='es')}" href="/portfolio/alejandro?lang=es">
                     <img class="cv-language-flag" th:src="@{/ovro-index6-full/assets/img/flags/colombia-circle.svg}" src="/ovro-index6-full/assets/img/flags/colombia-circle.svg" alt="Colombia flag">
                     <span class="cv-language-label">Spanish</span>
+                    <span class="cv-language-code" aria-hidden="true">ES</span>
                   </a>
                </div>
 

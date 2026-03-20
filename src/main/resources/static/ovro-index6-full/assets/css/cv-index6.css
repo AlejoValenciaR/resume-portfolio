@@ -677,8 +677,8 @@
 
 @media (max-width: 991px) {
     .main-hero-area5 .hero-heading-area .cv-hero-title-secondary {
-        gap: 6px;
-        line-height: 1.08;
+        gap: 8px;
+        line-height: 1.06;
     }
 
     .main-hero-area5 .hero-heading-area .cv-hero-title-secondary .cv-hero-title-secondary-main,
@@ -686,9 +686,16 @@
         display: block;
     }
 
+    .main-hero-area5 .hero-heading-area .cv-hero-title-secondary .cv-hero-title-secondary-main {
+        font-size: clamp(1.55rem, 2.1vw + 0.62rem, 2rem);
+        line-height: 1.08;
+        white-space: nowrap;
+    }
+
     .main-hero-area5 .hero-heading-area .cv-hero-title-secondary .cv-hero-title-secondary-accent {
-        font-size: clamp(1.04rem, 4vw, 1.45rem);
-        font-size: clamp(0.84rem, 6.1cqw, 1.45rem);
+        font-size: clamp(1.24rem, 1.5vw + 0.7rem, 1.62rem);
+        line-height: 1.08;
+        white-space: nowrap;
     }
 
     .main-hero-area5 .hero-heading-area .cv-hero-title-mobile-break {
@@ -1631,15 +1638,13 @@
     }
 
     .main-hero-area5 .hero-heading-area .cv-hero-title-secondary .cv-hero-title-secondary-main {
-        font-size: clamp(1.28rem, 6.2vw, 1.6rem);
-        font-size: clamp(1rem, 8.4cqw, 1.6rem);
+        font-size: clamp(1.46rem, 6vw, 1.84rem);
         line-height: 1.08;
         white-space: nowrap;
     }
 
     .main-hero-area5 .hero-heading-area .cv-hero-title-secondary .cv-hero-title-secondary-accent {
-        font-size: clamp(0.98rem, 5vw, 1.28rem);
-        font-size: clamp(0.78rem, 5.8cqw, 1.28rem);
+        font-size: clamp(1.18rem, 4.5vw, 1.42rem);
         line-height: 1.08;
         margin-left: 0;
         white-space: nowrap !important;
@@ -1861,13 +1866,11 @@
     }
 
     .main-hero-area5 .hero-heading-area .cv-hero-title-secondary .cv-hero-title-secondary-main {
-        font-size: clamp(1.14rem, 6.4vw, 1.4rem);
-        font-size: clamp(0.94rem, 7.8cqw, 1.4rem);
+        font-size: clamp(1.34rem, 6.2vw, 1.58rem);
     }
 
     .main-hero-area5 .hero-heading-area .cv-hero-title-secondary .cv-hero-title-secondary-accent {
-        font-size: clamp(0.9rem, 5vw, 1.12rem);
-        font-size: clamp(0.72rem, 5.2cqw, 1.12rem);
+        font-size: clamp(1.08rem, 4.8vw, 1.26rem);
     }
 
     .main-hero-area5 .personal-contact-box .btn-area1 .vl-btn1 {
