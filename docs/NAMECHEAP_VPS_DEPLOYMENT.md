@@ -443,6 +443,18 @@ Check:
 - the password is correct
 - port `22` is reachable
 
+### Jenkins Fails With `scp: stat local "22": No such file or directory`
+
+That means the Jenkins workspace is using an older version of the deployment script.
+
+What to do:
+
+1. make sure your Jenkins job is building the latest commit from `main`
+2. pull the latest repository changes into Jenkins
+3. run the pipeline again
+
+This error is fixed in the current `scripts/vps-common.sh`.
+
 ### Git Push Does Not Start Jenkins
 
 Check:

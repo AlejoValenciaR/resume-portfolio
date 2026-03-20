@@ -39,6 +39,11 @@ init_ssh_context() {
     -o StrictHostKeyChecking=yes
     -o UserKnownHostsFile="${KNOWN_HOSTS_FILE}"
   )
+  SCP_BASE_ARGS=(
+    -P "${VPS_PORT}"
+    -o StrictHostKeyChecking=yes
+    -o UserKnownHostsFile="${KNOWN_HOSTS_FILE}"
+  )
 
   if [[ -n "${SSH_PASSWORD:-}" ]]; then
     command -v sshpass >/dev/null 2>&1 || fail "sshpass is required on the Jenkins agent for password-based SSH."
@@ -48,10 +53,19 @@ init_ssh_context() {
       -o PreferredAuthentications=password,keyboard-interactive
       -o PubkeyAuthentication=no
     )
+    SCP_BASE_ARGS+=(
+      -o PreferredAuthentications=password,keyboard-interactive
+      -o PubkeyAuthentication=no
+    )
   else
     chmod 600 "${SSH_KEY_FILE}"
     SSH_AUTH_MODE="key"
     SSH_BASE_ARGS+=(
+      -i "${SSH_KEY_FILE}"
+      -o BatchMode=yes
+      -o IdentitiesOnly=yes
+    )
+    SCP_BASE_ARGS+=(
       -i "${SSH_KEY_FILE}"
       -o BatchMode=yes
       -o IdentitiesOnly=yes
@@ -84,11 +98,11 @@ remote_upload() {
   local source_path="$1"
   local target_path="$2"
   if [[ "${SSH_AUTH_MODE:-}" == "password" ]]; then
-    sshpass -e scp "${SSH_BASE_ARGS[@]}" "${source_path}" "${SSH_USER}@${VPS_HOST}:${target_path}"
+    sshpass -e scp "${SCP_BASE_ARGS[@]}" "${source_path}" "${SSH_USER}@${VPS_HOST}:${target_path}"
     return
   fi
 
-  scp "${SSH_BASE_ARGS[@]}" "${source_path}" "${SSH_USER}@${VPS_HOST}:${target_path}"
+  scp "${SCP_BASE_ARGS[@]}" "${source_path}" "${SSH_USER}@${VPS_HOST}:${target_path}"
 }
 
 build_image_archive() {
