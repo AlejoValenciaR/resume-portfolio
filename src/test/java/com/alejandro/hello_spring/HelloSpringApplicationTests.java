@@ -13,6 +13,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
@@ -27,8 +28,15 @@ class HelloSpringApplicationTests {
 	}
 
 	@Test
-	void homeRouteRendersHtml() throws Exception {
-		mockMvc.perform(get("/apps/").contextPath("/apps"))
+	void rootRouteRedirectsToPortfolio() throws Exception {
+		mockMvc.perform(get("/"))
+			.andExpect(status().is3xxRedirection())
+			.andExpect(redirectedUrl("/portfolio/alejandro"));
+	}
+
+	@Test
+	void legacyHomeRouteRendersHtml() throws Exception {
+		mockMvc.perform(get("/home"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith("text/html"))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Atlas Grove")));
@@ -36,7 +44,7 @@ class HelloSpringApplicationTests {
 
 	@Test
 	void helloRouteRendersHtml() throws Exception {
-		mockMvc.perform(get("/apps/api/hello").contextPath("/apps"))
+		mockMvc.perform(get("/api/hello"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith("text/html"))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Hello, World!")));
@@ -44,7 +52,7 @@ class HelloSpringApplicationTests {
 
 	@Test
 	void usersRouteRendersHtml() throws Exception {
-		mockMvc.perform(get("/apps/api/users").contextPath("/apps"))
+		mockMvc.perform(get("/api/users"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith("text/html"))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Alice")));
@@ -52,7 +60,7 @@ class HelloSpringApplicationTests {
 
 	@Test
 	void userDetailRouteRendersHtml() throws Exception {
-		mockMvc.perform(get("/apps/api/users/2").contextPath("/apps"))
+		mockMvc.perform(get("/api/users/2"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith("text/html"))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("User with id: 2")));
@@ -60,7 +68,7 @@ class HelloSpringApplicationTests {
 
 	@Test
 	void cvRouteRendersHtml() throws Exception {
-		mockMvc.perform(get("/apps/portfolio/alejandro").contextPath("/apps"))
+		mockMvc.perform(get("/portfolio/alejandro"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith("text/html"))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Alejandro Valencia - Senior Backend Developer")))
@@ -74,7 +82,7 @@ class HelloSpringApplicationTests {
 
 	@Test
 	void cvSpanishRouteRendersHtml() throws Exception {
-		mockMvc.perform(get("/apps/portfolio/alejandro").queryParam("lang", "es").contextPath("/apps"))
+		mockMvc.perform(get("/portfolio/alejandro").queryParam("lang", "es"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith("text/html"))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Alejandro Valencia - Desarrollador Backend Senior")))
@@ -87,7 +95,7 @@ class HelloSpringApplicationTests {
 
 	@Test
 	void cvPdfRouteDownloadsPdf() throws Exception {
-		mockMvc.perform(get("/apps/portfolio/alejandro/cv.pdf").contextPath("/apps"))
+		mockMvc.perform(get("/portfolio/alejandro/cv.pdf"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PDF))
 			.andExpect(header().string(HttpHeaders.CONTENT_DISPOSITION, org.hamcrest.Matchers.containsString("Alejandro-Valencia-Rivera-Resume.pdf")))
@@ -104,7 +112,7 @@ class HelloSpringApplicationTests {
 
 	@Test
 	void cvSpanishPdfRouteDownloadsPdf() throws Exception {
-		mockMvc.perform(get("/apps/portfolio/alejandro/cv.pdf").queryParam("lang", "es").contextPath("/apps"))
+		mockMvc.perform(get("/portfolio/alejandro/cv.pdf").queryParam("lang", "es"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PDF))
 			.andExpect(header().string(HttpHeaders.CONTENT_DISPOSITION, org.hamcrest.Matchers.containsString("Alejandro-Valencia-Rivera-Resume.pdf")))
@@ -121,7 +129,7 @@ class HelloSpringApplicationTests {
 
 	@Test
 	void compactCvPdfRouteDownloadsPdf() throws Exception {
-		mockMvc.perform(get("/apps/portfolio/alejandro/compact-resume.pdf").contextPath("/apps"))
+		mockMvc.perform(get("/portfolio/alejandro/compact-resume.pdf"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PDF))
 			.andExpect(header().string(HttpHeaders.CONTENT_DISPOSITION, org.hamcrest.Matchers.containsString("Alejandro-Valencia-Rivera-Compact-Resume.pdf")))
@@ -138,7 +146,7 @@ class HelloSpringApplicationTests {
 
 	@Test
 	void compactSpanishCvPdfRouteDownloadsPdf() throws Exception {
-		mockMvc.perform(get("/apps/portfolio/alejandro/compact-resume.pdf").queryParam("lang", "es").contextPath("/apps"))
+		mockMvc.perform(get("/portfolio/alejandro/compact-resume.pdf").queryParam("lang", "es"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PDF))
 			.andExpect(header().string(HttpHeaders.CONTENT_DISPOSITION, org.hamcrest.Matchers.containsString("Alejandro-Valencia-Rivera-Compact-Resume.pdf")))

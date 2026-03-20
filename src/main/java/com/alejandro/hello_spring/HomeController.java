@@ -8,9 +8,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
     @GetMapping("/")
-    public String home(Model model) {
+    public String home() {
+        return "redirect:/portfolio/alejandro";
+    }
+
+    @GetMapping("/home")
+    public String legacyHome(Model model) {
         model.addAttribute("pageTitle", "Home");
-        model.addAttribute("currentPath", "/");
+        model.addAttribute("currentPath", "/home");
         return "home";
     }
 }

@@ -12,55 +12,99 @@ pipeline {
   }
 
   environment {
-    AWS_DEFAULT_REGION    = 'us-east-1'
-    AWS_ACCESS_KEY_ID     = credentials('LS_AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = credentials('LS_AWS_SECRET_ACCESS_KEY')
-    LS_ENDPOINT_URL       = credentials('LS_ENDPOINT_URL')
-
-    APP_NAME         = 'hello-spring'
-    APP_BASE_PATH    = '/apps'
-    ECR_REPOSITORY   = 'hello-spring'
-    EKS_CLUSTER_NAME = 'localstack-eks-cluster'
-    EKS_NODEGROUP_NAME = 'localstack-eks-node-group'
-    K8S_NAMESPACE    = 'hello-spring'
-    PUBLIC_APP_URL   = 'https://nauthappstest.tech/apps/api/hello'
+    APP_NAME           = 'resume-portfolio'
+    APP_CONTAINER_NAME = 'resume-portfolio'
+    DOMAIN_NAME        = 'alejandrovalencia.site'
+    VPS_HOST           = '198.177.123.110'
+    VPS_PORT           = '22'
+    REMOTE_APP_DIR     = '/opt/resume-portfolio'
   }
 
   stages {
-    stage('checkout') {
+    stage('Checkout') {
       steps {
         checkout scm
       }
     }
 
-    stage('test') {
+    stage('Choose VPS Workflow') {
+      steps {
+        timeout(time: 2, unit: 'HOURS') {
+          script {
+            env.SELECTED_WORKFLOW = input(
+              message: "Choose what Jenkins should run on the VPS for build #${env.BUILD_NUMBER}.",
+              ok: 'Run Selected Workflow',
+              parameters: [
+                choice(
+                  name: 'VPS_WORKFLOW',
+                  choices: ['DEPLOY_APP', 'RESET_VM'].join('\n'),
+                  description: 'DEPLOY_APP is the normal redeploy. RESET_VM rebuilds the VPS app setup from zero.'
+                )
+              ]
+            )
+            currentBuild.description = "Workflow: ${env.SELECTED_WORKFLOW}"
+            echo "Selected workflow: ${env.SELECTED_WORKFLOW}"
+          }
+        }
+      }
+    }
+
+    stage('Test') {
       steps {
         sh '''
           set -euo pipefail
-          chmod +x mvnw scripts/deploy-to-localstack-eks.sh scripts/verify-localstack-eks.sh
+          chmod +x mvnw
           ./mvnw -B test
         '''
       }
     }
 
-    stage('build, push, deploy') {
+    stage('Build Docker Image') {
       steps {
         sh '''
           set -euo pipefail
-          chmod +x scripts/deploy-to-localstack-eks.sh
-          ./scripts/deploy-to-localstack-eks.sh
+          export IMAGE_REF="${APP_NAME}:${BUILD_NUMBER}-$(git rev-parse --short HEAD)"
+          echo "${IMAGE_REF}" > .image-ref
+          docker build -t "${IMAGE_REF}" .
         '''
       }
     }
 
-    stage('verify kubernetes objects') {
+    stage('Reset VPS From Zero') {
+      when {
+        expression { env.SELECTED_WORKFLOW == 'RESET_VM' }
+      }
       steps {
-        sh '''
-          set -euo pipefail
-          export KUBECONFIG="${WORKSPACE}/.kube/config"
-          chmod +x scripts/verify-localstack-eks.sh
-          ./scripts/verify-localstack-eks.sh
-        '''
+        withCredentials([
+          usernamePassword(credentialsId: 'NAMECHEAP_VPS_SSH', usernameVariable: 'SSH_USER', passwordVariable: 'SSH_PASSWORD'),
+          file(credentialsId: 'PORTFOLIO_VPS_ZEROSSL_FULLCHAIN', variable: 'SSL_FULLCHAIN_FILE'),
+          file(credentialsId: 'PORTFOLIO_VPS_ZEROSSL_PRIVKEY', variable: 'SSL_PRIVKEY_FILE')
+        ]) {
+          sh '''
+            set -euo pipefail
+            chmod +x scripts/vps-common.sh scripts/vps-bootstrap.sh
+            export IMAGE_REF="$(cat .image-ref)"
+            ./scripts/vps-bootstrap.sh
+          '''
+        }
+      }
+    }
+
+    stage('Deploy/Redeploy Spring Boot') {
+      when {
+        expression { env.SELECTED_WORKFLOW == 'DEPLOY_APP' }
+      }
+      steps {
+        withCredentials([
+          usernamePassword(credentialsId: 'NAMECHEAP_VPS_SSH', usernameVariable: 'SSH_USER', passwordVariable: 'SSH_PASSWORD')
+        ]) {
+          sh '''
+            set -euo pipefail
+            chmod +x scripts/vps-common.sh scripts/vps-deploy.sh
+            export IMAGE_REF="$(cat .image-ref)"
+            ./scripts/vps-deploy.sh
+          '''
+        }
       }
     }
   }
@@ -68,7 +112,7 @@ pipeline {
   post {
     always {
       sh '''
-        rm -rf "${WORKSPACE}/.kube"
+        rm -f .image-ref
       '''
     }
   }

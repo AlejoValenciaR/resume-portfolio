@@ -28,7 +28,7 @@
       "summary": "Plataforma en Spring Boot que sirve multiples aplicaciones web desde un solo backend, organizando rutas, plantillas, activos estaticos y logica compartida de presentacion.",
       "stack": "Java, Spring Boot, Thymeleaf, HTML, CSS, Enrutamiento web",
       "repoUrl": "https://github.com/AlejoValenciaR/hello-spring",
-      "liveUrl": "https://nauthappstest.tech/apps/"
+      "liveUrl": "https://alejandrovalencia.site/"
     }
   ]
 }
