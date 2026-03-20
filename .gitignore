@@ -3,6 +3,8 @@ target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+docs/LINKEDIN_PROFILE_COPY.md
+docs/LINKEDIN_PROFILE_COPY_ES.md
 
 ### STS ###
 .apt_generated
