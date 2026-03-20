@@ -89,6 +89,7 @@ What it does:
 - writes Nginx configuration
 - loads the Docker image
 - starts the Spring Boot container
+- waits for the Spring Boot app to become reachable
 - verifies the site
 
 ### `DEPLOY_APP`
@@ -104,6 +105,7 @@ What it does:
 
 - loads the new Docker image
 - replaces the running container
+- waits for the Spring Boot app to become reachable
 - verifies the app over HTTPS
 
 ## Before Jenkins: Manual Things You Must Do One Time
@@ -503,6 +505,24 @@ Check:
 - the container started correctly
 - the app is listening on `127.0.0.1:8080`
 - Nginx is proxying correctly
+
+### Jenkins Fails With `curl: (56) Recv failure: Connection reset by peer`
+
+That usually means one of these:
+
+- the Spring Boot container is still starting
+- the container started and then crashed
+- Nginx is ready, but the app behind it is not ready yet
+
+The current scripts now wait longer and print diagnostics automatically.
+
+If you still hit this error, inspect:
+
+- Docker container logs
+- Docker container status
+- Nginx service status
+
+Those details should now appear directly in the Jenkins console log.
 
 ### HTTPS Fails
 

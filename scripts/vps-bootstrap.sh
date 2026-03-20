@@ -168,15 +168,60 @@ deploy_container() {
     "${IMAGE_REF}"
 }
 
+show_runtime_diagnostics() {
+  echo "========== docker ps =========="
+  run_sudo docker ps -a || true
+  echo "========== container inspect =========="
+  run_sudo docker inspect "${APP_CONTAINER_NAME}" || true
+  echo "========== container logs =========="
+  run_sudo docker logs --tail 200 "${APP_CONTAINER_NAME}" || true
+  echo "========== nginx status =========="
+  run_sudo systemctl status nginx --no-pager || true
+}
+
+wait_for_url() {
+  local url="$1"
+  shift
+  local -a curl_args=("$@")
+  local attempts="${WAIT_ATTEMPTS:-30}"
+  local delay_seconds="${WAIT_DELAY_SECONDS:-3}"
+
+  for ((i=1; i<=attempts; i++)); do
+    if curl -fsS "${curl_args[@]}" "${url}" >/dev/null 2>&1; then
+      return 0
+    fi
+
+    if [[ "${i}" -lt "${attempts}" ]]; then
+      sleep "${delay_seconds}"
+    fi
+  done
+
+  echo "Timed out waiting for ${url}" >&2
+  return 1
+}
+
 verify_deployment() {
-  sleep 5
-  curl -fsS "http://127.0.0.1:8080/portfolio/alejandro" >/dev/null
-  curl -kfsS --resolve "${DOMAIN_NAME}:443:127.0.0.1" "https://${DOMAIN_NAME}/portfolio/alejandro" >/dev/null
+  if ! wait_for_url "http://127.0.0.1:8080/portfolio/alejandro"; then
+    echo "Application did not become reachable on the local container port." >&2
+    show_runtime_diagnostics
+    exit 1
+  fi
+
+  if ! wait_for_url "https://${DOMAIN_NAME}/portfolio/alejandro" -k --resolve "${DOMAIN_NAME}:443:127.0.0.1"; then
+    echo "Application did not become reachable through Nginx HTTPS." >&2
+    show_runtime_diagnostics
+    exit 1
+  fi
 
   local root_status
-  root_status="$(curl -kIs --resolve "${DOMAIN_NAME}:443:127.0.0.1" "https://${DOMAIN_NAME}/" | awk 'NR==1 {print $2}')"
+  root_status="$(curl -kIs --resolve "${DOMAIN_NAME}:443:127.0.0.1" "https://${DOMAIN_NAME}/" | awk 'NR==1 {print $2}')" || {
+    echo "Could not read the root URL response through Nginx." >&2
+    show_runtime_diagnostics
+    exit 1
+  }
   if [[ "${root_status}" != "301" && "${root_status}" != "302" ]]; then
     echo "Unexpected root response status: ${root_status}" >&2
+    show_runtime_diagnostics
     exit 1
   fi
 }
