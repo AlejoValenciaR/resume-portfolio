@@ -91,6 +91,41 @@
     display: none;
 }
 
+.main-hero-area5 .hero-heading-area .cv-hero-title-secondary-mobile {
+    display: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    text-align: right;
+}
+
+.main-hero-area5 .hero-heading-area .cv-hero-title-secondary-mobile .cv-hero-title-mobile-line {
+    display: block;
+    width: fit-content;
+    max-width: min(100%, 16ch);
+    margin-left: auto;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+}
+
+.main-hero-area5 .hero-heading-area .cv-hero-title-secondary-mobile .cv-hero-title-mobile-main {
+    color: var(--ztc-text-text-1);
+    font-family: var(--ztc-family-font1);
+    font-style: normal;
+    font-weight: var(--ztc-weight-semibold);
+    letter-spacing: -0.04em;
+}
+
+.main-hero-area5 .hero-heading-area .cv-hero-title-secondary-mobile .cv-hero-title-mobile-accent {
+    color: var(--ztc-bg-btn-bg1);
+    font-family: var(--ztc-family-font2);
+    font-style: italic;
+    font-weight: var(--ztc-weight-semibold);
+    text-decoration-line: underline;
+    text-underline-offset: 0.08em;
+    text-decoration-thickness: 0.06em;
+}
+
 @supports (width: 1cqw) {
     @media (min-width: 1200px) {
         .main-hero-area5 .hero-heading-area .cv-hero-title-primary {
@@ -676,6 +711,32 @@
 }
 
 @media (max-width: 991px) {
+    .main-hero-area5 .hero-heading-area .cv-hero-title-secondary-desktop {
+        display: none !important;
+    }
+
+    .main-hero-area5 .hero-heading-area .cv-hero-title-secondary-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+        line-height: 1;
+    }
+
+    .main-hero-area5 .hero-heading-area .cv-hero-title-secondary-mobile .cv-hero-title-mobile-line {
+        max-width: min(100%, 15ch);
+    }
+
+    .main-hero-area5 .hero-heading-area .cv-hero-title-secondary-mobile .cv-hero-title-mobile-main {
+        font-size: clamp(2.15rem, 2.8vw + 1.1rem, 2.95rem) !important;
+        line-height: 1.03 !important;
+    }
+
+    .main-hero-area5 .hero-heading-area .cv-hero-title-secondary-mobile .cv-hero-title-mobile-accent {
+        font-size: clamp(1.9rem, 2.2vw + 1rem, 2.45rem) !important;
+        line-height: 1.03 !important;
+    }
+
     .main-hero-area5 .hero-heading-area .cv-hero-title-secondary {
         gap: 8px;
         line-height: 1.06;
@@ -1567,6 +1628,24 @@
         padding: 90px 0 36px;
     }
 
+    .main-hero-area5 .hero-heading-area .cv-hero-title-secondary-mobile {
+        gap: 8px;
+    }
+
+    .main-hero-area5 .hero-heading-area .cv-hero-title-secondary-mobile .cv-hero-title-mobile-line {
+        max-width: min(100%, 13ch);
+    }
+
+    .main-hero-area5 .hero-heading-area .cv-hero-title-secondary-mobile .cv-hero-title-mobile-main {
+        font-size: clamp(2rem, 8.5vw, 2.55rem) !important;
+        line-height: 1.02 !important;
+    }
+
+    .main-hero-area5 .hero-heading-area .cv-hero-title-secondary-mobile .cv-hero-title-mobile-accent {
+        font-size: clamp(1.72rem, 7.2vw, 2.12rem) !important;
+        line-height: 1.02 !important;
+    }
+
     .main-hero-area5 .personal-contact-box {
         position: static;
         top: auto;
@@ -1627,6 +1706,10 @@
         text-align: right;
         font-size: 1rem;
         line-height: 1;
+    }
+
+    .main-hero-area5 .hero-heading-area .cv-hero-title-secondary.cv-hero-title-secondary-desktop {
+        display: none !important;
     }
 
     .main-hero-area5 .hero-heading-area .cv-hero-title-secondary .cv-hero-title-secondary-main,
@@ -1851,6 +1934,18 @@
     .main-hero-area5 > .container {
         padding-right: 12px;
         padding-left: 12px;
+    }
+
+    .main-hero-area5 .hero-heading-area .cv-hero-title-secondary-mobile .cv-hero-title-mobile-line {
+        max-width: min(100%, 11.5ch);
+    }
+
+    .main-hero-area5 .hero-heading-area .cv-hero-title-secondary-mobile .cv-hero-title-mobile-main {
+        font-size: clamp(1.88rem, 8.8vw, 2.28rem) !important;
+    }
+
+    .main-hero-area5 .hero-heading-area .cv-hero-title-secondary-mobile .cv-hero-title-mobile-accent {
+        font-size: clamp(1.58rem, 7vw, 1.92rem) !important;
     }
 
     .main-hero-area5 .hero-heading-area .cv-hero-title-primary {

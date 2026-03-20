@@ -714,7 +714,7 @@ function fitHeroTitleRow(heading, mainLine, accentLine, minMainFontPx, minAccent
 }
 
 function updateHeroTitleFit() {
-    const heading = document.querySelector('.cv-hero-title-secondary');
+    const heading = document.querySelector('.cv-hero-title-secondary-desktop');
     const mainLine = heading?.querySelector('.cv-hero-title-secondary-main');
     const accentLine = heading?.querySelector('.cv-hero-title-secondary-accent');
 
@@ -729,16 +729,19 @@ function updateHeroTitleFit() {
     accentLine.style.transform = '';
     accentLine.style.transformOrigin = '';
 
+    if (window.innerWidth <= 991) {
+        return;
+    }
+
     if (window.innerWidth > 1199) {
         fitHeroTitleRow(heading, mainLine, accentLine, 34, 28);
         return;
     }
 
-    const gutterAllowance = window.innerWidth <= 767 ? 28 : 20;
-    const maxWidth = Math.max(heading.clientWidth - gutterAllowance, 140);
+    const maxWidth = Math.max(heading.clientWidth - 24, 220);
 
-    fitHeroTitleLine(mainLine, maxWidth, window.innerWidth <= 575 ? 16 : 18, false);
-    fitHeroTitleLine(accentLine, maxWidth, window.innerWidth <= 575 ? 11 : 12, true);
+    fitHeroTitleLine(mainLine, maxWidth, 24, false);
+    fitHeroTitleLine(accentLine, maxWidth, 18, true);
 }
 
 function fitExperienceRoleTitle(roleElement) {
