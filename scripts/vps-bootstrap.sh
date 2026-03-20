@@ -41,6 +41,9 @@ if [[ -n "${APP_RUNTIME_ENV_FILE:-}" ]]; then
   cat "${APP_RUNTIME_ENV_FILE}" >> "${APP_ENV_PATH}"
 fi
 
+log "Validating that the SSL certificate and private key match."
+validate_ssl_pair "${SSL_FULLCHAIN_FILE}" "${SSL_PRIVKEY_FILE}"
+
 render_nginx_template "${REPO_ROOT}/deploy/vps/nginx-site.conf.template" "${NGINX_CONFIG_PATH}"
 
 log "Packaging Docker image ${IMAGE_REF}."

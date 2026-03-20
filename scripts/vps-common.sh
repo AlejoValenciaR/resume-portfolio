@@ -127,3 +127,36 @@ render_nginx_template() {
     -e "s|__SSL_KEY_PATH__|${SSL_KEY_PATH}|g" \
     "${template_path}" > "${output_path}"
 }
+
+validate_ssl_pair() {
+  local cert_path="$1"
+  local key_path="$2"
+
+  command -v openssl >/dev/null 2>&1 || fail "openssl is required to validate the SSL certificate and private key."
+  [[ -f "${cert_path}" ]] || fail "Certificate file not found: ${cert_path}"
+  [[ -f "${key_path}" ]] || fail "Private key file not found: ${key_path}"
+
+  local cert_fingerprint
+  local key_fingerprint
+
+  cert_fingerprint="$(
+    openssl x509 -in "${cert_path}" -pubkey -noout \
+      | openssl pkey -pubin -outform der 2>/dev/null \
+      | openssl dgst -sha256 -r \
+      | awk '{print $1}'
+  )" || fail "Unable to read the certificate public key from ${cert_path}."
+
+  key_fingerprint="$(
+    openssl pkey -in "${key_path}" -pubout -outform der 2>/dev/null \
+      | openssl dgst -sha256 -r \
+      | awk '{print $1}'
+  )" || fail "Unable to read the private key public component from ${key_path}."
+
+  if [[ -z "${cert_fingerprint}" || -z "${key_fingerprint}" ]]; then
+    fail "Could not compute SSL fingerprints for ${cert_path} and ${key_path}."
+  fi
+
+  if [[ "${cert_fingerprint}" != "${key_fingerprint}" ]]; then
+    fail "The SSL certificate and private key do not match. Update PORTFOLIO_VPS_ZEROSSL_FULLCHAIN and PORTFOLIO_VPS_ZEROSSL_PRIVKEY with a matching pair."
+  fi
+}

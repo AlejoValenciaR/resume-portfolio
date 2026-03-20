@@ -160,6 +160,23 @@ Get-Content .\certificate.crt, .\ca_bundle.crt | Set-Content .\fullchain.pem
 Copy-Item .\private.key .\privkey.pem
 ```
 
+Before uploading them to Jenkins, verify that they match:
+
+```powershell
+$certHash = openssl x509 -in .\fullchain.pem -pubkey -noout | openssl pkey -pubin -outform der | openssl dgst -sha256
+$keyHash = openssl pkey -in .\privkey.pem -pubout -outform der | openssl dgst -sha256
+$certHash
+$keyHash
+```
+
+The 2 SHA256 values must be the same.
+
+If they are different:
+
+- the certificate and private key do not belong together
+- Jenkins will fail when Nginx tries to start HTTPS
+- you must upload the correct matching pair or reissue the ZeroSSL certificate
+
 The certificate should cover at least:
 
 - `alejandrovalencia.site`
@@ -495,6 +512,23 @@ Check:
 - the certificate really covers `alejandrovalencia.site`
 - Jenkins uploaded the correct PEM files
 - Nginx restarted successfully
+
+### Jenkins Fails With `SSL_CTX_use_PrivateKey ... key values mismatch`
+
+That means:
+
+- `fullchain.pem` and `privkey.pem` do not match
+
+What to do:
+
+1. go back to the files you downloaded from ZeroSSL
+2. make sure `privkey.pem` comes from the same certificate request as `certificate.crt`
+3. rebuild `fullchain.pem` from the correct `certificate.crt` and `ca_bundle.crt`
+4. verify both files with the OpenSSL SHA256 check shown earlier in this guide
+5. update the Jenkins credentials:
+   - `PORTFOLIO_VPS_ZEROSSL_FULLCHAIN`
+   - `PORTFOLIO_VPS_ZEROSSL_PRIVKEY`
+6. run the pipeline again with `RESET_VM`
 
 ## Optional Improvement Later
 
