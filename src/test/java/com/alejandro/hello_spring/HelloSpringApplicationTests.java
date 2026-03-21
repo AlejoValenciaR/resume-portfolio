@@ -94,6 +94,40 @@ class HelloSpringApplicationTests {
 	}
 
 	@Test
+	void photographyRouteRedirectsToTrailingSlash() throws Exception {
+		mockMvc.perform(get("/photography"))
+			.andExpect(status().is3xxRedirection())
+			.andExpect(redirectedUrl("/photography/"));
+	}
+
+	@Test
+	void fotografiaAliasRedirectsToPhotography() throws Exception {
+		mockMvc.perform(get("/fotografia"))
+			.andExpect(status().is3xxRedirection())
+			.andExpect(redirectedUrl("/photography/"));
+	}
+
+	@Test
+	void photographyRouteRendersPhotographyPage() throws Exception {
+		mockMvc.perform(get("/photography/"))
+			.andExpect(status().isOk())
+			.andExpect(header().string(HttpHeaders.CACHE_CONTROL, org.hamcrest.Matchers.containsString("no-store")))
+			.andExpect(content().contentTypeCompatibleWith("text/html"))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("Soulframe Studio")))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("Alejandro Valencia")))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("Portrait and Product Photographer")));
+	}
+
+	@Test
+	void photographyStaticAssetsAreServed() throws Exception {
+		mockMvc.perform(get("/photography/css/style.css"))
+			.andExpect(status().isOk())
+			.andExpect(header().string(HttpHeaders.CACHE_CONTROL, org.hamcrest.Matchers.containsString("no-store")))
+			.andExpect(content().contentTypeCompatibleWith("text/css"))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString(".menu")));
+	}
+
+	@Test
 	void cvPdfRouteDownloadsPdf() throws Exception {
 		mockMvc.perform(get("/portfolio/alejandro/cv.pdf"))
 			.andExpect(status().isOk())

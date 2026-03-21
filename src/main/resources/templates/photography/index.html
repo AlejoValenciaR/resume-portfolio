@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{photography/fragments/head :: head}">
+    <meta charset="UTF-8">
+    <title>Soulframe Studio</title>
+</head>
+<body>
+    <div id="container" class="container">
+        <th:block th:replace="~{photography/fragments/menu :: menu}"></th:block>
+        <a href="#menu" class="totop-link">Go to the top</a>
+        <div class="content-scroller">
+            <div class="content-wrapper">
+                <th:block th:replace="~{photography/fragments/introduction :: content}"></th:block>
+                <th:block th:replace="~{photography/fragments/about :: content}"></th:block>
+                <th:block th:replace="~{photography/fragments/portfolio :: content}"></th:block>
+                <th:block th:replace="~{photography/fragments/contact :: content}"></th:block>
+                <th:block th:replace="~{photography/fragments/thankyou :: content}"></th:block>
+            </div>
+            <th:block th:replace="~{photography/fragments/navigation-overlay :: content}"></th:block>
+        </div>
+    </div>
+    <th:block th:replace="~{photography/fragments/scripts :: content}"></th:block>
+</body>
+</html>

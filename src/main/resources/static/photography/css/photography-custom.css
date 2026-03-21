@@ -1,0 +1,378 @@
+/* CV spacing utilities copied for photography template reuse.
+   Keep these as height-only spacers to stay compatible with the original
+   markup pattern, with a few aliases for common carry-over cases. */
+.space2 {
+    height: 2px;
+}
+
+.space6 {
+    height: 6px;
+}
+
+.space8 {
+    height: 8px;
+}
+
+.space10 {
+    height: 10px;
+}
+
+.space12 {
+    height: 12px;
+}
+
+.space14 {
+    height: 14px;
+}
+
+.space16 {
+    height: 16px;
+}
+
+.space18 {
+    height: 18px;
+}
+
+.space20,
+.soace20 {
+    height: 20px;
+}
+
+.space22 {
+    height: 22px;
+}
+
+.space24 {
+    height: 24px;
+}
+
+.space26 {
+    height: 26px;
+}
+
+.space28 {
+    height: 28px;
+}
+
+.space30 {
+    height: 30px;
+}
+
+.space32 {
+    height: 32px;
+}
+
+.space34 {
+    height: 34px;
+}
+
+.space36 {
+    height: 36px;
+}
+
+.space38 {
+    height: 38px;
+}
+
+.space40 {
+    height: 40px;
+}
+
+.space42 {
+    height: 42px;
+}
+
+.space44 {
+    height: 44px;
+}
+
+.space46 {
+    height: 46px;
+}
+
+.space48 {
+    height: 48px;
+}
+
+.space50 {
+    height: 50px;
+}
+
+.space52 {
+    height: 52px;
+}
+
+.space54 {
+    height: 54px;
+}
+
+.space56 {
+    height: 56px;
+}
+
+.space58 {
+    height: 58px;
+}
+
+.space60 {
+    height: 60px;
+}
+
+.space62 {
+    height: 62px;
+}
+
+.space64 {
+    height: 64px;
+}
+
+.space66 {
+    height: 66px;
+}
+
+.space68 {
+    height: 68px;
+}
+
+.space70 {
+    height: 70px;
+}
+
+.space72 {
+    height: 72px;
+}
+
+.space74 {
+    height: 74px;
+}
+
+.space76 {
+    height: 76px;
+}
+
+.space78 {
+    height: 78px;
+}
+
+.space80 {
+    height: 80px;
+}
+
+.space82 {
+    height: 82px;
+}
+
+.space84 {
+    height: 84px;
+}
+
+.space86 {
+    height: 86px;
+}
+
+.space,
+.space88 {
+    height: 88px;
+}
+
+.space90 {
+    height: 90px;
+}
+
+.space92 {
+    height: 92px;
+}
+
+.space94 {
+    height: 94px;
+}
+
+.space96 {
+    height: 96px;
+}
+
+.space98 {
+    height: 98px;
+}
+
+.space100 {
+    height: 100px;
+}
+
+.introduction .item {
+    overflow: hidden;
+}
+
+.introduction .item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    float: none;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+.introduction-end {
+    background-position: 30% center;
+    background-size: cover;
+}
+
+.introduction .item:nth-child(1) img {
+    object-position: 68% 35%;
+}
+
+.introduction .item:nth-child(2) img {
+    object-position: 56% 28%;
+}
+
+.introduction .item:nth-child(3) img {
+    object-position: 58% 20%;
+}
+
+@media screen and (min-width: 769px) {
+    #chapterthankyou {
+        position: relative;
+    }
+
+    #chapterthankyou .inner {
+        width: calc(100vw - 200px);
+        max-width: 100%;
+        min-height: 100dvh;
+        height: 100%;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    #chapterthankyou .introduction-end-con {
+        float: none;
+        margin: 0 !important;
+        width: min(360px, calc(100vw - 340px));
+        max-width: calc(100vw - 340px);
+        position: absolute;
+        right: clamp(24px, 5vw, 30px);
+        bottom: clamp(24px, 4vh, 30px);
+        z-index: 2;
+        text-align: right;
+    }
+
+    #chapterthankyou .introduction-end-con h3 {
+        font-size: clamp(38px, 4vw, 35px);
+        line-height: 1.15;
+        white-space: nowrap;
+    }
+
+    #chapterthankyou .introduction-end-con h3 strong {
+        white-space: inherit;
+    }
+
+    .menu nav {
+        top: 242px;
+    }
+
+    .content-scroller {
+        isolation: isolate;
+    }
+
+    .content-gallery-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 200px;
+        z-index: 30;
+        pointer-events: none;
+    }
+
+    .content-nav-zone {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 96px;
+        border: 0;
+        padding: 0;
+        background: transparent;
+        color: #ffffff;
+        cursor: pointer;
+        pointer-events: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    .content-nav-prev {
+        left: 0;
+        justify-content: flex-start;
+    }
+
+    .content-nav-next {
+        right: 0;
+        justify-content: flex-end;
+    }
+
+    .content-nav-zone::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    .content-nav-prev::before {
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0) 72%);
+    }
+
+    .content-nav-next::before {
+        background: linear-gradient(270deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0) 72%);
+    }
+
+    .content-nav-visual {
+        position: relative;
+        z-index: 1;
+        width: 54px;
+        height: 54px;
+        margin: 0 16px;
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.22);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+        font-size: 24px;
+    }
+
+    .content-nav-prev .content-nav-visual {
+        transform: translateX(-10px);
+    }
+
+    .content-nav-next .content-nav-visual {
+        transform: translateX(10px);
+    }
+
+    .content-nav-zone:hover::before,
+    .content-nav-zone:focus-visible::before {
+        opacity: 1;
+    }
+
+    .content-nav-zone:hover .content-nav-visual,
+    .content-nav-zone:focus-visible .content-nav-visual {
+        opacity: 1;
+        transform: translateX(0);
+        background: rgba(0, 0, 0, 0.36);
+    }
+
+    .content-nav-zone.is-disabled {
+        pointer-events: none;
+    }
+
+    .content-nav-zone.is-disabled::before,
+    .content-nav-zone.is-disabled .content-nav-visual {
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content-gallery-nav {
+        display: none;
+    }
+}

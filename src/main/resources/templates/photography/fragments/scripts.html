@@ -1,0 +1,35 @@
+<th:block th:fragment="content">
+    <script type="text/javascript" src="js/jquery.min.js" th:src="@{|/photography/js/jquery.min.js?v=${assetVersion}|}"></script>
+    <script type="text/javascript" src="js/head.min.js" th:src="@{|/photography/js/head.min.js?v=${assetVersion}|}"></script>
+    <!-- Portfolio Thumbnail -->
+    <script type="text/javascript" src="js/imagesloaded.min.js" th:src="@{|/photography/js/imagesloaded.min.js?v=${assetVersion}|}"></script>
+    <script type="text/javascript" src="js/masonry.min.js" th:src="@{|/photography/js/masonry.min.js?v=${assetVersion}|}"></script>
+    <script type="text/javascript" src="js/class_helper.js" th:src="@{|/photography/js/class_helper.js?v=${assetVersion}|}"></script>
+    <script type="text/javascript" src="js/grid_gallery.js" th:src="@{|/photography/js/grid_gallery.js?v=${assetVersion}|}"></script>
+    <!-- Portfolio Grid -->
+    <script>
+        new CBPGridGallery(document.getElementById('grid-gallery'));
+    </script>
+    <!-- Portfolio Slider-->
+    <script type="text/javascript" src="js/carousel.js" th:src="@{|/photography/js/carousel.js?v=${assetVersion}|}"></script>
+    <script type="text/javascript" src="js/jquery.easypiechart.js" th:src="@{|/photography/js/jquery.easypiechart.js?v=${assetVersion}|}"></script>
+    <script type="text/javascript" src="js/text.rotator.js" th:src="@{|/photography/js/text.rotator.js?v=${assetVersion}|}"></script>
+    <!-- Page Scrolling -->
+    <script th:inline="javascript">
+        head.js(
+            { mousewheel: /*[[@{|/photography/js/jquery.mousewheel.js?v=${assetVersion}|}]]*/ "/photography/js/jquery.mousewheel.js" },
+            { mwheelIntent: /*[[@{|/photography/js/mwheelIntent.js?v=${assetVersion}|}]]*/ "/photography/js/mwheelIntent.js" },
+            { jScrollPane: /*[[@{|/photography/js/jquery.jscrollpane.min.js?v=${assetVersion}|}]]*/ "/photography/js/jquery.jscrollpane.min.js" },
+            { history: /*[[@{|/photography/js/jquery.history.js?v=${assetVersion}|}]]*/ "/photography/js/jquery.history.js" },
+            { stringLib: /*[[@{|/photography/js/core.string.js?v=${assetVersion}|}]]*/ "/photography/js/core.string.js" },
+            { easing: /*[[@{|/photography/js/jquery.easing.1.3.js?v=${assetVersion}|}]]*/ "/photography/js/jquery.easing.1.3.js" },
+            { smartresize: /*[[@{|/photography/js/jquery.smartresize.js?v=${assetVersion}|}]]*/ "/photography/js/jquery.smartresize.js" },
+            { page: /*[[@{|/photography/js/jquery.page.js?v=${assetVersion}|}]]*/ "/photography/js/jquery.page.js" }
+        );
+    </script>
+    <!-- Fit Video -->
+    <script type="text/javascript" src="js/jquery.fitvids.js" th:src="@{|/photography/js/jquery.fitvids.js?v=${assetVersion}|}"></script>
+    <!-- All Javascript Component-->
+    <script src="js/settings.js" th:src="@{|/photography/js/settings.js?v=${assetVersion}|}"></script>
+    <script src="js/gallery-navigation.js" th:src="@{|/photography/js/gallery-navigation.js?v=${assetVersion}|}"></script>
+</th:block>
