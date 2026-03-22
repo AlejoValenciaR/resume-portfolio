@@ -82,8 +82,9 @@ var pagetitle=$(document).find("title").text();
 					var left		= $article.position().left,
 						top			= $article.position().top,
 						// check if we are scrolling down or left
-						// is_v will be true when the screen size < 715
-						is_v		= ( $(document).height() - $(window).height() > 0 ),
+						// keep the photography layout horizontal on compact screens
+						forceHorizontalLayout = ( $(window).width() <= 768 && $articles.length > 0 ),
+						is_v		= ( !forceHorizontalLayout && ( $(document).height() - $(window).height() > 0 ) ),
 						// animation parameters:
 						// if vertically scrolling then the body will animate the scrollTop,
 						// otherwise the scroller (div.content-scroller) will animate the scrollLeft
@@ -133,7 +134,7 @@ var pagetitle=$(document).find("title").text();
 				{
 					//$('.totop-link').hide();
 					switch( true ) {
-					case ( windowWidth <= 768 ) : $scroller.scrollLeft( 0 ).css( 'overflow', 'visible' ); break;
+					case ( windowWidth <= 768 ) : $scroller.scrollLeft( 0 ).css({ 'overflow-x' : 'hidden', 'overflow-y' : 'hidden' }); break;
 					case ( windowWidth <= 1024 ): $scroller.css( 'overflow-x', 'hidden' ); break;
 					case ( windowWidth > 1024 ) : $scroller.css( 'overflow', 'hidden' ); break;
 					};
@@ -141,7 +142,7 @@ var pagetitle=$(document).find("title").text();
 				else
 				{
 					switch( true ) {
-					case ( windowWidth <= 768 ) : $scroller.scrollLeft( 0 ).css( 'overflow', 'visible' ); break;
+					case ( windowWidth <= 768 ) : $scroller.scrollLeft( 0 ).css({ 'overflow-x' : 'hidden', 'overflow-y' : 'hidden' }); break;
 					case ( windowWidth <= 1024 ): $scroller.css( 'overflow-x', 'hidden' ); break;
 					case ( windowWidth > 1024 ) : $scroller.css( 'overflow', 'hidden' ); break;
 					};
@@ -167,6 +168,8 @@ var pagetitle=$(document).find("title").text();
 						var ismobile =  navigator.userAgent.toLowerCase().indexOf("mobile");
 						if(isipad > -1 || ismobile > -1 )
 						{
+							_layout();
+							_goto();
 						}
 						else
 						{
@@ -281,4 +284,3 @@ var pagetitle=$(document).find("title").text();
 	Page.init();
 	
 })(window);
-
