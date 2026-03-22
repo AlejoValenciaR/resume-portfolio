@@ -42,7 +42,7 @@ var pagetitle=$(document).find("title").text();
 
 				// Only add custom scroll to articles if screen size > 715.
 				// If not the articles will be expanded
-				if( $(window).width() > 767 ) {
+				if( $(window).width() > 1023 ) {
 				
 					$articles.jScrollPane( scrollOptions );
 				
@@ -83,7 +83,7 @@ var pagetitle=$(document).find("title").text();
 						top			= $article.position().top,
 						// check if we are scrolling down or left
 						// keep the photography layout horizontal on compact screens
-						forceHorizontalLayout = ( $(window).width() <= 768 && $articles.length > 0 ),
+						forceHorizontalLayout = ( $(window).width() <= 1023 && $articles.length > 0 ),
 						is_v		= ( !forceHorizontalLayout && ( $(document).height() - $(window).height() > 0 ) ),
 						// animation parameters:
 						// if vertically scrolling then the body will animate the scrollTop,
@@ -134,17 +134,15 @@ var pagetitle=$(document).find("title").text();
 				{
 					//$('.totop-link').hide();
 					switch( true ) {
-					case ( windowWidth <= 768 ) : $scroller.scrollLeft( 0 ).css({ 'overflow-x' : 'hidden', 'overflow-y' : 'hidden' }); break;
-					case ( windowWidth <= 1024 ): $scroller.css( 'overflow-x', 'hidden' ); break;
-					case ( windowWidth > 1024 ) : $scroller.css( 'overflow', 'hidden' ); break;
+					case ( windowWidth <= 1023 ) : $scroller.scrollLeft( 0 ).css({ 'overflow-x' : 'hidden', 'overflow-y' : 'hidden' }); break;
+					case ( windowWidth > 1023 ) : $scroller.css( 'overflow', 'hidden' ); break;
 					};
 				}
 				else
 				{
 					switch( true ) {
-					case ( windowWidth <= 768 ) : $scroller.scrollLeft( 0 ).css({ 'overflow-x' : 'hidden', 'overflow-y' : 'hidden' }); break;
-					case ( windowWidth <= 1024 ): $scroller.css( 'overflow-x', 'hidden' ); break;
-					case ( windowWidth > 1024 ) : $scroller.css( 'overflow', 'hidden' ); break;
+					case ( windowWidth <= 1023 ) : $scroller.scrollLeft( 0 ).css({ 'overflow-x' : 'hidden', 'overflow-y' : 'hidden' }); break;
+					case ( windowWidth > 1023 ) : $scroller.css( 'overflow', 'hidden' ); break;
 					};
 				}
 			
@@ -180,7 +178,7 @@ var pagetitle=$(document).find("title").text();
 								var $article 	= $(this),
 									aJSP		= $article.data( 'jsp' );
 								
-								if( $(window).width() > 767 ) {
+								if( $(window).width() > 1023 ) {
 									
 									( aJSP === undefined ) ? $article.jScrollPane( scrollOptions ) : aJSP.reinitialise();
 									
@@ -257,7 +255,7 @@ var pagetitle=$(document).find("title").text();
 				
 					
 					
-					if($(window).width()>768)
+					if($(window).width()>1023)
 					{
 						$container.on( 'click', 'article.content', function( event ) {
 							
