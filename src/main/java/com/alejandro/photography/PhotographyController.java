@@ -1,15 +1,17 @@
 package com.alejandro.photography;
 
+import com.alejandro.react.ReactPageHtmlService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Controller
 public class PhotographyController {
 
-    @ModelAttribute("assetVersion")
-    public long assetVersion() {
-        return System.currentTimeMillis();
+    private final ReactPageHtmlService reactPageHtmlService;
+
+    public PhotographyController(ReactPageHtmlService reactPageHtmlService) {
+        this.reactPageHtmlService = reactPageHtmlService;
     }
 
     @GetMapping({"/photography", "/fotografia", "/fotografia/"})
@@ -18,7 +20,7 @@ public class PhotographyController {
     }
 
     @GetMapping("/photography/")
-    public String photographyIndex() {
-        return "photography/index";
+    public ResponseEntity<String> photographyIndex() {
+        return reactPageHtmlService.renderPhotographyPage();
     }
 }

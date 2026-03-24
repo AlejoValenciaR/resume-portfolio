@@ -7,27 +7,31 @@ import org.springframework.http.ContentDisposition;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.alejandro.react.ReactPageHtmlService;
 
 @Controller
 @RequestMapping("/portfolio")
 public class CvController {
 
     private final AlejandroResumePdfService alejandroResumePdfService;
+    private final ReactPageHtmlService reactPageHtmlService;
 
-    public CvController(AlejandroResumePdfService alejandroResumePdfService) {
+    public CvController(AlejandroResumePdfService alejandroResumePdfService, ReactPageHtmlService reactPageHtmlService) {
         this.alejandroResumePdfService = alejandroResumePdfService;
+        this.reactPageHtmlService = reactPageHtmlService;
     }
 
     @GetMapping("/alejandro")
-    public String showAlejandroPortfolio(@RequestParam(name = "lang", defaultValue = "en") String lang) {
+    public ResponseEntity<String> showAlejandroPortfolio(@RequestParam(name = "lang", defaultValue = "en") String lang) {
         Locale locale = resolveLocale(lang);
         LocaleContextHolder.setLocale(locale);
-        return isSpanish(locale) ? "cv/index6-es" : "cv/index6";
+        return reactPageHtmlService.renderPortfolioPage(isSpanish(locale));
     }
 
     @GetMapping(value = "/alejandro/cv.pdf", produces = MediaType.APPLICATION_PDF_VALUE)

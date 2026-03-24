@@ -72,6 +72,9 @@ class HelloSpringApplicationTests {
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith("text/html"))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Alejandro Valencia - Senior Backend Developer")))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("window.__REACT_PAGE__")))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("/react/react-shell.js")))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("/webjars/react/18.2.0/umd/react.production.min.js")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Alejandro Valencia")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Senior Backend Developer")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Java & Python Solutions")))
@@ -86,6 +89,7 @@ class HelloSpringApplicationTests {
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith("text/html"))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Alejandro Valencia - Desarrollador Backend Senior")))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("window.__REACT_PAGE__")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Desarrollador Backend Senior")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Descarga mi hoja de vida:")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Hoja de vida completa (8 páginas)")))
@@ -114,6 +118,9 @@ class HelloSpringApplicationTests {
 			.andExpect(header().string(HttpHeaders.CACHE_CONTROL, org.hamcrest.Matchers.containsString("no-store")))
 			.andExpect(content().contentTypeCompatibleWith("text/html"))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Soulframe Studio")))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("window.__REACT_PAGE__")))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("/react/react-shell.js")))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("/webjars/react-dom/18.2.0/umd/react-dom.production.min.js")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Alejandro Valencia")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Portrait and Product Photographer")));
 	}
