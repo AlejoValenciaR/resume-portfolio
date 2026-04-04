@@ -9,6 +9,7 @@ import java.util.Locale;
 
 import com.alejandro.cv.model.CvPage;
 import com.alejandro.cv.model.CompactExperienceSection;
+import com.alejandro.cv.model.ContactSection;
 import com.alejandro.cv.model.ExperienceSection;
 import com.alejandro.cv.model.HighlightedProjectsSection;
 import com.alejandro.cv.model.PersonalProjectsSection;
@@ -75,6 +76,17 @@ public class AlejandroResumePdfService {
         context.setVariable("compactGithubProjects", resume.personalProjects().items());
 
         return renderPdf(compactResumeTemplateName(pdfLocale), context, "Unable to generate Alejandro compact resume PDF");
+    }
+
+    public byte[] generateAlejandroAtsResumePdf(Locale locale) {
+        Locale pdfLocale = resolveLocale(locale);
+        ResumePdfDocument resume = buildResumeDocument(pdfLocale);
+
+        Context context = new Context(pdfLocale);
+        context.setVariable("resume", resume);
+        context.setVariable("atsContactItems", sliceContactItems(resume.contact().items(), 0, 4));
+
+        return renderPdf(atsResumeTemplateName(pdfLocale), context, "Unable to generate Alejandro ATS resume PDF");
     }
 
     private ResumePdfDocument buildResumeDocument(Locale locale) {
@@ -161,6 +173,12 @@ public class AlejandroResumePdfService {
         return items.subList(safeFrom, safeTo);
     }
 
+    private List<ContactSection.Item> sliceContactItems(List<ContactSection.Item> items, int fromIndex, int toIndex) {
+        int safeFrom = Math.min(Math.max(fromIndex, 0), items.size());
+        int safeTo = Math.min(Math.max(toIndex, safeFrom), items.size());
+        return items.subList(safeFrom, safeTo);
+    }
+
     private List<TechnologiesSection.Category> sliceCategories(List<TechnologiesSection.Category> items, int fromIndex, int toIndex) {
         int safeFrom = Math.min(Math.max(fromIndex, 0), items.size());
         int safeTo = Math.min(Math.max(toIndex, safeFrom), items.size());
@@ -221,5 +239,9 @@ public class AlejandroResumePdfService {
 
     private String compactResumeTemplateName(Locale locale) {
         return isSpanish(locale) ? "cv/pdf/alejandro-brief-resume-es" : "cv/pdf/alejandro-brief-resume";
+    }
+
+    private String atsResumeTemplateName(Locale locale) {
+        return isSpanish(locale) ? "cv/pdf/alejandro-ats-resume-es" : "cv/pdf/alejandro-ats-resume";
     }
 }

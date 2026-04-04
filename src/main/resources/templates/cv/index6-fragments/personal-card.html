@@ -12,7 +12,7 @@
 
             .personal-contact-box .cv-download-actions {
               display: grid;
-              grid-template-columns: repeat(2, minmax(0, 1fr));
+              grid-template-columns: repeat(3, minmax(0, 1fr));
               gap: 12px;
               width: 100%;
             }
@@ -60,6 +60,12 @@
 
             .personal-contact-box .cv-download-label {
               display: block;
+            }
+
+            @media (max-width: 991px) {
+              .personal-contact-box .cv-download-actions {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+              }
             }
 
             @media (max-width: 575px) {
@@ -122,9 +128,11 @@
 
             <div class="btn-area1 text-center cv-download-actions">
 
-              <a th:href="@{/portfolio/alejandro/cv.pdf}" href="/portfolio/alejandro/cv.pdf" download class="cv-download-link"><span class="cv-download-label">Full Resume (8 pages)</span><img th:src="@{/ovro-index6-full/assets/img/icons/download1.svg}" src="/ovro-index6-full/assets/img/icons/download1.svg" alt=""></a>
+              <a th:href="@{/portfolio/alejandro/cv.pdf}" href="/portfolio/alejandro/cv.pdf" download class="cv-download-link"><span class="cv-download-label">Full Resume</span><img th:src="@{/ovro-index6-full/assets/img/icons/download1.svg}" src="/ovro-index6-full/assets/img/icons/download1.svg" alt=""></a>
 
-              <a th:href="@{/portfolio/alejandro/compact-resume.pdf}" href="/portfolio/alejandro/compact-resume.pdf" download class="cv-download-link"><span class="cv-download-label">Small Resume (2 pages)</span><img th:src="@{/ovro-index6-full/assets/img/icons/download1.svg}" src="/ovro-index6-full/assets/img/icons/download1.svg" alt=""></a>
+              <a th:href="@{/portfolio/alejandro/compact-resume.pdf}" href="/portfolio/alejandro/compact-resume.pdf" download class="cv-download-link"><span class="cv-download-label">Small Resume</span><img th:src="@{/ovro-index6-full/assets/img/icons/download1.svg}" src="/ovro-index6-full/assets/img/icons/download1.svg" alt=""></a>
+
+              <a th:href="@{/portfolio/alejandro/ats-resume.pdf}" href="/portfolio/alejandro/ats-resume.pdf" download class="cv-download-link"><span class="cv-download-label">ATS Resume</span><img th:src="@{/ovro-index6-full/assets/img/icons/download1.svg}" src="/ovro-index6-full/assets/img/icons/download1.svg" alt=""></a>
 
             </div>
 

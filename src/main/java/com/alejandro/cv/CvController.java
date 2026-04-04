@@ -62,6 +62,24 @@ public class CvController {
             .body(pdfBytes);
     }
 
+    @GetMapping(value = "/alejandro/ats-resume.pdf", produces = MediaType.APPLICATION_PDF_VALUE)
+    public ResponseEntity<byte[]> downloadAlejandroAtsResumePdf(@RequestParam(name = "lang", defaultValue = "en") String lang) {
+        Locale locale = resolveLocale(lang);
+        byte[] pdfBytes = alejandroResumePdfService.generateAlejandroAtsResumePdf(locale);
+        String filename = isSpanish(locale)
+            ? "Alejandro-Valencia-Rivera-Hoja-de-Vida-ATS.pdf"
+            : "Alejandro-Valencia-Rivera-ATS-Resume.pdf";
+        ContentDisposition contentDisposition = ContentDisposition.attachment()
+            .filename(filename, StandardCharsets.UTF_8)
+            .build();
+
+        return ResponseEntity.ok()
+            .header(HttpHeaders.CONTENT_DISPOSITION, contentDisposition.toString())
+            .contentType(MediaType.APPLICATION_PDF)
+            .contentLength(pdfBytes.length)
+            .body(pdfBytes);
+    }
+
     private Locale resolveLocale(String lang) {
         return "es".equalsIgnoreCase(lang) ? Locale.forLanguageTag("es") : Locale.ENGLISH;
     }

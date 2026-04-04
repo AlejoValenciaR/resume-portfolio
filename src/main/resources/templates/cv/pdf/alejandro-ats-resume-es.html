@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Alejandro Valencia Rivera Hoja de Vida ATS</title>
+  <style>
+    @page{size:A4;margin:14mm 15mm 15mm}
+    html,body{margin:0;padding:0}
+    body{font-family:Arial,Helvetica,sans-serif;font-size:10pt;line-height:1.45;color:#111827;background:#fff}
+    p,h1,h2,h3,ul{margin:0}
+    a{color:#0f4c81;text-decoration:none}
+    .resume{width:100%}
+    .header{padding-bottom:4mm;border-bottom:1px solid #cbd5e1}
+    .name{font-size:22pt;line-height:1.1;font-weight:700;color:#0f172a}
+    .headline{margin-top:1.6mm;font-size:11pt;line-height:1.4;color:#1f2937;font-weight:700}
+    .contact-line{margin-top:2mm;font-size:9.5pt;line-height:1.5;color:#334155}
+    .availability{margin-top:1.8mm;font-size:9.5pt;color:#475569}
+    .section{margin-top:5mm}
+    .section-title{padding-bottom:1.8mm;border-bottom:1px solid #dbe2ea;font-size:11pt;line-height:1.2;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0f172a}
+    .section-copy{margin-top:2.2mm}
+    .skill-list,.bullet-list,.language-list,.education-list{margin:2mm 0 0;padding-left:5mm}
+    .skill-list li,.bullet-list li,.language-list li,.education-list li{margin-bottom:1.5mm}
+    .skill-list li:last-child,.bullet-list li:last-child,.language-list li:last-child,.education-list li:last-child{margin-bottom:0}
+    .technology-item{margin-top:2mm}
+    .technology-item:first-child{margin-top:2.2mm}
+    .experience-item,.project-item,.education-item{margin-top:3.5mm;page-break-inside:avoid}
+    .experience-item:first-child,.project-item:first-child,.education-item:first-child{margin-top:2.4mm}
+    .entry-title{font-size:10.4pt;line-height:1.35;font-weight:700;color:#0f172a}
+    .entry-meta{margin-top:.8mm;font-size:9.2pt;line-height:1.4;color:#475569}
+    .entry-summary{margin-top:1.4mm}
+    .keyword-line{margin-top:1.6mm;font-size:9.2pt;line-height:1.4;color:#334155}
+    .project-link{display:block;margin-top:1mm;font-size:9.1pt;line-height:1.4;word-wrap:break-word}
+  </style>
+</head>
+<body>
+  <div class="resume">
+    <div class="header">
+      <div class="name" th:text="${resume.personalInfo.fullName}">Alejandro Valencia Rivera</div>
+      <div class="headline" th:text="${resume.personalInfo.title}">Senior Full Stack Developer | Backend-First | Java, Python, AWS, Data Engineering</div>
+      <p class="contact-line">
+        <span th:each="item, itemStat : ${atsContactItems}">
+          <span th:if="${itemStat.index > 0}"> | </span>
+          <span th:if="${item.url == null}" th:text="${item.value}">Cali, Colombia</span>
+          <a th:if="${item.url != null}" th:href="${item.url}" th:text="${item.value}">alejo.valenciarivera@gmail.com</a>
+        </span>
+      </p>
+      <p class="availability" th:text="${resume.personalInfo.footerText}">Abierto a oportunidades senior en backend, ingenieria de plataforma y liderazgo tecnico.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Resumen Profesional</div>
+      <p class="section-copy" th:text="${resume.personalInfo.shortBio}">Desarrollador full stack senior con mas de 7 anos de experiencia en banca, fintech, CRM, cloud y entornos intensivos en datos.</p>
+      <p class="section-copy" th:text="${resume.hero.summary}">Java / Spring Boot, Python, AWS, Terraform, microservicios, ETL, core bancario, integraciones CRM y entrega productiva.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Habilidades Clave</div>
+      <ul class="skill-list">
+        <li th:each="skill : ${resume.skills.items}">
+          <strong th:text="${skill.title}">Java / Spring Boot</strong>
+          <span> - </span>
+          <span th:text="${skill.description}">Servicios backend, integraciones, iniciativas de core bancario, APIs REST y migraciones productivas.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Tecnologias</div>
+      <div class="technology-item" th:each="category : ${resume.technologies.categories}">
+        <strong th:text="${category.title}">Backend &amp; APIs</strong>
+        <span>: </span>
+        <span th:text="${#strings.listJoin(category.items, ', ')}">Java, Spring Boot, Python, REST, SOAP</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Experiencia Profesional</div>
+      <div class="experience-item" th:each="experience : ${resume.experience.items}">
+        <div class="entry-title" th:text="${experience.role}">Technical Lead, Backend &amp; Data Engineering</div>
+        <div class="entry-meta">
+          <span th:text="${experience.company}">CINTE GROUP S.A. (Experian Outsourcing)</span>
+          <span> | </span>
+          <span th:text="${experience.location}">Cali, Colombia</span>
+          <span> | </span>
+          <span th:text="${experience.period}">Jun 2024 - Dec 2025</span>
+        </div>
+        <p class="entry-summary" th:text="${experience.summary}">Lidere y contribui a programas de alto impacto en integracion CRM, arquitectura cloud, modernizacion de bases de datos, monitoreo transaccional y optimizacion de pagos.</p>
+        <ul class="bullet-list">
+          <li th:each="bullet : ${experience.bullets}" th:text="${bullet}">Lidere el ciclo completo de una implementacion de Salesforce Marketing Cloud.</li>
+        </ul>
+        <p class="keyword-line" th:if="${experience.tags != null and !#lists.isEmpty(experience.tags)}">
+          <strong>Palabras clave:</strong>
+          <span th:text="${#strings.listJoin(experience.tags, ', ')}">Integracion CRM, Migracion a DocumentDB, Optimizacion de pagos</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Educacion</div>
+      <div class="education-item" th:each="education : ${resume.education.items}">
+        <div class="entry-title" th:text="${education.degree}">Ingeniero de Sistemas</div>
+        <div class="entry-meta">
+          <span th:text="${education.institution}">Universidad del Valle</span>
+          <span> | </span>
+          <span th:text="${education.location}">Cali, Colombia</span>
+          <span> | </span>
+          <span th:text="${education.period}">2014 - 2019</span>
+        </div>
+        <ul class="education-list" th:if="${education.highlights != null and !#lists.isEmpty(education.highlights)}">
+          <li th:each="highlight : ${education.highlights}" th:text="${highlight}">Graduado con buenos resultados academicos y ubicado entre los mejores desempenos nacionales en las pruebas ECAES del programa de Ingenieria de Sistemas.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Idiomas</div>
+      <ul class="language-list">
+        <li th:each="language : ${resume.languages.items}">
+          <strong th:text="${language.name}">Espanol</strong>
+          <span>: </span>
+          <span th:text="${language.level}">Nativo</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Proyectos Publicos Seleccionados</div>
+      <div class="project-item" th:each="project : ${resume.personalProjects.items}">
+        <div class="entry-title" th:text="${project.title}">Terraform Jenkins on DigitalOcean</div>
+        <p class="entry-summary" th:text="${project.summary}">Proyecto de infraestructura como codigo que aprovisiona un servidor Jenkins en DigitalOcean con almacenamiento persistente, Nginx, DNS, reglas de firewall, Docker y HTTPS.</p>
+        <p class="keyword-line">
+          <strong>Stack:</strong>
+          <span th:text="${project.stack}">Terraform, Jenkins, Docker, Nginx, Linux, DigitalOcean</span>
+        </p>
+        <a class="project-link" th:href="${project.repoUrl}" th:text="|Repositorio: ${project.repoUrl}|">Repositorio: https://github.com/...</a>
+        <a class="project-link" th:if="${project.liveUrl != null and !#strings.isEmpty(project.liveUrl)}" th:href="${project.liveUrl}" th:text="|URL publica: ${project.liveUrl}|">URL publica: https://example.com</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
