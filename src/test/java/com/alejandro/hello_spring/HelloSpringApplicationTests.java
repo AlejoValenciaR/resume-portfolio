@@ -79,8 +79,9 @@ class HelloSpringApplicationTests {
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Senior Backend Developer")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Java & Python Solutions")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Download my CV:")))
-			.andExpect(content().string(org.hamcrest.Matchers.containsString("Full Resume (8 pages)")))
-			.andExpect(content().string(org.hamcrest.Matchers.containsString("Small Resume (2 pages)")));
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("Full Resume")))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("Small Resume")))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("ATS Resume")));
 	}
 
 	@Test
@@ -92,8 +93,9 @@ class HelloSpringApplicationTests {
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("window.__REACT_PAGE__")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Desarrollador Backend Senior")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Descarga mi hoja de vida:")))
-			.andExpect(content().string(org.hamcrest.Matchers.containsString("Hoja de vida completa (8 páginas)")))
-			.andExpect(content().string(org.hamcrest.Matchers.containsString("Hoja de vida corta (2 páginas)")))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("Hoja de vida completa")))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("Hoja de vida corta")))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("Hoja de vida ATS")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("CONTÁCTAME")));
 	}
 
@@ -199,6 +201,42 @@ class HelloSpringApplicationTests {
 				String pdfText = normalizePdfText(extractPdfText(content));
 				org.junit.jupiter.api.Assertions.assertTrue(pdfText.contains("jun. 2024 - dic. 2025"));
 				org.junit.jupiter.api.Assertions.assertTrue(pdfText.contains("ene. 2024 - jun. 2024"));
+			});
+	}
+
+	@Test
+	void atsCvPdfRouteDownloadsPdf() throws Exception {
+		mockMvc.perform(get("/portfolio/alejandro/ats-resume.pdf"))
+			.andExpect(status().isOk())
+			.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PDF))
+			.andExpect(header().string(HttpHeaders.CONTENT_DISPOSITION, org.hamcrest.Matchers.containsString("Alejandro-Valencia-Rivera-ATS-Resume.pdf")))
+			.andExpect(result -> {
+				byte[] content = result.getResponse().getContentAsByteArray();
+				org.junit.jupiter.api.Assertions.assertTrue(content.length > 1000, "ATS PDF should not be empty");
+				String pdfHeader = new String(content, 0, 5, java.nio.charset.StandardCharsets.US_ASCII);
+				org.junit.jupiter.api.Assertions.assertEquals("%PDF-", pdfHeader);
+				String pdfText = normalizePdfText(extractPdfText(content));
+				org.junit.jupiter.api.Assertions.assertTrue(pdfText.contains("PROFESSIONAL SUMMARY"));
+				org.junit.jupiter.api.Assertions.assertTrue(pdfText.contains("TECHNICAL SKILLS"));
+				org.junit.jupiter.api.Assertions.assertTrue(pdfText.contains("Jun 2024 - Dec 2025"));
+			});
+	}
+
+	@Test
+	void atsSpanishCvPdfRouteDownloadsPdf() throws Exception {
+		mockMvc.perform(get("/portfolio/alejandro/ats-resume.pdf").queryParam("lang", "es"))
+			.andExpect(status().isOk())
+			.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PDF))
+			.andExpect(header().string(HttpHeaders.CONTENT_DISPOSITION, org.hamcrest.Matchers.containsString("Alejandro-Valencia-Rivera-Hoja-de-Vida-ATS.pdf")))
+			.andExpect(result -> {
+				byte[] content = result.getResponse().getContentAsByteArray();
+				org.junit.jupiter.api.Assertions.assertTrue(content.length > 1000, "Spanish ATS PDF should not be empty");
+				String pdfHeader = new String(content, 0, 5, java.nio.charset.StandardCharsets.US_ASCII);
+				org.junit.jupiter.api.Assertions.assertEquals("%PDF-", pdfHeader);
+				String pdfText = normalizePdfText(extractPdfText(content));
+				org.junit.jupiter.api.Assertions.assertTrue(pdfText.contains("RESUMEN PROFESIONAL"));
+				org.junit.jupiter.api.Assertions.assertTrue(pdfText.contains("TECNOLOGIAS"));
+				org.junit.jupiter.api.Assertions.assertTrue(pdfText.contains("jun. 2024 - dic. 2025"));
 			});
 	}
 
