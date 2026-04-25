@@ -28,10 +28,18 @@ class HelloSpringApplicationTests {
 	}
 
 	@Test
-	void rootRouteRedirectsToPortfolio() throws Exception {
+	void rootRouteRendersLandingPage() throws Exception {
 		mockMvc.perform(get("/"))
+			.andExpect(status().isOk())
+			.andExpect(content().contentTypeCompatibleWith("text/html"))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("Alejandro Valencia Rivera")));
+	}
+
+	@Test
+	void legacyPortfolioRouteRedirectsToDeveloper() throws Exception {
+		mockMvc.perform(get("/portfolio/alejandro"))
 			.andExpect(status().is3xxRedirection())
-			.andExpect(redirectedUrl("/portfolio/alejandro"));
+			.andExpect(redirectedUrl("/developer"));
 	}
 
 	@Test
@@ -68,7 +76,7 @@ class HelloSpringApplicationTests {
 
 	@Test
 	void cvRouteRendersHtml() throws Exception {
-		mockMvc.perform(get("/portfolio/alejandro"))
+		mockMvc.perform(get("/developer"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith("text/html"))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Alejandro Valencia - Senior Backend Developer")))
@@ -86,7 +94,7 @@ class HelloSpringApplicationTests {
 
 	@Test
 	void cvSpanishRouteRendersHtml() throws Exception {
-		mockMvc.perform(get("/portfolio/alejandro").queryParam("lang", "es"))
+		mockMvc.perform(get("/developer").queryParam("lang", "es"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith("text/html"))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Alejandro Valencia - Desarrollador Backend Senior")))
@@ -138,7 +146,7 @@ class HelloSpringApplicationTests {
 
 	@Test
 	void cvPdfRouteDownloadsPdf() throws Exception {
-		mockMvc.perform(get("/portfolio/alejandro/cv.pdf"))
+		mockMvc.perform(get("/developer/cv.pdf"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PDF))
 			.andExpect(header().string(HttpHeaders.CONTENT_DISPOSITION, org.hamcrest.Matchers.containsString("Alejandro-Valencia-Rivera-Resume.pdf")))
@@ -155,7 +163,7 @@ class HelloSpringApplicationTests {
 
 	@Test
 	void cvSpanishPdfRouteDownloadsPdf() throws Exception {
-		mockMvc.perform(get("/portfolio/alejandro/cv.pdf").queryParam("lang", "es"))
+		mockMvc.perform(get("/developer/cv.pdf").queryParam("lang", "es"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PDF))
 			.andExpect(header().string(HttpHeaders.CONTENT_DISPOSITION, org.hamcrest.Matchers.containsString("Alejandro-Valencia-Rivera-Resume.pdf")))
@@ -172,7 +180,7 @@ class HelloSpringApplicationTests {
 
 	@Test
 	void compactCvPdfRouteDownloadsPdf() throws Exception {
-		mockMvc.perform(get("/portfolio/alejandro/compact-resume.pdf"))
+		mockMvc.perform(get("/developer/compact-resume.pdf"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PDF))
 			.andExpect(header().string(HttpHeaders.CONTENT_DISPOSITION, org.hamcrest.Matchers.containsString("Alejandro-Valencia-Rivera-Compact-Resume.pdf")))
@@ -189,7 +197,7 @@ class HelloSpringApplicationTests {
 
 	@Test
 	void compactSpanishCvPdfRouteDownloadsPdf() throws Exception {
-		mockMvc.perform(get("/portfolio/alejandro/compact-resume.pdf").queryParam("lang", "es"))
+		mockMvc.perform(get("/developer/compact-resume.pdf").queryParam("lang", "es"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PDF))
 			.andExpect(header().string(HttpHeaders.CONTENT_DISPOSITION, org.hamcrest.Matchers.containsString("Alejandro-Valencia-Rivera-Compact-Resume.pdf")))
@@ -206,7 +214,7 @@ class HelloSpringApplicationTests {
 
 	@Test
 	void atsCvPdfRouteDownloadsPdf() throws Exception {
-		mockMvc.perform(get("/portfolio/alejandro/ats-resume.pdf"))
+		mockMvc.perform(get("/developer/ats-resume.pdf"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PDF))
 			.andExpect(header().string(HttpHeaders.CONTENT_DISPOSITION, org.hamcrest.Matchers.containsString("Alejandro-Valencia-Rivera-ATS-Resume.pdf")))
@@ -224,7 +232,7 @@ class HelloSpringApplicationTests {
 
 	@Test
 	void atsSpanishCvPdfRouteDownloadsPdf() throws Exception {
-		mockMvc.perform(get("/portfolio/alejandro/ats-resume.pdf").queryParam("lang", "es"))
+		mockMvc.perform(get("/developer/ats-resume.pdf").queryParam("lang", "es"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PDF))
 			.andExpect(header().string(HttpHeaders.CONTENT_DISPOSITION, org.hamcrest.Matchers.containsString("Alejandro-Valencia-Rivera-Hoja-de-Vida-ATS.pdf")))
