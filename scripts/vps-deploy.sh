@@ -114,13 +114,13 @@ run_sudo docker run -d \
   -p 127.0.0.1:8080:8080 \
   "${IMAGE_REF}"
 
-if ! wait_for_url "http://127.0.0.1:8080/portfolio/alejandro"; then
+if ! wait_for_url "http://127.0.0.1:8080/developer"; then
   echo "Application did not become reachable on the local container port." >&2
   show_runtime_diagnostics
   exit 1
 fi
 
-if ! wait_for_url "https://${DOMAIN_NAME}/portfolio/alejandro" -k --resolve "${DOMAIN_NAME}:443:127.0.0.1"; then
+if ! wait_for_url "https://${DOMAIN_NAME}/developer" -k --resolve "${DOMAIN_NAME}:443:127.0.0.1"; then
   echo "Application did not become reachable through Nginx HTTPS." >&2
   show_runtime_diagnostics
   exit 1

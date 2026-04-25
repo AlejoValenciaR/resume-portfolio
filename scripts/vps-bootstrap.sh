@@ -201,13 +201,13 @@ wait_for_url() {
 }
 
 verify_deployment() {
-  if ! wait_for_url "http://127.0.0.1:8080/portfolio/alejandro"; then
+  if ! wait_for_url "http://127.0.0.1:8080/developer"; then
     echo "Application did not become reachable on the local container port." >&2
     show_runtime_diagnostics
     exit 1
   fi
 
-  if ! wait_for_url "https://${DOMAIN_NAME}/portfolio/alejandro" -k --resolve "${DOMAIN_NAME}:443:127.0.0.1"; then
+  if ! wait_for_url "https://${DOMAIN_NAME}/developer" -k --resolve "${DOMAIN_NAME}:443:127.0.0.1"; then
     echo "Application did not become reachable through Nginx HTTPS." >&2
     show_runtime_diagnostics
     exit 1
@@ -219,8 +219,8 @@ verify_deployment() {
     show_runtime_diagnostics
     exit 1
   }
-  if [[ "${root_status}" != "301" && "${root_status}" != "302" ]]; then
-    echo "Unexpected root response status: ${root_status}" >&2
+  if [[ "${root_status}" != "200" ]]; then
+    echo "Unexpected root response status: ${root_status} (expected 200)" >&2
     show_runtime_diagnostics
     exit 1
   fi
