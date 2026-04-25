@@ -9,16 +9,17 @@
       "company": "CINTE GROUP S.A. (Experian Outsourcing)",
       "location": "Cali, Colombia",
       "period": "Jun 2024 - Dec 2025",
-      "summary": "Led and contributed to high-impact programs across CRM integration, cloud architecture, database modernization, transaction monitoring, and payment optimization for enterprise delivery teams.",
+      "summary": "Led and contributed to high-impact programs across CRM integration, cloud architecture, Angular-based internal operations tooling, database modernization, transaction monitoring, and secure enterprise delivery for large-scale teams.",
       "tags": [
         "CRM Integration",
+        "Angular Frontend Delivery",
+        "AWS / EKS Operations",
         "DocumentDB Migration",
-        "Payment Optimization",
-        "API Delivery",
         "Salesforce Marketing Cloud"
       ],
       "bullets": [
         "Led the full lifecycle of a Salesforce Marketing Cloud implementation, including API and SFTP integrations with AWS and migration of internal customer data into contactability models.",
+        "Delivered an Angular + TypeScript internal operations console backed by AWS services to expose Amazon EKS pod inventories, deployment status, and cluster visibility for engineering and support teams.",
         "Led the migration from on-premises MongoDB to Amazon DocumentDB and delivered the AWS infrastructure using Terraform, aligned with governance and security requirements.",
         "Built a large AWS-based architecture and the initial microservices backbone behind API Gateway, using services such as Lambda, Step Functions, ECS, EKS, Glue, EventBridge, SQS, S3, and CloudWatch.",
         "Implemented the Ascend transaction monitoring and BI solution and delivered a national encryption plus anonymization model to protect customer identity and enable secure cross-team data exchange."

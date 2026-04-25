@@ -123,6 +123,7 @@ function renderSkillCards() {
                 { name: 'Java', score: 100, icon: deviconUrl('java'), link: 'https://openjdk.org/' },
                 { name: 'Python', score: 90, icon: deviconUrl('python'), link: 'https://www.python.org/' },
                 { name: 'Node.js', score: 70, icon: deviconUrl('nodejs'), link: 'https://nodejs.org/' },
+                { name: 'TypeScript', score: 78, icon: deviconUrl('typescript', 'plain'), link: 'https://www.typescriptlang.org/' },
                 { name: 'Kotlin', score: 50, icon: deviconUrl('kotlin'), link: 'https://kotlinlang.org/' },
                 { name: 'Jakarta EE', score: 75, icon: deviconUrl('java'), link: 'https://jakarta.ee/' },
                 { name: 'PL/SQL', score: 75, icon: deviconUrl('oracle'), link: 'https://www.oracle.com/database/technologies/appdev/plsql.html' }
@@ -138,6 +139,7 @@ function renderSkillCards() {
                 { name: 'Django', score: 80, icon: deviconUrl('django', 'plain'), link: 'https://www.djangoproject.com/' },
                 { name: 'Flask', score: 75, icon: simpleIconUrl('flask'), link: 'https://flask.palletsprojects.com/' },
                 { name: 'React.js', score: 70, icon: deviconUrl('react'), link: 'https://react.dev/' },
+                { name: 'Angular', score: 80, icon: deviconUrl('angularjs', 'plain'), link: 'https://angular.dev/' },
                 { name: 'REST', score: 100, icon: iconifyUrl('api'), link: 'https://restfulapi.net/' },
                 { name: 'SOAP', score: 85, icon: iconifyUrl('sync-alt'), link: 'https://www.w3.org/TR/soap/' }
             ]

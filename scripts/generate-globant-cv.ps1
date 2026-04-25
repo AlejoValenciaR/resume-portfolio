@@ -212,16 +212,16 @@ $experienceData = Read-JsonFile (Join-Path $cvRoot 'experience.json')
 $educationData = Read-JsonFile (Join-Path $cvRoot 'education.json')
 $languagesData = Read-JsonFile (Join-Path $cvRoot 'languages.json')
 
-$summary = 'Alejandro Valencia Rivera is a senior backend-first full stack developer with 7+ years of experience in banking, fintech, CRM, cloud, and data platforms. He specializes in Java / Spring Boot, Python, AWS, APIs, ETL, and modernization delivery in senior developer and technical lead roles.'
+$summary = 'Alejandro Valencia Rivera is a senior backend-first full stack developer with 7+ years of experience in banking, fintech, CRM, cloud, and data platforms. He specializes in Java / Spring Boot, Python, AWS, APIs, ETL, and modernization delivery in senior developer and technical lead roles, with 2 years of Angular experience building internal operational frontends on cloud-native platforms.'
 
 $qualifications = @(
     'Java / Spring Boot backend services',
     'Python for APIs, ETL, and automation',
+    'Angular / TypeScript for internal operational frontends',
     'REST, SOAP, and SFTP integrations',
     'Microservices and Domain-Driven Design',
     'AWS architecture and Terraform delivery',
-    'Oracle, PL/SQL, PostgreSQL, and SQL tuning',
-    'MongoDB, Amazon DocumentDB, and DynamoDB',
+    'Oracle, PL/SQL, PostgreSQL, MongoDB, DocumentDB, and DynamoDB',
     'ETL / ELT, AWS Glue, DataStage, and Power BI',
     'Jenkins, Docker, Kubernetes, and CI/CD',
     'Core banking, CRM, and Scrum leadership'
@@ -240,11 +240,12 @@ $experienceMap = @{
         Period = 'Jun 2024 - Dec 2025'
         Bullets = @(
             'Led Salesforce Marketing Cloud integration through API Gateway, secure SFTP exchange, and governed customer-data flows on AWS, improving campaign success by 45% and profitability by 25%',
+            'Delivered an Angular and TypeScript internal operations console backed by AWS services to expose Amazon EKS pod inventories, deployment status, and cloud-runtime visibility for engineering and support teams',
             'Produced technical designs, diagrams, and delivery artifacts for a six-month integration program with cross-team dependencies and enterprise governance constraints',
             'Led the migration from on-premises MongoDB to Amazon DocumentDB, adapting roughly 400 queries across 130 components and standardizing translation utilities across Node.js, Spring Boot, and Python services',
             'Implemented encryption, anonymization, and monitored data-distribution flows that reduced operating cost by nearly USD 15,000 per month and improved migration-team efficiency by about 70%'
         )
-        Tools = @('AWS', 'Terraform', 'API Gateway', 'Salesforce Marketing Cloud', 'Amazon DocumentDB', 'Java', 'Python')
+        Tools = @('Angular', 'TypeScript', 'AWS', 'Amazon EKS', 'Terraform', 'API Gateway', 'Salesforce Marketing Cloud', 'Amazon DocumentDB', 'Java', 'Python')
     }
     'Independent' = @{
         Company = 'Independent'

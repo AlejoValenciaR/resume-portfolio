@@ -10,13 +10,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.alejandro.react.ReactPageHtmlService;
 
 @Controller
-@RequestMapping("/portfolio")
 public class CvController {
 
     private final AlejandroResumePdfService alejandroResumePdfService;
@@ -27,14 +25,19 @@ public class CvController {
         this.reactPageHtmlService = reactPageHtmlService;
     }
 
-    @GetMapping("/alejandro")
+    @GetMapping("/portfolio/alejandro")
+    public String redirectLegacyPortfolio() {
+        return "redirect:/developer";
+    }
+
+    @GetMapping("/developer")
     public ResponseEntity<String> showAlejandroPortfolio(@RequestParam(name = "lang", defaultValue = "en") String lang) {
         Locale locale = resolveLocale(lang);
         LocaleContextHolder.setLocale(locale);
         return reactPageHtmlService.renderPortfolioPage(isSpanish(locale));
     }
 
-    @GetMapping(value = "/alejandro/cv.pdf", produces = MediaType.APPLICATION_PDF_VALUE)
+    @GetMapping(value = "/developer/cv.pdf", produces = MediaType.APPLICATION_PDF_VALUE)
     public ResponseEntity<byte[]> downloadAlejandroCvPdf(@RequestParam(name = "lang", defaultValue = "en") String lang) {
         byte[] pdfBytes = alejandroResumePdfService.generateAlejandroResumePdf(resolveLocale(lang));
         ContentDisposition contentDisposition = ContentDisposition.attachment()
@@ -48,7 +51,7 @@ public class CvController {
             .body(pdfBytes);
     }
 
-    @GetMapping(value = "/alejandro/compact-resume.pdf", produces = MediaType.APPLICATION_PDF_VALUE)
+    @GetMapping(value = "/developer/compact-resume.pdf", produces = MediaType.APPLICATION_PDF_VALUE)
     public ResponseEntity<byte[]> downloadAlejandroCompactResumePdf(@RequestParam(name = "lang", defaultValue = "en") String lang) {
         byte[] pdfBytes = alejandroResumePdfService.generateAlejandroCompactResumePdf(resolveLocale(lang));
         ContentDisposition contentDisposition = ContentDisposition.attachment()
@@ -62,7 +65,7 @@ public class CvController {
             .body(pdfBytes);
     }
 
-    @GetMapping(value = "/alejandro/ats-resume.pdf", produces = MediaType.APPLICATION_PDF_VALUE)
+    @GetMapping(value = "/developer/ats-resume.pdf", produces = MediaType.APPLICATION_PDF_VALUE)
     public ResponseEntity<byte[]> downloadAlejandroAtsResumePdf(@RequestParam(name = "lang", defaultValue = "en") String lang) {
         Locale locale = resolveLocale(lang);
         byte[] pdfBytes = alejandroResumePdfService.generateAlejandroAtsResumePdf(locale);

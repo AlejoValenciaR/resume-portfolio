@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/brand :: head(${pageTitle})}"></head>
+<body>
+    <main class="landing-root">
+        <section class="landing-hero">
+            <h1 class="landing-name">Alejandro Valencia Rivera</h1>
+            <p class="landing-tagline">Select a portfolio to explore</p>
+        </section>
+
+        <div class="landing-cards">
+            <a class="landing-card landing-card--developer" th:href="@{/developer}">
+                <div class="landing-card__icon">&#128187;</div>
+                <h2 class="landing-card__title">Developer</h2>
+                <p class="landing-card__desc">Full-stack software engineer portfolio with resume, skills, and highlighted projects.</p>
+                <span class="landing-card__cta">View Portfolio &rarr;</span>
+            </a>
+
+            <a class="landing-card landing-card--photography" th:href="@{/photography/}">
+                <div class="landing-card__icon">&#128247;</div>
+                <h2 class="landing-card__title">Photography</h2>
+                <p class="landing-card__desc">Visual storytelling through Soulframe Studio — landscapes, portraits, and creative work.</p>
+                <span class="landing-card__cta">View Gallery &rarr;</span>
+            </a>
+        </div>
+    </main>
+</body>
+</html>

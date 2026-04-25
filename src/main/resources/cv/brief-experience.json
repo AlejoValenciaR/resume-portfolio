@@ -11,12 +11,12 @@
           "stack": ["Java", "Python", "AWS", "Terraform", "SFTP", "API Gateway", "Salesforce Marketing Cloud"]
         },
         {
-          "name": "MongoDB to Amazon DocumentDB Modernization",
-          "stack": ["Spring Boot", "Node.js", "Python", "MongoDB", "Amazon DocumentDB", "AWS", "Terraform"]
+          "name": "Angular Operations Console for AWS EKS",
+          "stack": ["Angular", "TypeScript", "AWS", "Amazon EKS", "Kubernetes", "REST APIs"]
         },
         {
-          "name": "Ascend Transaction Monitoring",
-          "stack": ["AWS", "BI", "Encryption", "Anonymization", "Data Pipelines"]
+          "name": "MongoDB to Amazon DocumentDB Modernization",
+          "stack": ["Spring Boot", "Node.js", "Python", "MongoDB", "Amazon DocumentDB", "AWS", "Terraform"]
         }
       ]
     },

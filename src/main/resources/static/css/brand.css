@@ -230,6 +230,105 @@ body {
     font-size: 0.95rem;
 }
 
+/* Landing page */
+
+.landing-root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.landing-hero {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.landing-name {
+    margin: 0 0 0.4rem;
+    font-family: "Fraunces", "Georgia", serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.15;
+    color: var(--ink-900);
+}
+
+.landing-tagline {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--ink-500);
+}
+
+.landing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.4rem;
+    width: min(720px, 100%);
+}
+
+.landing-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+    text-decoration: none;
+    background: var(--surface);
+    border: 1px solid rgba(30, 36, 54, 0.1);
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow);
+    padding: clamp(1.4rem, 3.5vw, 2rem);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.landing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 48px rgba(25, 34, 57, 0.18);
+}
+
+.landing-card__icon {
+    font-size: 2.4rem;
+    line-height: 1;
+}
+
+.landing-card__title {
+    margin: 0;
+    font-family: "Fraunces", "Georgia", serif;
+    font-size: 1.6rem;
+    color: var(--ink-900);
+}
+
+.landing-card__desc {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--ink-500);
+    line-height: 1.55;
+    flex: 1;
+}
+
+.landing-card__cta {
+    margin-top: 0.4rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+}
+
+.landing-card--developer .landing-card__cta {
+    color: var(--accent);
+}
+
+.landing-card--photography .landing-card__cta {
+    color: #7b5ea7;
+}
+
+.landing-card--photography {
+    border-color: rgba(123, 94, 167, 0.18);
+}
+
+.landing-card--photography:hover {
+    box-shadow: 0 20px 48px rgba(123, 94, 167, 0.18);
+}
+
 @media (max-width: 680px) {
     .brand-header .brand-shell {
         border-radius: var(--radius-medium);

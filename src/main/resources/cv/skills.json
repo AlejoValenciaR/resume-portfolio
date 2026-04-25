@@ -35,10 +35,10 @@
       "level": 90
     },
     {
-      "badge": "Full Stack",
-      "title": "Frontend Support Delivery",
-      "description": "React and Angular exposure for end-to-end delivery, while keeping backend engineering as the main specialization.",
-      "level": 72
+      "badge": "2 years",
+      "title": "Angular / TypeScript",
+      "description": "Angular-based internal operational frontends integrated with Java and Python services, including Amazon EKS pod and deployment visibility dashboards, while keeping backend and cloud engineering as the core specialization.",
+      "level": 80
     }
   ]
 }

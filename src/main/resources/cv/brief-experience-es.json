@@ -11,12 +11,12 @@
           "stack": ["Java", "Python", "AWS", "Terraform", "SFTP", "API Gateway", "Salesforce Marketing Cloud"]
         },
         {
-          "name": "Modernizacion de MongoDB hacia Amazon DocumentDB",
-          "stack": ["Spring Boot", "Node.js", "Python", "MongoDB", "Amazon DocumentDB", "AWS", "Terraform"]
+          "name": "Consola Operativa Angular para AWS EKS",
+          "stack": ["Angular", "TypeScript", "AWS", "Amazon EKS", "Kubernetes", "APIs REST"]
         },
         {
-          "name": "Monitoreo transaccional Ascend",
-          "stack": ["AWS", "BI", "Encryption", "Anonymization", "Data Pipelines"]
+          "name": "Modernizacion de MongoDB hacia Amazon DocumentDB",
+          "stack": ["Spring Boot", "Node.js", "Python", "MongoDB", "Amazon DocumentDB", "AWS", "Terraform"]
         }
       ]
     },
@@ -60,7 +60,7 @@
           "stack": ["Java", "Spring Boot", "REST", "SOAP", "API Gateway", "Mediation Layer"]
         },
         {
-          "name": "Modernizacion ETL y reportería",
+          "name": "Modernizacion ETL y reporteria",
           "stack": ["AWS Glue", "Azure Data Factory", "GoAnywhere", "Power BI", "ETL"]
         },
         {
@@ -75,7 +75,7 @@
       "period": "ene. 2021 - ene. 2022",
       "projects": [
         {
-          "name": "Aplicaciones internas de reportería",
+          "name": "Aplicaciones internas de reporteria",
           "stack": ["Java", "Python", "Flask", "Django", "Reporting", "Business Data"]
         },
         {

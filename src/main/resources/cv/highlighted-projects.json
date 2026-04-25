@@ -3,16 +3,16 @@
   "title": "Selected enterprise delivery projects",
   "items": [
     {
-      "title": "Salesforce Marketing Cloud Integration",
+      "title": "Angular Operations Console for AWS EKS",
       "company": "CINTE GROUP S.A. / Experian",
       "period": "Jun 2024 - Dec 2025",
-      "summary": "Designed a six-month integration program that connected Salesforce Marketing Cloud with internal AWS services through a new API Gateway, secure SFTP exchange, governed customer-data pipelines, and production-ready technical designs.",
-      "impact": "Enabled campaign orchestration and reliable contactability flows while improving campaign success rates by 45% and profitability by 25% under enterprise security and governance constraints.",
-      "stack": "AWS, Terraform, Java, Python, SFTP, API Gateway, Salesforce Marketing Cloud",
+      "summary": "Delivered an Angular + TypeScript internal operations console that consumed AWS-backed services to visualize Amazon EKS pod inventory, deployment status, and runtime visibility for teams supporting cloud workloads.",
+      "impact": "Improved operational visibility for engineering and support teams by centralizing Kubernetes workload status in a usable internal frontend aligned with enterprise release and support processes.",
+      "stack": "Angular, TypeScript, AWS, Amazon EKS, Kubernetes, REST APIs",
       "highlights": [
-        "Defined the API Gateway and secure SFTP exchange that allowed Salesforce Marketing Cloud to communicate with internal AWS services.",
-        "Produced diagrams, technical designs, and governed data-movement flows for a six-month program with cross-team dependencies.",
-        "Balanced Java, Python, infrastructure, and governance needs so the solution could move cleanly from design into production delivery."
+        "Designed the frontend flow and data contract for an internal console centered on pod inventory and deployment visibility across Amazon EKS workloads.",
+        "Connected Angular views with AWS-backed services and operational data already used by cloud engineering and support teams.",
+        "Delivered the tool inside a backend-first, cloud-heavy environment, aligning UI work with enterprise governance, release practices, and service integrations."
       ]
     },
     {

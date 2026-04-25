@@ -1,6 +1,6 @@
 {
-  "eyebrow": "Tecnologías",
-  "titlePrimary": "Stack listo para producción",
+  "eyebrow": "Tecnologias",
+  "titlePrimary": "Stack listo para produccion",
   "titleSecondary": "en backend, nube y",
   "highlightWord": "datos",
   "categories": [
@@ -27,8 +27,9 @@
     {
       "title": "Frontend",
       "items": [
-        "React",
         "Angular",
+        "TypeScript",
+        "React",
         "HTML",
         "CSS",
         "Soporte para entregas responsive"
@@ -105,7 +106,7 @@
         "Copilot",
         "Gemini",
         "Ollama",
-        "Ingeniería de prompts"
+        "Ingenieria de prompts"
       ]
     }
   ]
