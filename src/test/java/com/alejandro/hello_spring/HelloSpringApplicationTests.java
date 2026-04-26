@@ -39,7 +39,7 @@ class HelloSpringApplicationTests {
 	void legacyPortfolioRouteRedirectsToDeveloper() throws Exception {
 		mockMvc.perform(get("/portfolio/alejandro"))
 			.andExpect(status().is3xxRedirection())
-			.andExpect(redirectedUrl("/developer"));
+			.andExpect(redirectedUrl("/developer?lang=en"));
 	}
 
 	@Test
@@ -111,19 +111,19 @@ class HelloSpringApplicationTests {
 	void photographyRouteRedirectsToTrailingSlash() throws Exception {
 		mockMvc.perform(get("/photography"))
 			.andExpect(status().is3xxRedirection())
-			.andExpect(redirectedUrl("/photography/"));
+			.andExpect(redirectedUrl("/photography/?lang=es"));
 	}
 
 	@Test
 	void fotografiaAliasRedirectsToPhotography() throws Exception {
 		mockMvc.perform(get("/fotografia"))
 			.andExpect(status().is3xxRedirection())
-			.andExpect(redirectedUrl("/photography/"));
+			.andExpect(redirectedUrl("/photography/?lang=es"));
 	}
 
 	@Test
 	void photographyRouteRendersPhotographyPage() throws Exception {
-		mockMvc.perform(get("/photography/"))
+		mockMvc.perform(get("/photography/").queryParam("lang", "en"))
 			.andExpect(status().isOk())
 			.andExpect(header().string(HttpHeaders.CACHE_CONTROL, org.hamcrest.Matchers.containsString("no-store")))
 			.andExpect(content().contentTypeCompatibleWith("text/html"))
