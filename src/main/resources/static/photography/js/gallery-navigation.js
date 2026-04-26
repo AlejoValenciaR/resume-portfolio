@@ -36,7 +36,9 @@
             return;
         }
 
-        window.History.pushState(null, null, "?page=" + chapters[targetIndex]);
+        var params = new URLSearchParams(window.location.search);
+        params.set("page", chapters[targetIndex]);
+        window.History.pushState(null, null, "?" + params.toString());
     }
 
     function bindNavigation() {

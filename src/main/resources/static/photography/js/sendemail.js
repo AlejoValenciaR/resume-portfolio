@@ -31,7 +31,7 @@ function validateForm() {
     }
 
     if (!isValid) {
-        showContactStatus("Please complete the highlighted fields with a valid email address.", false);
+        showContactStatus(getContactText("validationMessage", "Please complete the highlighted fields with a valid email address."), false);
     }
 
     return isValid;
@@ -63,13 +63,21 @@ function showContactStatus(message, success) {
 
 function buildMessageBody(name, email, message) {
     "use strict";
-    return "Name: " + name + "\nEmail: " + email + "\n\n" + message;
+    var nameLabel = getContactText("messageNameLabel", "Name");
+    var emailLabel = getContactText("messageEmailLabel", "Email");
+    return nameLabel + ": " + name + "\n" + emailLabel + ": " + email + "\n\n" + message;
 }
 
 function getContactEndpoint() {
     "use strict";
     var form = $("#form1");
     return form.data("contact-api") || form.attr("action") || "/api/contact/send?lang=en";
+}
+
+function getContactText(key, fallback) {
+    "use strict";
+    var value = $("#form1").data(key);
+    return value || fallback;
 }
 
 $(document).ready(function () {
@@ -89,7 +97,7 @@ $(document).ready(function () {
         var subject = $.trim($("#subject").val());
         var message = $.trim($("#message").val());
 
-        submitButton.prop("disabled", true).val("sending...");
+        submitButton.prop("disabled", true).val(getContactText("sendingLabel", "sending..."));
 
         $.ajax({
             type: "POST",
@@ -104,7 +112,7 @@ $(document).ready(function () {
             success: function (response) {
                 var successMessage = response && response.message
                     ? response.message
-                    : "Thanks. Your message was sent successfully.";
+                    : getContactText("successMessage", "Thanks. Your message was sent successfully.");
 
                 showContactStatus(successMessage, true);
                 $("#form1")[0].reset();
@@ -113,7 +121,7 @@ $(document).ready(function () {
                 var response = xhr.responseJSON || {};
                 var errors = response.errors || {};
                 var errorMessage = response.message
-                    || "Sorry, your message could not be sent right now. Please try again later.";
+                    || getContactText("errorMessage", "Sorry, your message could not be sent right now. Please try again later.");
 
                 if (errors.fromEmail) {
                     markInvalid("#email");

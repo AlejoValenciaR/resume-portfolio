@@ -1,0 +1,143 @@
+<article class="content portfolio white-bg" id="chapterportfolio" th:fragment="content">
+    <div class="inner">
+        <h2>Portafolio</h2>
+        <div class="title-divider"></div>
+        <h3>Proyectos seleccionados de retrato, producto y sesiones creativas</h3>
+        <p>
+            Este portafolio re&uacute;ne una selecci&oacute;n curada de fotograf&iacute;a de modelo, estudio, cosplay,
+            lifestyle y producto, creada con enfoque en direcci&oacute;n expresiva, composici&oacute;n limpia y narrativa
+            visual pulida. Cada proyecto est&aacute; dise&ntilde;ado para resaltar la personalidad del sujeto, la intenci&oacute;n
+            del estilismo y la atm&oacute;sfera de la sesi&oacute;n, desde retratos casuales y naturales hasta trabajo de estudio
+            controlado e imagen comercial de producto. El objetivo es crear fotograf&iacute;as intencionales, memorables y
+            listas para uso profesional en marca personal, redes sociales, presentaciones editoriales, campa&ntilde;as,
+            tiendas en l&iacute;nea y portafolios creativos. Explora cada proyecto para ver c&oacute;mo la luz, el color,
+            la pose, el vestuario y el entorno construyen una narrativa fotogr&aacute;fica completa.
+        </p>
+
+        <!-- Full-bleed image strip CTA -->
+        <div class="pf-cta" id="pf-open-projects" role="button" tabindex="0" aria-label="Explorar mi trabajo">
+            <div class="pf-cta__images">
+                <img src="images/portfolio/mariana/mariana-01.jpg" alt="" />
+                <img src="images/portfolio/heidy/heidy-01.jpg" alt="" />
+                <img src="images/portfolio/carolina/carolina-01.jpg" alt="" />
+                <img src="images/portfolio/angelica/angelica-01.jpg" alt="" />
+                <img src="images/portfolio/shoes-store/shoes-store-01.jpg" alt="" />
+            </div>
+            <div class="pf-cta__overlay">
+                <span class="pf-cta__label">Explorar mi trabajo</span>
+                <span class="pf-cta__rule"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Level 2: Projects panel (moved to body by JS) -->
+    <div class="pf-panel" id="pf-projects-panel" aria-hidden="true">
+        <div class="pf-panel__bar">
+            <button type="button" class="pf-back" id="pf-close-projects">
+                <span class="pf-back__icon">&#8592;</span> Portafolio
+            </button>
+            <h2 class="pf-panel__title">Mis proyectos</h2>
+            <div class="pf-panel__end"></div>
+        </div>
+        <div class="pf-projects-grid">
+
+            <div class="pf-project"
+                 data-name="MODEL - MARIANA - CASUAL"
+                 data-photos='["images/portfolio/mariana/mariana-01.jpg","images/portfolio/mariana/mariana-02.jpg","images/portfolio/mariana/mariana-04.jpg","images/portfolio/mariana/mariana-05.jpg","images/portfolio/mariana/mariana-06.jpg","images/portfolio/mariana/mariana-07.jpg","images/portfolio/mariana/mariana-08.jpg"]'>
+                <div class="pf-project__thumb">
+                    <img src="images/portfolio/mariana/mariana-01.jpg" alt="MODEL - MARIANA - CASUAL" />
+                    <div class="pf-project__hover"><span>Ver todas las fotos</span></div>
+                </div>
+                <div class="pf-project__info">
+                    <strong>MODEL - MARIANA - CASUAL</strong>
+                    <span>Portafolio de modelo casual</span>
+                </div>
+            </div>
+
+            <div class="pf-project"
+                 data-name="MODEL - HEIDY - STUDIO"
+                 data-photos='["images/portfolio/heidy/heidy-01.jpg","images/portfolio/heidy/heidy-02.jpg","images/portfolio/heidy/heidy-03.jpg","images/portfolio/heidy/heidy-04.jpg","images/portfolio/heidy/heidy-05.jpg","images/portfolio/heidy/heidy-06.jpg","images/portfolio/heidy/heidy-07.jpg"]'>
+                <div class="pf-project__thumb">
+                    <img src="images/portfolio/heidy/heidy-01.jpg" alt="MODEL - HEIDY - STUDIO" />
+                    <div class="pf-project__hover"><span>Ver todas las fotos</span></div>
+                </div>
+                <div class="pf-project__info">
+                    <strong>MODEL - HEIDY - STUDIO</strong>
+                    <span>Portafolio de modelo en estudio</span>
+                </div>
+            </div>
+
+            <div class="pf-project"
+                 data-name="MODEL - CAROLINA - COSPLAY"
+                 data-photos='["images/portfolio/carolina/carolina-01.jpg","images/portfolio/carolina/carolina-02.jpg","images/portfolio/carolina/carolina-03.jpg","images/portfolio/carolina/carolina-04.jpg"]'>
+                <div class="pf-project__thumb">
+                    <img src="images/portfolio/carolina/carolina-01.jpg" alt="MODEL - CAROLINA - COSPLAY" />
+                    <div class="pf-project__hover"><span>Ver todas las fotos</span></div>
+                </div>
+                <div class="pf-project__info">
+                    <strong>MODEL - CAROLINA - COSPLAY</strong>
+                    <span>Portafolio de modelo cosplay</span>
+                </div>
+            </div>
+
+            <div class="pf-project"
+                 data-name="MODEL - ANGELICA - COSPLAY"
+                 data-photos='["images/portfolio/angelica/angelica-01.jpg","images/portfolio/angelica/angelica-02.jpg","images/portfolio/angelica/angelica-03.jpg","images/portfolio/angelica/angelica-04.jpg","images/portfolio/angelica/angelica-05.jpg","images/portfolio/angelica/angelica-06.jpg"]'>
+                <div class="pf-project__thumb">
+                    <img src="images/portfolio/angelica/angelica-01.jpg" alt="MODEL - ANGELICA - COSPLAY" />
+                    <div class="pf-project__hover"><span>Ver todas las fotos</span></div>
+                </div>
+                <div class="pf-project__info">
+                    <strong>MODEL - ANGELICA - COSPLAY</strong>
+                    <span>Portafolio de modelo cosplay</span>
+                </div>
+            </div>
+
+            <div class="pf-project"
+                 data-name="JUST DUNK IT - SHOES STORE"
+                 data-photos='["images/portfolio/shoes-store/shoes-store-01.jpg","images/portfolio/shoes-store/shoes-store-02.jpg","images/portfolio/shoes-store/shoes-store-03.jpg","images/portfolio/shoes-store/shoes-store-04.jpg","images/portfolio/shoes-store/shoes-store-05.jpg","images/portfolio/shoes-store/shoes-store-06.jpg","images/portfolio/shoes-store/shoes-store-07.jpg","images/portfolio/shoes-store/shoes-store-08.jpg"]'>
+                <div class="pf-project__thumb">
+                    <img src="images/portfolio/shoes-store/shoes-store-01.jpg" alt="JUST DUNK IT - SHOES STORE" />
+                    <div class="pf-project__hover"><span>Ver todas las fotos</span></div>
+                </div>
+                <div class="pf-project__info">
+                    <strong>JUST DUNK IT - SHOES STORE</strong>
+                    <span>Fotograf&iacute;a de producto</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Level 3: Photos panel (moved to body by JS) -->
+    <div class="pf-panel" id="pf-photos-panel" aria-hidden="true">
+        <div class="pf-panel__bar">
+            <button type="button" class="pf-back" id="pf-close-photos">
+                <span class="pf-back__icon">&#8592;</span> Proyectos
+            </button>
+            <h2 class="pf-panel__title" id="pf-photos-title">Proyecto</h2>
+            <div class="pf-panel__end"></div>
+        </div>
+        <div class="pf-carousel">
+            <button type="button" class="pf-carousel__arrow pf-carousel__arrow--prev" id="pf-carousel-prev" aria-label="Foto anterior">&#8592;</button>
+            <img class="pf-main-img" id="pf-main-img" src="" alt="" />
+            <button type="button" class="pf-carousel__arrow pf-carousel__arrow--next" id="pf-carousel-next" aria-label="Foto siguiente">&#8594;</button>
+        </div>
+        <div class="pf-filmstrip" id="pf-filmstrip">
+            <!-- thumbnails injected by JS -->
+        </div>
+    </div>
+
+    <!-- Lightbox: full-screen photo view (moved to body by JS) -->
+    <div class="pf-lightbox" id="pf-lightbox" aria-hidden="true">
+        <div class="pf-lightbox__controls">
+            <button type="button" class="pf-lightbox__btn" id="pf-lb-zoomin"  aria-label="Acercar">+</button>
+            <span class="pf-lightbox__zoom-label" id="pf-lb-zoom-label">100%</span>
+            <button type="button" class="pf-lightbox__btn" id="pf-lb-zoomout" aria-label="Alejar">&#8722;</button>
+            <button type="button" class="pf-lightbox__btn pf-lightbox__close" id="pf-lb-close" aria-label="Cerrar">&#10005;</button>
+        </div>
+        <div class="pf-lightbox__stage" id="pf-lb-stage">
+            <img class="pf-lightbox__img" id="pf-lb-img" src="" alt="" draggable="false" />
+        </div>
+    </div>
+</article>

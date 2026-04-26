@@ -1,0 +1,29 @@
+<article class="content contact gray-bg" id="chaptercontact" th:fragment="content">
+    <div class="inner">
+        <h2>Cont&aacute;ctame</h2>
+        <div class="title-divider"></div>
+        <div class="contact-con contact-con-compact">
+            <div class="container-sub">
+                <div class="row">
+                    <div class="contact-form">
+                        <h3>Sigamos en contacto</h3>
+                        <div class="contact-direct-shortcuts" aria-label="Accesos directos de contacto">
+                            <a href="mailto:alejo.valenciarivera@gmail.com"><i class="fa fa-envelope"></i><span>Email</span></a>
+                            <a href="https://wa.me/573028078826" target="_blank" rel="noopener noreferrer" aria-label="Chatear por WhatsApp al +57 302 807 8826"><i class="fa fa-phone"></i><span>WhatsApp</span></a>
+                            <a href="https://www.linkedin.com/in/alejandro-valencia-rivera/" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin"></i><span>LinkedIn</span></a>
+                            <a href="https://www.instagram.com/alejo.vphotography?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i><span>Instagram</span></a>
+                        </div>
+                        <form id="form1" name="form1" method="post" action="/api/contact/send?lang=es" data-contact-api="/api/contact/send?lang=es" data-message-name-label="Nombre" data-message-email-label="Correo" data-validation-message="Completa los campos marcados con un correo v&aacute;lido." data-sending-label="enviando..." data-success-message="Gracias. Tu mensaje fue enviado correctamente." data-error-message="No fue posible enviar tu mensaje en este momento. Int&eacute;ntalo nuevamente m&aacute;s tarde." novalidate>
+                            <input name="name" type="text" id="name" maxlength="120" autocomplete="name" placeholder="Tu nombre..." />
+                            <input name="email" type="email" id="email" maxlength="320" autocomplete="email" inputmode="email" placeholder="Tu correo..." />
+                            <input name="subject" type="text" id="subject" maxlength="160" placeholder="Asunto..." />
+                            <textarea name="message" id="message" cols="45" rows="4" maxlength="4800" placeholder="Tu mensaje..."></textarea>
+                            <input type="submit" name="button" id="button" value="enviar!" />
+                            <div id="successmsg" role="status" aria-live="polite"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

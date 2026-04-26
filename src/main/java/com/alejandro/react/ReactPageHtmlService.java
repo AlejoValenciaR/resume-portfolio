@@ -97,11 +97,17 @@ public class ReactPageHtmlService {
     }
 
     public ResponseEntity<String> renderPhotographyPage() {
-        String title = "Soulframe Studio";
+        return renderPhotographyPage(true);
+    }
+
+    public ResponseEntity<String> renderPhotographyPage(boolean spanish) {
+        String title = spanish ? "Soulframe Studio - Fotografia" : "Soulframe Studio - Photography";
+        String lang = spanish ? "es" : "en";
+        String topLink = spanish ? "Volver arriba" : "Go to the top";
         String markup = wrapForReact("""
                 <div id="container" class="container">
                     %s
-                    <a href="#menu" class="totop-link">Go to the top</a>
+                    <a href="#menu" class="totop-link">%s</a>
                     <div class="content-scroller">
                         <div class="content-wrapper">
                             %s
@@ -114,17 +120,18 @@ public class ReactPageHtmlService {
                     </div>
                 </div>
                 """.formatted(
-                templateFragmentAssembler.assembleFragment("photography/fragments/menu.html"),
-                templateFragmentAssembler.assembleFragment("photography/fragments/introduction.html"),
-                templateFragmentAssembler.assembleFragment("photography/fragments/about.html"),
-                templateFragmentAssembler.assembleFragment("photography/fragments/portfolio.html"),
-                templateFragmentAssembler.assembleFragment("photography/fragments/contact.html"),
-                templateFragmentAssembler.assembleFragment("photography/fragments/thankyou.html"),
-                templateFragmentAssembler.assembleFragment("photography/fragments/navigation-overlay.html")));
+                templateFragmentAssembler.assembleFragment(localizedPhotographyFragment(spanish, "menu")),
+                topLink,
+                templateFragmentAssembler.assembleFragment(localizedPhotographyFragment(spanish, "introduction")),
+                templateFragmentAssembler.assembleFragment(localizedPhotographyFragment(spanish, "about")),
+                templateFragmentAssembler.assembleFragment(localizedPhotographyFragment(spanish, "portfolio")),
+                templateFragmentAssembler.assembleFragment(localizedPhotographyFragment(spanish, "contact")),
+                templateFragmentAssembler.assembleFragment(localizedPhotographyFragment(spanish, "thankyou")),
+                templateFragmentAssembler.assembleFragment(localizedPhotographyFragment(spanish, "navigation-overlay"))));
 
         String html = """
                 <!DOCTYPE html>
-                <html lang="en">
+                <html lang="%s">
                 <head>
                     <meta charset="UTF-8">
                     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -177,11 +184,15 @@ public class ReactPageHtmlService {
                     <script src="js/photography-portfolio.js"></script>
                 </body>
                 </html>
-                """.formatted(title, markup, toInitialPageJson(title, "", markup));
+                """.formatted(lang, title, markup, toInitialPageJson(title, "", markup));
 
         return ResponseEntity.ok()
                 .contentType(HTML_UTF8)
                 .body(html);
+    }
+
+    private String localizedPhotographyFragment(boolean spanish, String name) {
+        return "photography/fragments/" + name + (spanish ? "-es" : "") + ".html";
     }
 
     private String wrapForReact(String pageMarkup) {

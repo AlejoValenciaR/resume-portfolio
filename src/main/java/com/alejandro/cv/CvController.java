@@ -26,8 +26,8 @@ public class CvController {
     }
 
     @GetMapping("/portfolio/alejandro")
-    public String redirectLegacyPortfolio() {
-        return "redirect:/developer";
+    public String redirectLegacyPortfolio(@RequestParam(name = "lang", defaultValue = "en") String lang) {
+        return "redirect:/developer?lang=" + lang;
     }
 
     @GetMapping("/developer")

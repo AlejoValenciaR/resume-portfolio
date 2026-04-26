@@ -229,6 +229,55 @@
     object-position: 58% 20%;
 }
 
+.menu nav .photo-language-switch {
+    display: flex;
+    gap: 8px;
+    margin: 18px 30px 0;
+}
+
+.menu nav > a:last-of-type {
+    border-bottom: none;
+}
+
+.menu nav .photo-language-switch .photo-language-option {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 0;
+    margin: 0;
+    padding: 7px 8px;
+    border: 1px solid #333333;
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+}
+
+.menu nav .photo-language-switch .photo-language-option:hover,
+.menu nav .photo-language-switch .photo-language-option.is-active {
+    border-color: #ffb400;
+    color: #ffb400;
+}
+
+.photo-language-option img {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+.menu nav .photo-language-switch .photo-language-option span {
+    display: inline;
+    padding: 0;
+    color: inherit;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
 .about-signature-name {
     margin: 0 0 20px;
     padding: 0 0 18px;
@@ -573,6 +622,10 @@
         margin: 0 17px;
     }
 
+    .menu nav .photo-language-switch {
+        margin: 16px 17px 0;
+    }
+
     .menu nav a:last-child {
         border-bottom: none;
     }
@@ -876,6 +929,10 @@
         top: 50px;
         bottom: auto;
         width: 100% !important;
+    }
+
+    .menu nav .photo-language-switch {
+        margin: 16px 17px 0;
     }
 
     nav.active {
