@@ -229,6 +229,48 @@
     object-position: 58% 20%;
 }
 
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.contact-form input[type="email"] {
+    padding: 15px;
+    border: 1px solid #dfdfdf;
+    color: #a6a6a6;
+    font-size: 14px;
+    margin: 20px 0 0;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+.contact-form input[type="email"]:focus {
+    color: #545454;
+    border-color: #ffb400;
+}
+
+.contact-form input[type="submit"]:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+#successmsg {
+    min-height: 22px;
+    font-weight: 500;
+}
+
+#successmsg.is-error {
+    color: #dc0505;
+}
+
+#successmsg.is-success {
+    color: #7e983c;
+}
+
 @media screen and (min-width: 1024px) {
     #chapterthankyou {
         position: relative;
