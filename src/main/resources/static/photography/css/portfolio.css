@@ -266,3 +266,1046 @@ span.nav-next:before {
 span.nav-close:before {
 	content: "\f00d";
 }
+
+/* ==========================================================================
+   Portfolio v2 – three-level navigation
+   ========================================================================== */
+
+/* ── Level 1: CTA image strip ─────────────────────────────────────────── */
+.pf-cta {
+    margin-top: 2.5rem;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    display: block;
+    border-top: 4px solid #ffb400;
+    padding-top: 12px;
+}
+.pf-cta__images {
+    display: flex;
+    height: 200px;
+    gap: 4px;
+}
+.pf-cta__images img {
+    flex: 1;
+    min-width: 0;
+    width: 0;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    max-width: none !important;
+    filter: brightness(0.78) saturate(0.72);
+    -webkit-filter: brightness(0.78) saturate(0.72);
+    transition: filter 0.55s ease;
+    -webkit-transition: filter 0.55s ease;
+}
+.pf-cta:hover .pf-cta__images img {
+    filter: brightness(0.38) saturate(0.45);
+    -webkit-filter: brightness(0.38) saturate(0.45);
+}
+.pf-cta__overlay {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    gap: 12px;
+    pointer-events: none;
+}
+.pf-cta__label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: clamp(1.2rem, 2.4vw, 1.9rem);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #fff;
+    opacity: 0;
+    -webkit-transform: translateY(14px);
+    transform: translateY(14px);
+    transition: opacity 0.45s ease, -webkit-transform 0.45s ease;
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.pf-cta:hover .pf-cta__label {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+}
+.pf-cta__rule {
+    display: block;
+    width: 36px;
+    height: 2px;
+    background: #ffb400;
+    opacity: 0;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    transition: opacity 0.45s ease 0.07s, -webkit-transform 0.45s ease 0.07s;
+    transition: opacity 0.45s ease 0.07s, transform 0.45s ease 0.07s;
+}
+.pf-cta:hover .pf-cta__rule {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+}
+
+/* ── Shared full-screen panels ────────────────────────────────────────── */
+.pf-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9000;
+    background: #111;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+.pf-panel.pf-panel--open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+}
+
+/* Panel top bar */
+.pf-panel__bar {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 1.5rem;
+    background: #000;
+    border-bottom: 1px solid rgba(255,255,255,0.09);
+    flex-shrink: 0;
+}
+.pf-panel__title {
+    -webkit-box-flex: 1;
+    flex: 1;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.pf-panel__end {
+    flex: 0 0 auto;
+    min-width: 110px;
+}
+.pf-back {
+    display: -webkit-inline-box;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 0.4rem;
+    border: none;
+    background: none;
+    color: #ccc;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    padding: 0.4rem 0.7rem;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.pf-back:hover {
+    color: #ffb400;
+}
+.pf-back__icon {
+    font-size: 1.1em;
+}
+
+/* ── Level 2: projects grid ───────────────────────────────────────────── */
+.pf-projects-grid {
+    -webkit-box-flex: 1;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr));
+    gap: 1.6rem;
+    align-content: start;
+}
+
+/* Project card */
+.pf-project {
+    cursor: pointer;
+    background: #1a1a1a;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pf-project:hover {
+    transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+    box-shadow: 0 22px 54px rgba(0,0,0,0.75);
+}
+.pf-project__thumb {
+    position: relative;
+    overflow: hidden;
+    padding-top: 62%;
+}
+.pf-project__thumb img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    max-width: none !important;
+    transition: transform 0.5s ease;
+    -webkit-transition: transform 0.5s ease;
+}
+.pf-project:hover .pf-project__thumb img {
+    transform: scale(1.07);
+    -webkit-transform: scale(1.07);
+}
+.pf-project__hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.55);
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+.pf-project:hover .pf-project__hover {
+    opacity: 1;
+}
+.pf-project__hover span {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: #ffb400;
+    border: 1px solid rgba(255,180,0,0.75);
+    padding: 0.5rem 1.5rem;
+    pointer-events: none;
+}
+.pf-project__info {
+    padding: 1rem 1.2rem 1.1rem;
+    border-top: 3px solid #ffb400;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    gap: 0.28rem;
+}
+.pf-project__info strong {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #fff;
+}
+.pf-project__info span {
+    display: block;
+    color: #777;
+    font-size: 0.73rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── Level 3: photo carousel ──────────────────────────────────────────── */
+.pf-carousel {
+    -webkit-box-flex: 1;
+    flex: 1;
+    min-height: 0;
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #0a0a0a;
+}
+.pf-main-img {
+    display: block;
+    max-width: calc(100% - 144px);
+    max-height: 100%;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain;
+}
+.pf-carousel__arrow {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 54px;
+    height: 54px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.55);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.pf-carousel__arrow:hover {
+    background: #ffb400;
+    border-color: #ffb400;
+    color: #000;
+}
+.pf-carousel__arrow--prev { left: 1rem; }
+.pf-carousel__arrow--next { right: 1rem; }
+.pf-carousel__arrow:disabled {
+    opacity: 0.18;
+    pointer-events: none;
+}
+
+/* Filmstrip */
+.pf-filmstrip {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 1.5rem;
+    background: #000;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    flex-shrink: 0;
+    height: 88px;
+    overflow: hidden;
+}
+.pf-film-thumb {
+    height: 56px;
+    width: 80px;
+    cursor: pointer;
+    opacity: 0.42;
+    display: block;
+    border: 2px solid transparent;
+    transition: opacity 0.22s ease, transform 0.22s ease, border-color 0.22s ease;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.pf-film-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    max-width: none !important;
+}
+.pf-film-thumb:hover {
+    opacity: 0.72;
+}
+.pf-film-thumb--active {
+    opacity: 1 !important;
+    border-color: #ffb400 !important;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+.pf-film-empty {
+    width: 80px;
+    height: 56px;
+    flex-shrink: 0;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+    .pf-cta__images {
+        height: 140px;
+    }
+    .pf-cta__images img {
+        height: 140px;
+    }
+    .pf-projects-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    .pf-panel__end {
+        display: none;
+    }
+    .pf-main-img {
+        max-width: calc(100% - 100px);
+    }
+    .pf-carousel__arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    .pf-carousel__arrow--prev { left: 0.4rem; }
+    .pf-carousel__arrow--next { right: 0.4rem; }
+    .pf-film-thumb {
+        width: 56px;
+        height: 42px;
+    }
+    .pf-film-empty {
+        width: 56px;
+        height: 42px;
+    }
+    .pf-filmstrip {
+        height: 68px;
+        gap: 5px;
+        padding: 8px 0.75rem;
+    }
+}
+
+/* ── Lightbox (click main photo → full-screen view) ───────────────────── */
+.pf-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9100;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+.pf-lightbox--open {
+    opacity: 1;
+    pointer-events: auto;
+}
+/* Dark semi-transparent base */
+.pf-lightbox::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(6, 4, 2, 0.74);
+    pointer-events: none;
+}
+/* Artistic brush-stroke layer in gold + black */
+.pf-lightbox::after {
+    content: '';
+    position: absolute;
+    inset: -8%;
+    background:
+        radial-gradient(ellipse 72% 9%  at 10% 20%, rgba(255,180,0,0.22) 0%, transparent 100%),
+        radial-gradient(ellipse 58% 7%  at 90% 72%, rgba(255,180,0,0.17) 0%, transparent 100%),
+        radial-gradient(ellipse 44% 11% at 38% 85%, rgba(255,140,0,0.11) 0%, transparent 100%),
+        radial-gradient(ellipse 80% 12% at 55% 40%, rgba(0,0,0,0.28)     0%, transparent 100%),
+        radial-gradient(ellipse 50% 15% at 18% 62%, rgba(0,0,0,0.22)     0%, transparent 100%);
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+    pointer-events: none;
+}
+.pf-lightbox__controls {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    z-index: 1;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.pf-lightbox__btn {
+    background: rgba(0, 0, 0, 0.58);
+    border: 1px solid rgba(255, 180, 0, 0.40);
+    color: #d8d8d8;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 3px;
+    cursor: pointer;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-transition: background 0.2s, border-color 0.2s, color 0.2s;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.pf-lightbox__btn:hover:not(:disabled) {
+    background: rgba(255, 180, 0, 0.20);
+    border-color: #ffb400;
+    color: #ffb400;
+}
+.pf-lightbox__btn:disabled {
+    opacity: 0.28;
+    cursor: default;
+}
+.pf-lightbox__close {
+    margin-left: 0.8rem;
+    font-size: 0.95rem;
+}
+.pf-lightbox__zoom-label {
+    color: rgba(210, 210, 210, 0.85);
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    min-width: 3.2rem;
+    text-align: center;
+}
+.pf-lightbox__stage {
+    position: relative;
+    z-index: 1;
+    width: 92vw;
+    height: 84vh;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: default;
+}
+.pf-lightbox__stage--grab     { cursor: grab; }
+.pf-lightbox__stage--grabbing { cursor: grabbing !important; }
+.pf-lightbox__img {
+    display: block;
+    max-width: 92vw;
+    max-height: 84vh;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transition: -webkit-transform 0.25s ease;
+    transition: transform 0.25s ease;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+/* zoom-in cursor hint on the carousel main photo */
+.pf-main-img { cursor: zoom-in; }
+
+@media (max-width: 600px) {
+    .pf-lightbox__stage {
+        width: 100vw;
+        height: 78vh;
+    }
+    .pf-lightbox__img {
+        max-width: 100vw;
+        max-height: 78vh;
+    }
+    .pf-lightbox__controls {
+        top: 0.5rem;
+        right: 0.5rem;
+        gap: 0.35rem;
+    }
+    .pf-lightbox__btn {
+        width: 2.1rem;
+        height: 2.1rem;
+        font-size: 1rem;
+    }
+}
+
+/* ==========================================================================
+   Portfolio responsive hardening
+   ========================================================================== */
+
+body.pf-modal-open {
+    overflow: hidden !important;
+}
+
+.pf-cta {
+    width: 100%;
+    box-sizing: border-box;
+    touch-action: manipulation;
+}
+
+.pf-cta:focus-visible,
+.pf-project:focus-visible {
+    box-shadow: 0 0 0 3px rgba(255,180,0,0.5);
+}
+
+.pf-cta__label {
+    font-size: 1.5rem;
+}
+
+.pf-panel,
+.pf-lightbox {
+    height: 100vh;
+    height: 100dvh;
+    box-sizing: border-box;
+}
+
+.pf-panel__bar,
+.pf-projects-grid,
+.pf-filmstrip {
+    box-sizing: border-box;
+}
+
+.pf-back,
+.pf-carousel__arrow,
+.pf-lightbox__btn {
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
+}
+
+.pf-projects-grid {
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    grid-auto-rows: max-content;
+    align-items: start;
+}
+
+.pf-project {
+    touch-action: manipulation;
+    width: 100%;
+}
+
+.pf-project__thumb {
+    aspect-ratio: 100 / 62;
+    padding-top: 0;
+}
+
+.pf-carousel {
+    touch-action: pan-y;
+}
+
+.pf-main-img {
+    max-height: calc(100% - 2rem);
+}
+
+.pf-lightbox {
+    overflow: hidden;
+}
+
+.pf-lightbox__stage {
+    min-height: 0;
+    touch-action: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .pf-cta__images,
+    .pf-cta__images img {
+        height: 180px;
+    }
+
+    .pf-projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+        padding: 1.5rem;
+        gap: 1.25rem;
+    }
+
+    .pf-panel__bar {
+        padding: 0.75rem 1rem;
+    }
+
+    .pf-main-img {
+        max-width: calc(100% - 124px);
+    }
+
+    .pf-carousel__arrow {
+        width: 48px;
+        height: 48px;
+        font-size: 1.35rem;
+    }
+
+    .pf-filmstrip {
+        height: 80px;
+    }
+
+    .pf-film-thumb,
+    .pf-film-empty {
+        width: 72px;
+        height: 52px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pf-cta {
+        margin-top: 2rem;
+    }
+
+    .pf-cta__images,
+    .pf-cta__images img {
+        height: 160px;
+    }
+
+    .pf-cta__label {
+        font-size: 1.25rem;
+        letter-spacing: 0.24em;
+    }
+
+    .pf-projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+        padding: 1.1rem;
+        gap: 1rem;
+    }
+
+    .pf-panel__bar {
+        gap: 0.7rem;
+        padding: 0.55rem 0.8rem;
+    }
+
+    .pf-panel__title {
+        font-size: 0.88rem;
+        letter-spacing: 0.12em;
+    }
+
+    .pf-panel__end {
+        display: none;
+    }
+
+    .pf-back {
+        padding: 0.3rem 0.55rem;
+    }
+
+    .pf-main-img {
+        max-width: calc(100% - 96px);
+        max-height: calc(100% - 1rem);
+    }
+
+    .pf-carousel__arrow {
+        width: 42px;
+        height: 42px;
+        font-size: 1.15rem;
+    }
+
+    .pf-carousel__arrow--prev { left: 0.55rem; }
+    .pf-carousel__arrow--next { right: 0.55rem; }
+
+    .pf-filmstrip {
+        height: 70px;
+        gap: 6px;
+        padding: 8px 0.75rem;
+    }
+
+    .pf-film-thumb,
+    .pf-film-empty {
+        width: 58px;
+        height: 42px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .pf-cta__images,
+    .pf-cta__images img {
+        height: 140px;
+    }
+
+    .pf-cta__label {
+        font-size: 1.1rem;
+        letter-spacing: 0.2em;
+    }
+
+    .pf-projects-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .pf-project__info {
+        padding: 0.85rem 1rem 0.95rem;
+    }
+
+    .pf-main-img {
+        max-width: calc(100% - 80px);
+    }
+
+    .pf-carousel__arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+
+    .pf-carousel__arrow--prev { left: 0.4rem; }
+    .pf-carousel__arrow--next { right: 0.4rem; }
+
+    .pf-filmstrip {
+        height: 68px;
+        gap: 5px;
+        padding: 8px 0.75rem;
+    }
+
+    .pf-film-thumb,
+    .pf-film-empty {
+        width: clamp(46px, 14vw, 56px);
+        height: clamp(34px, 10vw, 42px);
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .pf-cta {
+        margin-top: 1.6rem;
+        padding-top: 10px;
+    }
+
+    .pf-cta__images,
+    .pf-cta__images img {
+        height: 124px;
+    }
+
+    .pf-cta__images img:nth-child(5) {
+        display: none;
+    }
+
+    .pf-cta__overlay {
+        top: 10px;
+        gap: 9px;
+    }
+
+    .pf-cta__label {
+        font-size: 0.96rem;
+        letter-spacing: 0.16em;
+    }
+
+    .pf-panel__bar {
+        gap: 0.45rem;
+        padding: 0.45rem 0.55rem;
+    }
+
+    .pf-panel__title {
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-align: right;
+    }
+
+    .pf-back {
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        padding: 0.25rem 0.4rem;
+    }
+
+    .pf-projects-grid {
+        padding: 0.75rem;
+        gap: 0.75rem;
+    }
+
+    .pf-project__info strong {
+        font-size: 0.95rem;
+        letter-spacing: 0.07em;
+    }
+
+    .pf-project__info span {
+        font-size: 0.68rem;
+        letter-spacing: 0.06em;
+    }
+
+    .pf-project__thumb {
+        aspect-ratio: 16 / 9;
+    }
+
+    .pf-main-img {
+        max-width: calc(100% - 68px);
+    }
+
+    .pf-carousel__arrow {
+        width: 36px;
+        height: 36px;
+    }
+
+    .pf-carousel__arrow--prev { left: 0.3rem; }
+    .pf-carousel__arrow--next { right: 0.3rem; }
+
+    .pf-filmstrip {
+        height: 60px;
+        gap: 4px;
+        padding: 7px 0.5rem;
+    }
+}
+
+@media screen and (max-height: 520px) {
+    .pf-panel__bar {
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+    }
+
+    .pf-projects-grid {
+        padding: 0.8rem;
+        gap: 0.8rem;
+    }
+
+    .pf-project__thumb {
+        aspect-ratio: 100 / 52;
+        padding-top: 0;
+    }
+
+    .pf-project__info {
+        padding: 0.65rem 0.85rem 0.7rem;
+    }
+
+    .pf-filmstrip {
+        height: 58px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    .pf-film-thumb,
+    .pf-film-empty {
+        width: 50px;
+        height: 36px;
+    }
+
+    .pf-carousel__arrow {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (hover: none), (pointer: coarse) {
+    .pf-cta__images img,
+    .pf-cta:hover .pf-cta__images img {
+        filter: brightness(0.48) saturate(0.58);
+        -webkit-filter: brightness(0.48) saturate(0.58);
+    }
+
+    .pf-cta__label,
+    .pf-cta__rule,
+    .pf-cta:hover .pf-cta__label,
+    .pf-cta:hover .pf-cta__rule {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+
+    .pf-project:hover {
+        -webkit-transform: none;
+        transform: none;
+        box-shadow: none;
+    }
+
+    .pf-project:hover .pf-project__thumb img {
+        -webkit-transform: none;
+        transform: none;
+    }
+
+    .pf-project__hover,
+    .pf-project:hover .pf-project__hover {
+        opacity: 1;
+        background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.62) 100%);
+        -webkit-box-align: end;
+        align-items: flex-end;
+        padding-bottom: 1rem;
+        box-sizing: border-box;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pf-cta__images img,
+    .pf-cta__label,
+    .pf-cta__rule,
+    .pf-panel,
+    .pf-project,
+    .pf-project__thumb img,
+    .pf-project__hover,
+    .pf-carousel__arrow,
+    .pf-film-thumb,
+    .pf-lightbox,
+    .pf-lightbox__btn,
+    .pf-lightbox__img {
+        -webkit-transition: none !important;
+        transition: none !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pf-lightbox {
+        -webkit-box-pack: start;
+        justify-content: flex-start;
+        padding: max(0.5rem, env(safe-area-inset-top)) 0.5rem max(0.5rem, env(safe-area-inset-bottom));
+    }
+
+    .pf-lightbox__controls {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        -webkit-box-pack: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        gap: 0.35rem;
+        margin-bottom: 0.5rem;
+        box-sizing: border-box;
+    }
+
+    .pf-lightbox__stage {
+        -webkit-box-flex: 1;
+        flex: 1 1 auto;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+    }
+
+    .pf-lightbox__img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .pf-lightbox__close {
+        margin-left: 0.35rem;
+    }
+}
+
+@media screen and (max-width: 420px), screen and (max-height: 520px) {
+    .pf-lightbox {
+        padding-right: 0.35rem;
+        padding-left: 0.35rem;
+    }
+
+    .pf-lightbox__controls {
+        gap: 0.25rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .pf-lightbox__btn {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .pf-lightbox__zoom-label {
+        min-width: 2.8rem;
+        font-size: 0.75rem;
+    }
+}

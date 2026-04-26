@@ -1,16 +1,7 @@
 <th:block th:fragment="content">
     <script type="text/javascript" src="js/jquery.min.js" th:src="@{|/photography/js/jquery.min.js?v=${assetVersion}|}"></script>
     <script type="text/javascript" src="js/head.min.js" th:src="@{|/photography/js/head.min.js?v=${assetVersion}|}"></script>
-    <!-- Portfolio Thumbnail -->
-    <script type="text/javascript" src="js/imagesloaded.min.js" th:src="@{|/photography/js/imagesloaded.min.js?v=${assetVersion}|}"></script>
-    <script type="text/javascript" src="js/masonry.min.js" th:src="@{|/photography/js/masonry.min.js?v=${assetVersion}|}"></script>
-    <script type="text/javascript" src="js/class_helper.js" th:src="@{|/photography/js/class_helper.js?v=${assetVersion}|}"></script>
-    <script type="text/javascript" src="js/grid_gallery.js" th:src="@{|/photography/js/grid_gallery.js?v=${assetVersion}|}"></script>
-    <!-- Portfolio Grid -->
-    <script>
-        new CBPGridGallery(document.getElementById('grid-gallery'));
-    </script>
-    <!-- Portfolio Slider-->
+    <!-- Portfolio -->
     <script type="text/javascript" src="js/carousel.js" th:src="@{|/photography/js/carousel.js?v=${assetVersion}|}"></script>
     <script type="text/javascript" src="js/jquery.easypiechart.js" th:src="@{|/photography/js/jquery.easypiechart.js?v=${assetVersion}|}"></script>
     <script type="text/javascript" src="js/text.rotator.js" th:src="@{|/photography/js/text.rotator.js?v=${assetVersion}|}"></script>
@@ -32,4 +23,5 @@
     <!-- All Javascript Component-->
     <script src="js/settings.js" th:src="@{|/photography/js/settings.js?v=${assetVersion}|}"></script>
     <script src="js/gallery-navigation.js" th:src="@{|/photography/js/gallery-navigation.js?v=${assetVersion}|}"></script>
+    <script src="js/photography-portfolio.js" th:src="@{|/photography/js/photography-portfolio.js?v=${assetVersion}|}"></script>
 </th:block>

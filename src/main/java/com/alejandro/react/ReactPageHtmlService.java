@@ -156,11 +156,6 @@ public class ReactPageHtmlService {
                     <script src="/react/react-shell.js"></script>
                     <script type="text/javascript" src="js/jquery.min.js"></script>
                     <script type="text/javascript" src="js/head.min.js"></script>
-                    <script type="text/javascript" src="js/imagesloaded.min.js"></script>
-                    <script type="text/javascript" src="js/masonry.min.js"></script>
-                    <script type="text/javascript" src="js/class_helper.js"></script>
-                    <script type="text/javascript" src="js/grid_gallery.js"></script>
-                    <script>new CBPGridGallery(document.getElementById('grid-gallery'));</script>
                     <script type="text/javascript" src="js/carousel.js"></script>
                     <script type="text/javascript" src="js/jquery.easypiechart.js"></script>
                     <script type="text/javascript" src="js/text.rotator.js"></script>
@@ -179,6 +174,7 @@ public class ReactPageHtmlService {
                     <script type="text/javascript" src="js/jquery.fitvids.js"></script>
                     <script src="js/settings.js"></script>
                     <script src="js/gallery-navigation.js"></script>
+                    <script src="js/photography-portfolio.js"></script>
                 </body>
                 </html>
                 """.formatted(title, markup, toInitialPageJson(title, "", markup));
