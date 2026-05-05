@@ -80,13 +80,16 @@ class HelloSpringApplicationTests {
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith("text/html"))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Alejandro Valencia - Senior Backend Developer")))
-			.andExpect(content().string(org.hamcrest.Matchers.containsString("window.__REACT_PAGE__")))
-			.andExpect(content().string(org.hamcrest.Matchers.containsString("/react/react-shell.js")))
-			.andExpect(content().string(org.hamcrest.Matchers.containsString("/webjars/react/18.2.0/umd/react.production.min.js")))
+			.andExpect(content().string(org.hamcrest.Matchers.not(org.hamcrest.Matchers.containsString("window.__REACT_PAGE__"))))
+			.andExpect(content().string(org.hamcrest.Matchers.not(org.hamcrest.Matchers.containsString("/react/react-shell.js"))))
+			.andExpect(content().string(org.hamcrest.Matchers.not(org.hamcrest.Matchers.containsString("/webjars/react/18.2.0/umd/react.production.min.js"))))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Alejandro Valencia")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Senior Backend Developer")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Java & Python Solutions")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Download my CV:")))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("/developer?lang=es")))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("/developer/cv.pdf?lang=en")))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("approximately 400 database queries")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Full Resume")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Small Resume")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("ATS Resume")));
@@ -98,13 +101,14 @@ class HelloSpringApplicationTests {
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith("text/html"))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Alejandro Valencia - Desarrollador Backend Senior")))
-			.andExpect(content().string(org.hamcrest.Matchers.containsString("window.__REACT_PAGE__")))
+			.andExpect(content().string(org.hamcrest.Matchers.not(org.hamcrest.Matchers.containsString("window.__REACT_PAGE__"))))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Desarrollador Backend Senior")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Descarga mi hoja de vida:")))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("/developer?lang=en")))
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("/developer/cv.pdf?lang=es")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Hoja de vida completa")))
 			.andExpect(content().string(org.hamcrest.Matchers.containsString("Hoja de vida corta")))
-			.andExpect(content().string(org.hamcrest.Matchers.containsString("Hoja de vida ATS")))
-			.andExpect(content().string(org.hamcrest.Matchers.containsString("CONTÁCTAME")));
+			.andExpect(content().string(org.hamcrest.Matchers.containsString("Hoja de vida ATS")));
 	}
 
 	@Test
@@ -149,7 +153,7 @@ class HelloSpringApplicationTests {
 		mockMvc.perform(get("/developer/cv.pdf"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PDF))
-			.andExpect(header().string(HttpHeaders.CONTENT_DISPOSITION, org.hamcrest.Matchers.containsString("Alejandro-Valencia-Rivera-Resume.pdf")))
+			.andExpect(header().string(HttpHeaders.CONTENT_DISPOSITION, org.hamcrest.Matchers.containsString("Alejandro-Valencia-Rivera-Full-Resume.pdf")))
 			.andExpect(result -> {
 				byte[] content = result.getResponse().getContentAsByteArray();
 				org.junit.jupiter.api.Assertions.assertTrue(content.length > 1000, "PDF should not be empty");
@@ -166,7 +170,7 @@ class HelloSpringApplicationTests {
 		mockMvc.perform(get("/developer/cv.pdf").queryParam("lang", "es"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PDF))
-			.andExpect(header().string(HttpHeaders.CONTENT_DISPOSITION, org.hamcrest.Matchers.containsString("Alejandro-Valencia-Rivera-Resume.pdf")))
+			.andExpect(header().string(HttpHeaders.CONTENT_DISPOSITION, org.hamcrest.Matchers.containsString("Alejandro-Valencia-Rivera-Hoja-de-Vida-Completa.pdf")))
 			.andExpect(result -> {
 				byte[] content = result.getResponse().getContentAsByteArray();
 				org.junit.jupiter.api.Assertions.assertTrue(content.length > 1000, "Spanish PDF should not be empty");
@@ -200,7 +204,7 @@ class HelloSpringApplicationTests {
 		mockMvc.perform(get("/developer/compact-resume.pdf").queryParam("lang", "es"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PDF))
-			.andExpect(header().string(HttpHeaders.CONTENT_DISPOSITION, org.hamcrest.Matchers.containsString("Alejandro-Valencia-Rivera-Compact-Resume.pdf")))
+			.andExpect(header().string(HttpHeaders.CONTENT_DISPOSITION, org.hamcrest.Matchers.containsString("Alejandro-Valencia-Rivera-Hoja-de-Vida-Corta.pdf")))
 			.andExpect(result -> {
 				byte[] content = result.getResponse().getContentAsByteArray();
 				org.junit.jupiter.api.Assertions.assertTrue(content.length > 1000, "Spanish compact PDF should not be empty");
